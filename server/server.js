@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const userController = require('./controllers/UserController');
+const skillController = require('./controllers/SkillController');
 
 
 // define port
@@ -41,9 +42,11 @@ app.use('/', express.static(__dirname + './../assets'));
     next();
 });
 
-// User login and register
+// User login, register, skills
 app.post('/login', userController.postLogin)
-    .post('/register', userController.postRegister);
+    .post('/register', userController.postRegister)
+    .get('/skills', skillController.getSkill)
+    .post('/skills', skillController.updateSkill);
 
 /**
  * Listen to Port
