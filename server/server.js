@@ -17,8 +17,8 @@ app.use(bodyParser.json());
 /**
  * serve index.html
  */
-app.use('/', express.static(__dirname + './../public'));
-app.use('/', express.static(__dirname + './../assets'));
+app.use('/', express.static(__dirname + '/../public'));
+app.use('/', express.static(__dirname + '/../assets'));
 
 /**
  * Add headers middleware 
