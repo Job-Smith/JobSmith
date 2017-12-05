@@ -7,7 +7,6 @@ import skillsReducer from './skillsReducer';
 // combine reducers
 const reducers = combineReducers({
   skills: skillsReducer,
-  // markets: marketsReducer,
 });
 
 // make the combined reducers available for import

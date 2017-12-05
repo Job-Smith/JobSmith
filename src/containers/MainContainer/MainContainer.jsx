@@ -41,7 +41,7 @@ class MainContainer extends Component {
             Right
           </div>
         </div>
-      </div>
+      </div>  
     )
   }
 

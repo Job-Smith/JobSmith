@@ -8,6 +8,7 @@ const skillsReducer = (state=initialState, action) => {
   let skillList;
 
   switch(action.type) {
+    
     default:
       return state;
   }
