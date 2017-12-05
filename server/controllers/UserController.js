@@ -12,17 +12,17 @@ const userController = {
     postRegister(req, res, next) {
         let newUser = new User({
             name: req.body.name,
-            passowrd: req.body.password,
+            password: req.body.password,
             email: req.body.email,
         });
-
+        
         let query = {
-            text: 'INSERT INTO users (name, password, email) VALUES($1, $2, $3) RETURNING _id',
-            values: Object.values(newUser)
+            text: 'INSERT INTO "user" (name, password, email) VALUES($1, $2, $3) RETURNING id',
+            values: [newUser.name, newUser.password, newUser.email]
         };
 
         db.conn.one(query)
-        .then(postRegister => res.status(200).send({'msg':'User created!', 'id': postRegister._id}))
+        .then(postRegister => res.status(200).send({'msg':'User created!', 'id': postRegister.id}))
         .catch(err =>{ 
             console.log('The error is', err);
             res.status(404).send(err)
