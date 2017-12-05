@@ -17,7 +17,8 @@ const userController = {
         });
 
         let query = {
-            text: 'INSERT INTO users (name, password, email) VALUES($1, $2, $3) RETURNING _id',
+            // text: 'INSERT INTO user (name, password, email) VALUES($1, $2, $3) RETURNING _id',
+            text: 'INSERT INTO user (name, password, email) VALUES($1, $2, $3)',
             values: Object.values(newUser)
         };
 
