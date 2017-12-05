@@ -8,8 +8,6 @@ const initialState = {
 const loginReducer = (state=initialState, action) => {
   let login;
 
-  
-
   switch(action.type) {
     
     default:
