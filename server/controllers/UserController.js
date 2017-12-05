@@ -1,8 +1,21 @@
 const User = require('../models/userModel');
 const db = require('../models/database');
 
+/**
+ * userController methods for login and register
+ */
 const userController = {
+    /**
+     * 
+     * @param {*} req, request from client
+     * @param {*} res, response from server 
+     * @param {*} next, move to next middleware
+     * 
+     * return a promise if the select query is successful for comparing email & password from DB to req.body,
+     * else return a 404 error
+     */
     postLogin(req, res, next) {
+       // query 
        const query = `SELECT * FROM "user" WHERE email = '${req.body.email}' AND password = '${req.body.password}'`;
        db.conn.one(query)
         .then(postLogin => res.status(200).send({'msg': 'Login successful'}))
@@ -10,8 +23,17 @@ const userController = {
            console.log('The error is', err);
            res.status(404).send(err)
        });
+       next();
     },
-
+    /**
+     * 
+     * @param {*} req, request from client
+     * @param {*} res, response from server 
+     * @param {*} next, move to next middleware
+     *  
+     * return a promise if the insert query is successful from user name, email, and passowrd,
+     * else return a 404 error
+     */
     postRegister(req, res, next) {
         let newUser = new User({
             name: req.body.name,
@@ -31,6 +53,7 @@ const userController = {
             console.log('The error is', err);
             res.status(404).send(err)
         });
+        next();
     }
 }
 
