@@ -1,10 +1,31 @@
-container {
+/* .container {
     width: 100%;
     height: 100%;
     background-color: cyan;
+} */
+#loginContainer {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    z-index: 1000;
+    opacity: 0.6;
+    position: fixed;    
+    padding-top: 30px;
 }
-outerBox {
+#loginOuterBox {
     width: 400px;
     height: 400px;
     background-color: greenyellow;
+    margin: 0 auto;
+}
+#loginHeader {
+    width: 200px;
+    height: 40px;
+    background-color: red;
+    text-align: center;
+    margin: auto;
+}
+#loginForm {
+    background-color: rgb(221, 210, 61);
+    margin: auto;
 }

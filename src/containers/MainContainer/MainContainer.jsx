@@ -112,6 +112,7 @@ class MainContainer extends Component {
             <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} />
           </div>
           <div className="display">
+            <button id="loginBtn">Login</button>
             <Display />
           </div>
           <div className="right">
