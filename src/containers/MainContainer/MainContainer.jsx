@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => ({
 
 class MainContainer extends Component {
   constructor(props) {
-    console.log("props", props);
+    // console.log("props", props);
     super(props);
   }
 
