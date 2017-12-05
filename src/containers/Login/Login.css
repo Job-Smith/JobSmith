@@ -17,7 +17,6 @@
     height: 400px;
     background-color: greenyellow;
     margin: 0 auto;
-    /* padding: 30px; */
 }
 #loginHeader {
     width: 200px;
@@ -27,15 +26,6 @@
     margin: auto;
 }
 #loginForm {
-    /* /* width: 200px; */
-    /* height: 40px; */ 
-    /* right: 80%;
-    padding: 10px; */
     background-color: rgb(221, 210, 61);
     margin: auto;
 }
-/* #loginFormWrapper {
-    width: 50%;
-    padding: 10px;
-    margin: auto;
-} */

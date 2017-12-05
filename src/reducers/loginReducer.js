@@ -1,7 +1,6 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-//   active: false,
   display: 'block'
 };
 
