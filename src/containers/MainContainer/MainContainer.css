@@ -7,34 +7,34 @@
 
 .top {
   display: block;
-  width: 100%;
-  height: 20%;
+  width: 100vw;
+  height: 20vh;
   background-color: #5AE6A4;  
 }
 
 .bottom {
-  width: 100%;
-  height: 80%;
+  width: 100vw;
+  height: 80vh;
   background-color: #22583F;   
 }
 
 .left {
-  width: 20%;
-  height: 100%;
+  width: 20vw;
+  height: 100vh;
   float: left;
-  background-color: #E65AC7;  
+  background-color: #E6A15A;  
 }
 
 .display {
-  width: 60%;
-  height: 100%;
+  width: 60vw;
+  height: 100vh;
   float: left;
-  background-color: #DCEB38;  
+  background-color: #38EBC9;  
 }
 
 .right {
-  width: 20%;
-  height: 100%;
+  width: 20vw;
+  height: 100vh;
   float: left;
   background-color: #5A64E6;  
 }

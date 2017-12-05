@@ -1,22 +1,12 @@
-/**
- * ************************************
- *
- * @module  index.js
- * @author
- * @date
- * @description simply a place to combine reducers
- *
- * ************************************
- */
-
 import { combineReducers } from 'redux';
 
 // import all reducers here
+import skillsReducer from './skillsReducer';
 
 
 // combine reducers
 const reducers = combineReducers({
-  // cards: cardsReducer,
+  skills: skillsReducer,
   // markets: marketsReducer,
 });
 
