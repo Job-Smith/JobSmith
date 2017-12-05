@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import from child components...
 import { bindActionCreators } from 'redux';
+import * as actions from './../../actions/actions.js';
 
 // Import css
 import css from './MainContainer.css';
@@ -14,12 +15,24 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => ({
   // return bindActionCreators(actionCreators, dispatch);
+  updateSkills: (skills) => {
+    dispatch(actions.updateSkills(skills));
+  }
 });
 
 class MainContainer extends Component {
   constructor(props) {
     console.log("props", props);
     super(props);
+  }
+
+  componentDidMount() {
+console.log("actions", actions);
+    console.log('componentDidMount');
+    //Do AJAX request to get skills ....
+    const data = [ 'Javascript', 'Java', 'HTML', 'CSS' ];
+    this.props.updateSkills(data);
+
   }
 
   render() {

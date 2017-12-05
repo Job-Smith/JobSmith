@@ -1,13 +1,22 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-  skills: [ 'Javascript', 'Java', 'HTML', 'CSS' ]
+  skills: [],
 };
 
 const skillsReducer = (state=initialState, action) => {
-  let skillList;
+  let skills;
 
   switch(action.type) {
+
+    case types.UPDATE_SKILLS:
+      skills = state.skills.slice();
+      skills = skills.concat(action.payload);
+
+      return {
+        ...state,
+        skills,
+      };
     
     default:
       return state;
