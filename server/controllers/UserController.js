@@ -31,17 +31,17 @@ const userController = {
      * @param {*} res, response from server 
      * @param {*} next, move to next middleware
      *  
-     * return a promise if the insert query is successful from user name, email, and passowrd,
+     * return a promise if the insert query is successful for user name, email, and passowrd,
      * else return a 404 error
      */
     postRegister(req, res, next) {
-        let newUser = new User({
+        const newUser = new User({
             name: req.body.name,
             password: req.body.password,
             email: req.body.email,
         });
         
-        let query = {
+        const query = {
             text: 'INSERT INTO "user" (name, password, email) VALUES($1, $2, $3) RETURNING id',
             values: [newUser.name, newUser.password, newUser.email]
 
