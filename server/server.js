@@ -13,6 +13,11 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended : true}));
 app.use(bodyParser.json());
 
+/**
+ * serve index.html
+ */
+app.use('/', express.static(__dirname + './../public'));
+app.use('/', express.static(__dirname + './../assets'));
 
 /**
  * Add headers middleware 
