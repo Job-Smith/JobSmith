@@ -1,16 +1,27 @@
+/**
+ * ************************************
+ *
+ * @module  MainContainer
+ * @author
+ * @date
+ * @description stateful component that renders TotalsDisplay and MarketsContainer
+ *
+ * ************************************
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import from child components...
 import { bindActionCreators } from 'redux';
-
+import Login from '../containers/Login.jsx';
 // Import css
-import css from './MainContainer.css';
-// import Login from '../containers/Login.jsx';
+import css from './Login.css'; 
 
 
 const mapStateToProps = store => ({
   // add pertinent state here
-  skills: store.skills,
+  // totalCards: store.cards.totalCards,
+  // totalMarkets: store.markets.totalMarkets
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -19,29 +30,17 @@ const mapDispatchToProps = dispatch => ({
 
 class MainContainer extends Component {
   constructor(props) {
-    console.log("props", props);
     super(props);
   }
 
   render() {
     return(
       <div className="container">
-        <div className="top">
+        <div className="outerBox">
           <h1 id="header">JobSmith</h1>
           { /* Start adding components here... */ }
         </div>
-        <div className="bottom">
-          <div className="left">
-            Left
-          </div>
-          <div className="display">
-            Display
-          </div>
-          <div className="right">
-            Right
-          </div>
-        </div>
-      </div>  
+      </div>
     )
   }
 
