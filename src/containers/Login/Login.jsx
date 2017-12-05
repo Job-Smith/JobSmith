@@ -17,6 +17,7 @@ import { bindActionCreators } from 'redux';
 // Import css
 import css from './Login.css'; 
 import * as actions from './../../actions/actions.js';
+import axios from 'axios';
 
 
 const mapStateToProps = store => ({
@@ -37,7 +38,16 @@ const mapDispatchToProps = dispatch => ({
 // if login credentials are correct, submit action to store to change loginRecur's display to 'none'
 
 function sendCredentials (credentials) {
-  
+  axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 }
 
 
@@ -51,14 +61,15 @@ class LoginContainer extends Component {
     console.log("actions", actions);
         console.log('componentDidMount');
         //Update login reducer boolean ....
-        const data = true;
-        this.props.showLogin(data);
-        console.log('props in login', this.props.login.display)
+        // const data = true;
+        // this.props.showLogin(data);
+        // console.log('props in login', this.props.login.display)
+        console.log('props in login', this.props.login)        
       }
 
   render() {
     return(
-      <div id="loginContainer" style={{display: this.props.login.display}}>
+      <div id="loginContainer" style={{display: this.props.login}}>
         <div id="loginOuterBox">
           <h1 id="loginHeader">Login</h1>
           { /* Start adding components here... */ }

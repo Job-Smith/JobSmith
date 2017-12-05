@@ -7,7 +7,8 @@ import LoginContainer from './containers/Login/Login.jsx';
 
 const mapStateToProps = store => ({
   // add pertinent state here
-  login: store.login,
+  // skills: store.skills,
+  // login: store.login,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -18,7 +19,7 @@ class App extends Component {
 
   constructor(props) {
     console.log('props in App', props);
-    console.log('props in Login', props.login.display);
+    console.log('props in Login', props.login);
     super(props);
   }
 
