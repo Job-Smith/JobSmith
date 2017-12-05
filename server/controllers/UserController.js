@@ -3,10 +3,13 @@ const db = require('../models/database');
 
 const userController = {
     postLogin(req, res, next) {
-       //query DB to grab email and password from user DB
-       //store it in variables email and password
-       //compare req.body.email and req.body.password
-       //redirect to the landing page
+       const query = `SELECT * FROM "user" WHERE email = '${req.body.email}' AND password = '${req.body.password}'`;
+       db.conn.one(query)
+        .then(postLogin => res.status(200).send({'msg': 'Login successful'}))
+        .catch(err =>{ 
+           console.log('The error is', err);
+           res.status(404).send(err)
+       });
     },
 
     postRegister(req, res, next) {
