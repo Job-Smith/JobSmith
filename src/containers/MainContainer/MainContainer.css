@@ -1,0 +1,40 @@
+.container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #D08E8E;
+}
+
+.top {
+  display: block;
+  width: 100%;
+  height: 20%;
+  background-color: #5AE6A4;  
+}
+
+.bottom {
+  width: 100%;
+  height: 80%;
+  background-color: #22583F;   
+}
+
+.left {
+  width: 20%;
+  height: 100%;
+  float: left;
+  background-color: #E65AC7;  
+}
+
+.display {
+  width: 60%;
+  height: 100%;
+  float: left;
+  background-color: #DCEB38;  
+}
+
+.right {
+  width: 20%;
+  height: 100%;
+  float: left;
+  background-color: #5A64E6;  
+}
