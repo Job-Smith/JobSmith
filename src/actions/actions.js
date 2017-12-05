@@ -6,4 +6,7 @@ export const updateSkills = (skills) => ({
   payload: skills,
 });
 
-// add more action creators
+export const replaceQuestions = (questions) => ({
+  type: types.REPLACE_QUESTIONS,
+  payload: questions,
+});
