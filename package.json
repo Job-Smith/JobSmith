@@ -4,7 +4,7 @@
   "description": "Simple and modern React boilerplate",
   "main": "src/app.js",
   "repository": "https://github.com/amorijs/react-boilerplate",
-  "author": "Chris Amori",
+  "author": "Woojun Choi, Gordon Farquharson, Kelly Gilliam, Vu Phong",
   "license": "MIT",
   "scripts": {
     "serve": "live-server public",

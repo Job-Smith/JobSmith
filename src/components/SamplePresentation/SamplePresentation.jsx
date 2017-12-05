@@ -1,5 +1,5 @@
 import React from 'react';
-import './SamplePresentation.scss';
+import './SamplePresentation.css';
 
 const SamplePresentation = props => (
   <div>
