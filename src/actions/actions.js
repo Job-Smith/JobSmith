@@ -12,3 +12,7 @@ export const showLogin = (login) => ({
 });
 
 // add more action creators
+export const replaceQuestions = (questions) => ({
+  type: types.REPLACE_QUESTIONS,
+  payload: questions,
+});
