@@ -1,5 +1,6 @@
-.container {
-  display: block;
+.menuContainer {
+  display: flex;
   margin-top: 15px;
-  background-color: #E50EB4;
+  background-color: #B57CA8;
+  flex-direction: column;
 }

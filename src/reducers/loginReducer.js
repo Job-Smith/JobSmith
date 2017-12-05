@@ -1,13 +1,14 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-  display: 'block'
+  display: 'none'
 };
 
 const loginReducer = (state=initialState, action) => {
   let login;
 
   switch(action.type) {
+
     default:
       return state;
   }
