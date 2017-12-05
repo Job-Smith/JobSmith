@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 
 // Import css
 import css from './MainContainer.css';
-// import Login from '../containers/Login.jsx';
 
 
 const mapStateToProps = store => ({
@@ -36,6 +35,7 @@ class MainContainer extends Component {
           </div>
           <div className="display">
             Display
+            <button id="loginBtn">Login</button>
           </div>
           <div className="right">
             Right
