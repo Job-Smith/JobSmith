@@ -19,8 +19,8 @@ const skillController = {
         const query = 'SELECT * from "skills"';
         db.conn.many(query)
          .then(data => {
-             console.log(data);
              res.send(data);
+             next();
          })
          .catch(err => {
             console.log('The error is', err);
@@ -39,17 +39,22 @@ const skillController = {
      */
     updateSkill(req, res, next) {
         const query = {
-            text: 'INSERT INTO "skills" (skill, color) VALUES($1, $2) RETURNING id',
+            text: 'INSERT INTO "skills" (skill, color) VALUES($1, $2)',
             values: [req.body.skill, req.body.color]
         };
 
         db.conn.one(query)
-          .then(updateSkill => res.status(200).send({'msg':'Skill created!', 'id': updateSkill.id}))
+          .then(updateSkill => {
+              res.status(200).send({'msg':'Skill created!', 'id': updateSkill.id})
+              next();
+          })
           .catch(err =>{ 
             console.log('The error is', err);
             res.status(404).send(err)
           });
     }
+    
+
 }
 
 module.exports = skillController;
