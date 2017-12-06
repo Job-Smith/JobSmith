@@ -11,7 +11,6 @@ export const fetchSkills = () => {
   return (dispatch) => {
     axios.get('/skills')
       .then((response) => {
-        console.log(response.data);    
         dispatch(updateSkills(response.data));
       })
       .catch(function (error) {
@@ -19,7 +18,6 @@ export const fetchSkills = () => {
       });
   };
 };
-
 
 //login reducer
 export const showLogin = (login) => ({
@@ -43,6 +41,18 @@ export const addQuestion = (question) => ({
   payload: question,
 });
 
+export const fetchQuestions = (skillType) => {
+  console.log("fetchQuestions skillType", skillType);
+  return (dispatch) => {
+    axios.get('/getQuestions', { skillType })
+      .then((response) => {
+        dispatch(replaceQuestions(response.data));
+      })
+      .catch(function (error) {
+        console.log('Fetch Questions ERROR: ', error);
+      });
+  };
+};
 
 // display reducer
 export const changeView = (view) => ({
