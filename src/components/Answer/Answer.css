@@ -1,6 +1,15 @@
 
 .answer {
-  display: block;
-  margin-top: 15px;
-  background-color: #E78429;
+  display: flex;
+  margin-top: 5px;
+  width: 100%;
+  min-height: 40px;
+  background-color: #F77805;
+}
+
+.skillHolder {
+  position: absolute;
+  display: inline-block;
+  width: 120px;
+  background-color: #CDC848;
 }
