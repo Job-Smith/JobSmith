@@ -42,7 +42,6 @@ export const addQuestion = (question) => ({
 });
 
 export const fetchQuestions = (skillType) => {
-  console.log("fetchQuestions skillType", skillType);
   return (dispatch) => {
     axios.get('/getQuestions', { skillType })
       .then((response) => {
@@ -53,6 +52,19 @@ export const fetchQuestions = (skillType) => {
       });
   };
 };
+
+export const saveQuestion = (questionData) => {
+  console.log('Save Question...');
+  return (dispatch) => {
+    axios.post('/question', { questionData })
+      .then((response) => {
+        dispatch(replaceQuestions(response.data));
+      })
+      .catch(function (error) {
+        console.log('Fetch Questions ERROR: ', error);
+      });
+  };
+}
 
 // display reducer
 export const changeView = (view) => ({
