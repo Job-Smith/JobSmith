@@ -45,9 +45,9 @@ function sendCredentials (that) {
   console.log('this inside of sendCredentials', that);
   axios.post('/login', {
     // email: 'woojun@gmail.com',
-    email: document.getElementById('name').value,
+    email: document.getElementById('loginEmail').value,
     // password: 1234
-    password: document.getElementById('password').value
+    password: document.getElementById('loginPassword').value
   })
   .then(function (response) {
     console.log('response:', response.data);
@@ -59,6 +59,8 @@ function sendCredentials (that) {
 }
 
 function hideLoginShowSignUp (that) {
+  document.getElementById('loginEmail').value = "";
+  document.getElementById('loginPassword').value = "";
   that.props.showLogin('none');
   // show sign up page:
   that.props.showSignUp('block');
@@ -94,10 +96,10 @@ class LoginContainer extends Component {
           <h1 id="loginHeader">Login</h1>
           { /* Start adding components here... */ }
           <form id="loginForm">
-            <h2>Name / Email</h2><br></br>
-            <input id="name" type="text" name="nameOrEmail"></input><br></br>
+            <h2>Email</h2><br></br>
+            <input id="loginEmail" type="text" name="nameOrEmail"></input><br></br>
             <h2>Password</h2><br></br>
-            <input id="password" type="text" name="password"></input>
+            <input id="loginPassword" type="password" name="password"></input>
             <input type="button" value="Submit" onClick={() => sendCredentials(this)}></input>
           </form>
           <h2>Not a user? Sign up here</h2>

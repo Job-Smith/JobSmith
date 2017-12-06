@@ -4,7 +4,7 @@ import * as types from '../constants/actionTypes';
 //   display: 'none'
 // };
 
-const initialState = 'none';
+const initialState = 'block';
 
 const loginReducer = (state=initialState, action) => {
 //   let login;

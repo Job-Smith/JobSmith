@@ -45,7 +45,7 @@ const userController = {
             password: req.body.password,
             email: req.body.email,
         });
-        
+        console.log('reqBody',req.body);
         const query = {
             text: 'INSERT INTO "user" (name, password, email) VALUES($1, $2, $3) RETURNING id',
             values: [newUser.name, newUser.password, newUser.email]
@@ -53,12 +53,15 @@ const userController = {
         };
 
         db.conn.one(query)
-        .then(postRegister => res.status(200).send({'msg':'User created!', 'id': postRegister.id}))
+        .then(postRegister => {
+            res.status(200).send({'msg':'User created!', 'id': postRegister.id})
+            next();
+        })
         .catch(err =>{ 
             console.log('The error is', err);
             res.status(404).send(err)
         });
-        next();
+        // next();
     }
 }
 
