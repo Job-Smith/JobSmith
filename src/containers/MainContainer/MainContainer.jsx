@@ -14,12 +14,17 @@ import css from './MainContainer.css';
 
 const mapStateToProps = store => ({
     skills: store.skills,
+    login: store.login
 });
 
 
 const mapDispatchToProps = dispatch => ({
   updateSkills: (skills) => {
     dispatch(actions.updateSkills(skills));
+  },
+  showLogin: (login) => {
+    dispatch(actions.showLogin(login));
+    console.log('click fired')
   },
   markerClicked:(skillType) => {
     console.log("skillType", skillType);
@@ -106,7 +111,8 @@ class MainContainer extends Component {
                    { id: 2, skill: 'Java', color: '#E51742' }, 
                    { id: 3, skill: 'HTML', color: '#E517AC' }, 
                    { id: 4, skill: 'CSS', color: '#5417E5' } ];
-    this.props.updateSkills(data);
+    this.props.updateSkills(data); 
+    // this.props.showLogin('block');
   }
 
   render() {
@@ -122,6 +128,9 @@ class MainContainer extends Component {
             <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} />
           </div>
           <div className="display">
+          {/* onClick={this.props.showLogin('none')} */}
+            <button id="loginBtn" onClick={() => this.props.showLogin('block')}>Login</button>
+            {/* <button onclick="myFunction()">Click me</button> */}
             <Display />
           </div>
           <div className="right">
