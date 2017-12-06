@@ -15,7 +15,7 @@ questionController = {
 
         let query = {
             text: 'INSERT INTO "questions" (question, skill_id, company, date, resource) VALUES($1, $2, $3, $4, $5) returning id',
-            values: [nnewQuestion.question, newQuestion.skill_id, newQuestion.company, newQuestion.date, newQuestion.resource]
+            values: [newQuestion.question, newQuestion.skill_id, newQuestion.company, newQuestion.date, newQuestion.resource]
         };
 
         db.conn.one(query)
