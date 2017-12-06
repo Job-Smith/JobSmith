@@ -4,7 +4,7 @@ console.log(Answer)
 const moment = require('moment');
 
 answerController = {
-    postAnswer(req,res,next) {
+  postAnswer(req,res,next) {
       let newAnswer = new Answer({
           answer:req.body.answer,
           user_id: req.body.user_id,
@@ -24,6 +24,6 @@ answerController = {
         console.log('The error is', err);        
         res.status(404).send(err)        
     })
-    }
+  }
 }
 module.exports = answerController;
