@@ -20,3 +20,8 @@ export const expandAnswers = (questionId) => ({
   type: types.EXPAND_ANSWERS,
   payload: questionId,
 });
+
+export const changeView = (view) => ({
+  type: types.CHANGE_VIEW,
+  payload: view,
+});

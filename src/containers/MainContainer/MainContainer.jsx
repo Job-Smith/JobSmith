@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './../../actions/actions.js';
 import axios from 'axios';
+import * as views from '../../constants/displayTypes.js';
 
 // import from child components...
 import SkillsMenu from './../../components/SkillsMenu/SkillsMenu.jsx'
@@ -23,15 +24,13 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.updateSkills(skills));
   },
   addQuestion: () => {
-    // dispatch(actions.updateSkills(skills));
+    dispatch(actions.changeView(views.QUESTION_VIEW));
   },
   showLogin: (login) => {
     dispatch(actions.showLogin(login));
-    console.log('click fired')
-
   },
   markerClicked:(skillType) => {
-    console.log("skillType", skillType);
+    dispatch(actions.changeView(views.REGULAR_VIEW));
     //DO AJAX HERE??
     // axios.post('/getQuestions', { 
     //     skillType 
@@ -42,6 +41,7 @@ const mapDispatchToProps = dispatch => ({
     //   .catch(function (error) {
     //     console.log(error);
     //   });
+
     const data = [  { 
                       id: 100,
                       question: 'What is recursion?',
@@ -132,17 +132,13 @@ class MainContainer extends Component {
       <div className="container">
         <div className="top">
           <h1 id="header">JobSmith</h1>
-          { /* Start adding components here... */ }
-          <button id="loginBtn">Login</button>
+          <button id="loginBtn" onClick={() => this.props.showLogin('block')}>Login</button>
         </div>
         <div className="bottom">
           <div className="left">
             <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} addQuestion={this.props.addQuestion}/>
           </div>
           <div className="display">
-          {/* onClick={this.props.showLogin('none')} */}
-            <button id="loginBtn" onClick={() => this.props.showLogin('block')}>Login</button>
-            {/* <button onclick="myFunction()">Click me</button> */}
             <Display />
           </div>
           <div className="right">

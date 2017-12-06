@@ -8,7 +8,7 @@
 }
 
 .skillHolder {
-  position: absolute;
+  position: absolute; 
   display: inline-block;
   width: 120px;
   background-color: #F8EF11;
@@ -29,4 +29,12 @@
 
 .answerHolder {
   background-color: #AEDA40;
+}
+
+.company {
+  margin-top: 10px;
+  display: inline-block;
+  width: 150px;
+  color: #68696E;
+  background-color: #A14A7D;
 }

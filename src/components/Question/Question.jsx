@@ -9,7 +9,7 @@ import QuestionButton from './../QuestionButton/QuestionButton.jsx'
 import css from './Question.css';
 
 const Question = props => {
-    
+
   const { question } = props;
   const answers = question.answers;
   const answerList = [];
@@ -30,7 +30,11 @@ const Question = props => {
         <div className="textHolder">
           {question.question}
         </div>
-        <QuestionButton expandAnswers={props.expandAnswers} questionId={question.id} expand={question.expand} hasAnswers={hasAnswers}/>
+        <div className="company">
+          {question.company}
+        </div>
+        <QuestionButton expandAnswers={props.expandAnswers} questionId={question.id} expand={question.expand} hasAnswers={hasAnswers}
+                        showNewAnswer={props.showNewAnswer} />
       </div>
       <div className="answerHolder">
         {answerList}
