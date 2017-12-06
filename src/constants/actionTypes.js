@@ -4,7 +4,8 @@ export const UPDATE_SKILLS = "UPDATE_SKILLS";
 // reducers for toggling show (display: block) and hide (display: none):
 export const SHOW_LOGIN = "SHOW_LOGIN";
 export const SHOW_SIGNUP = "SHOW_SIGNUP";
-export const SHOW_LOGIN_BUTTON = "SHOW_LOGIN_BUTTON";
+// export const SHOW_LOGIN_BUTTON = "SHOW_LOGIN_BUTTON";
+export const SHOW_LOGOUT_BUTTON = "SHOW_LOGOUT_BUTTON";
 
 // questions reducer
 export const REPLACE_QUESTIONS = "REPLACE_QUESTIONS";

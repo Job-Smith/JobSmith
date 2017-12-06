@@ -23,7 +23,8 @@ import axios from 'axios';
 const mapStateToProps = store => ({
   // add pertinent state here
   login: store.login,
-  signUp: store.signUp
+  signUp: store.signUp,
+  logoutButton: store.logoutButton
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -33,6 +34,9 @@ const mapDispatchToProps = dispatch => ({
   },
   showSignUp: (signUp) => {
     dispatch(actions.showSignUp(signUp));
+  },
+  showLogoutButton: (logoutButton) => {
+    dispatch(actions.showLogoutButton(logoutButton));
   }
 });
 
@@ -50,6 +54,7 @@ function sendCredentials (that) {
   .then(function (response) {
     console.log('response:', response.data);
     that.props.showLogin('none');
+    that.props.showLogoutButton('block'); 
   })
   .catch(function (error) {
     console.log('error:', error);

@@ -4,13 +4,13 @@ import * as types from '../constants/actionTypes';
 //   display: 'none'
 // };
 
-const initialState = 'block';
+const initialState = 'none';
 
-const loginReducer = (state=initialState, action) => {
-//   let login;
-  switch(action.type) {
+const logoutButtonReducer = (state=initialState, action) => {
 
-    case types.SHOW_LOGIN:
+    switch(action.type) {
+
+    case types.SHOW_LOGOUT_BUTTON:
       console.log('ACTION PAYLOAD', action.payload);
       return action.payload;
 
@@ -19,4 +19,4 @@ const loginReducer = (state=initialState, action) => {
   }
 };
 
-export default loginReducer;
+export default logoutButtonReducer;

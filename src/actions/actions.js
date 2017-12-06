@@ -31,9 +31,14 @@ export const showSignUp = (signup) => ({
   payload: signup,
 });
 
-export const showLoginButton = (loginButton) => ({
-  type: types.SHOW_LOGIN_BUTTON,
-  payload: loginButton,
+// export const showLoginButton = (loginButton) => ({
+//   type: types.SHOW_LOGIN_BUTTON,
+//   payload: loginButton,
+// });
+
+export const showLogoutButton = (logoutButton) => ({
+  type: types.SHOW_LOGOUT_BUTTON,
+  payload: logoutButton,
 });
 
 // add more action creators
