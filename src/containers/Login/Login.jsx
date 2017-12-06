@@ -22,8 +22,6 @@ import axios from 'axios';
 
 const mapStateToProps = store => ({
   // add pertinent state here
-  // totalCards: store.cards.totalCards,
-  // totalMarkets: store.markets.totalMarkets
   login: store.login,
   signUp: store.signUp
 });
@@ -66,28 +64,10 @@ function hideLoginShowSignUp (that) {
   that.props.showSignUp('block');
 }
 
-// function logInput () {
-//     var name = document.getElementsById("name").value
-//     console.log(name)
-// }
-
-
 class LoginContainer extends Component {
   constructor(props) {
     super(props);
   }
-
-  // componentDidMount() {
-  //   // console.log("actions", actions);
-  //       // console.log('componentDidMount');
-  //       //Update login reducer boolean ....
-  //       // const data = true;
-  //       // this.props.showLogin(data);
-  //       // console.log('props in login', this.props.login.display)
-  //       // console.log('props in login', this.props.login)   
-  //       sendCredentials();  
-  //       // showLogin(this.props.showLogin('block'))                
-  //     }
 
   render() {
     return(

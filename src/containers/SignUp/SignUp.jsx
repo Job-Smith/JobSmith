@@ -65,29 +65,10 @@ function signUpUser (that) {
   });
 }
 
-// function logInput () {
-//     var name = document.getElementsById("name").value
-//     console.log(name)
-// }
-
-
 class SignUpContainer extends Component {
   constructor(props) {
     super(props);
   }
-
-  componentDidMount() {
-      console.log('props in signUp', this.props)
-    // console.log("actions", actions);
-        // console.log('componentDidMount');
-        //Update login reducer boolean ....
-        // const data = true;
-        // this.props.showLogin(data);
-        // console.log('props in login', this.props.login.display)
-        // console.log('props in login', this.props.login)   
-        // sendCredentials();  
-        // showLogin(this.props.showLogin('block'))                
-      }
 
   render() {
     return(

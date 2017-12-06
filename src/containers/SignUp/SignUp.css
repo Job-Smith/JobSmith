@@ -9,9 +9,9 @@
     background-color: grey;
     z-index: 1000;
     opacity: 0.6;
-    position: absolute;    
+    position: fixed;    
     padding-top: 30px;
-    margin: 0;
+    margin: 0px;
 }
 #signUpOuterBox {
     width: 400px;

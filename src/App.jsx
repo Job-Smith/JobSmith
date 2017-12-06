@@ -29,8 +29,8 @@ class App extends Component {
     return(
       <div>
         <LoginContainer/>
-        <MainContainer/>
         <SignUpContainer/>
+        <MainContainer/>
       </div>
     )
   }
