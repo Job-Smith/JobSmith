@@ -6,13 +6,14 @@ import loginReducer from './loginReducer';
 import signUpReducer from './signUpReducer';
 import questionsReducer from './questionsReducer';
 import displayReducer from './displayReducer';
-
+import showLoginButtonReducer from './showLoginButtonReducer';
 
 // combine reducers
 const reducers = combineReducers({
   skills: skillsReducer,
   login: loginReducer,
   signUp: signUpReducer,
+  loginButton: showLoginButtonReducer,
   questions: questionsReducer,
   display: displayReducer
 });

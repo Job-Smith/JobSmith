@@ -15,9 +15,9 @@ import css from './MainContainer.css';
 
 const mapStateToProps = store => ({
     skills: store.skills,
-    login: store.login
+    login: store.login,
+    loginButton: store.loginButton
 });
-
 
 const mapDispatchToProps = dispatch => ({
   updateSkills: (skills) => {
@@ -32,6 +32,9 @@ const mapDispatchToProps = dispatch => ({
   },
   showLogin: (login) => {
     dispatch(actions.showLogin(login));
+  },
+  showLoginButton: (loginButton) => {
+    dispatch(actions.showLoginButton(loginButton));
   },
   markerClicked:(skillType) => {
     dispatch(actions.changeView(views.REGULAR_VIEW));
@@ -113,7 +116,8 @@ class MainContainer extends Component {
   }
 
   componentDidMount() {
-    const update = this.props.updateSkills;
+    console.log('PROPS IN MAIN CONTAINER:', this.props);
+    // const update = this.props.updateSkills;
     // DO AJAX HERE??
     // axios.get('/skills')
     //   .then((response) => {
@@ -129,7 +133,7 @@ class MainContainer extends Component {
     //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
     // this.props.updateSkills(data); 
     // this.props.fetchSkills();
-    this.props.showLogin('block');
+    // this.props.showLogin('block');
   }
 
   render() {
@@ -137,7 +141,7 @@ class MainContainer extends Component {
       <div className="container">
         <div className="top">
           <h1 id="header">JobSmith</h1>
-          <button id="loginBtn" onClick={() => this.props.showLogin('block')}>Login</button>
+          <button id="loginBtn" style={{display: this.props.loginButton}} onClick={() => this.props.showLogin('block')}>Login</button>
         </div>
         <div className="bottom">
           <div className="left">
