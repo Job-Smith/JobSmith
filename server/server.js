@@ -3,7 +3,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const userController = require('./controllers/UserController');
 const skillController = require('./controllers/SkillController');
-
+const questionConroller = require('./controllers/QuestionController');
+const answerController = require('./controllers/AnswerController');
+const QuestionskillController = require('./controllers/QuestionskillController')
 
 // define port
 const PORT = process.env.PORT || 3000;
@@ -17,8 +19,8 @@ app.use(bodyParser.json());
 /**
  * serve index.html
  */
-app.use('/', express.static(__dirname + './../public'));
-app.use('/', express.static(__dirname + './../assets'));
+app.use('/', express.static(__dirname + '/../public'));
+app.use('/', express.static(__dirname + '/../assets'));
 
 /**
  * Add headers middleware 
@@ -46,8 +48,13 @@ app.use('/', express.static(__dirname + './../assets'));
 app.post('/login', userController.postLogin)
     .post('/register', userController.postRegister)
     .get('/skills', skillController.getSkill)
-    .post('/skills', skillController.updateSkill);
-
+    .post('/skills', skillController.updateSkill)
+    .post('/question', questionController.postQuestion)
+    .get('/question', questionController.getQuestion)
+    .post('/answer', answerController.postAnswer)
+    .get('/answer', answerController.getAnswer)
+    .post('/questionskill', QuestionskillController.postQuestionskill)
+    .get('/questionskill', QuestionskillController.getQuestionskill)
 /**
  * Listen to Port
  */

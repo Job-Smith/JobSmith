@@ -1,0 +1,40 @@
+
+.question {
+  display: flex;
+  margin-top: 5px;
+  width: 100%;
+  min-height: 40px;
+  background-color: #F70538;
+}
+
+.skillHolder {
+  position: absolute; 
+  display: inline-block;
+  width: 120px;
+  background-color: #F8EF11;
+}
+
+.textHolder {
+  margin-top: 10px;
+  padding-left: 18px;
+  display: inline-block;
+  width: 90%;
+  margin-left: 120px;
+  background-color: #D00BF0;
+}
+
+.questionItem {
+  background-color: #29645C;
+}
+
+.answerHolder {
+  background-color: #AEDA40;
+}
+
+.company {
+  margin-top: 10px;
+  display: inline-block;
+  width: 150px;
+  color: #68696E;
+  background-color: #A14A7D;
+}

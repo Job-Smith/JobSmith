@@ -1,5 +1,25 @@
-.container {
-  display: block;
+.menuContainer {
+  display: flex;
   margin-top: 15px;
-  background-color: #E50EB4;
+  background-color: #B57CA8;
+  flex-direction: column;
+}
+
+.skillsContainer {
+  display: flex;
+  margin-top: 15px;
+  background-color: #B57CA8;
+  flex-direction: column;
+}
+
+.newQuestion {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: bold;
+  background-color: #B6B7BB;
 }
