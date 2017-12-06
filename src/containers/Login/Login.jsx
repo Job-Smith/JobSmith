@@ -37,16 +37,17 @@ const mapDispatchToProps = dispatch => ({
 // function that on click, makes post request to server
 // if login credentials are correct, submit action to store to change loginRecur's display to 'none'
 
-function sendCredentials (credentials) {
-  axios.post('/user', {
-    firstName: 'Fred',
-    lastName: 'Flintstone'
+function sendCredentials () {
+  axios.post('/login', {
+    email: 'woojun@gmail.com',
+    password: 1234
   })
   .then(function (response) {
-    console.log(response);
+    console.log('RESPONSE FROM DB:', response);
   })
   .catch(function (error) {
-    console.log(error);
+    console.log('kelly post')
+    console.log('ERROR FROM DB', error);
   });
 }
 
@@ -64,7 +65,8 @@ class LoginContainer extends Component {
         // const data = true;
         // this.props.showLogin(data);
         // console.log('props in login', this.props.login.display)
-        console.log('props in login', this.props.login)        
+        console.log('props in login', this.props.login)   
+        sendCredentials();     
       }
 
   render() {
