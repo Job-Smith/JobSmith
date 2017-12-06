@@ -22,9 +22,13 @@ const mapDispatchToProps = dispatch => ({
   updateSkills: (skills) => {
     dispatch(actions.updateSkills(skills));
   },
+  addQuestion: () => {
+    // dispatch(actions.updateSkills(skills));
+  },
   showLogin: (login) => {
     dispatch(actions.showLogin(login));
     console.log('click fired')
+
   },
   markerClicked:(skillType) => {
     console.log("skillType", skillType);
@@ -133,7 +137,7 @@ class MainContainer extends Component {
         </div>
         <div className="bottom">
           <div className="left">
-            <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} />
+            <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} addQuestion={this.props.addQuestion}/>
           </div>
           <div className="display">
           {/* onClick={this.props.showLogin('none')} */}
