@@ -53,6 +53,8 @@ const skillController = {
             res.status(404).send(err)
           });
     }
+    
+
 }
 
 module.exports = skillController;
