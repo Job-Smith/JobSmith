@@ -5,6 +5,7 @@ const moment = require('moment');
 answerController = {
     postAnswer(req, res, next) {
         let newAnswer = new Answer({
+            id:req.body.id,
             answer: req.body.answer,
             user_id: req.body.user_id,
             rating: req.body.rating,

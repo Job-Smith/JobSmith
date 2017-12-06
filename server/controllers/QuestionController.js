@@ -14,7 +14,7 @@ questionController = {
         
         let query = {
             text: 'INSERT INTO "questions" (question, skill_id, company, date) VALUES($1, $2, $3, $4) returning id',
-            values: [newQuestion.question, newQuestion.skill_id, newQuestion.company, newQuestion.date]
+            values: [nnewQuestion.question, newQuestion.skill_id, newQuestion.company, newQuestion.date]
         };
 
         db.conn.one(query)
@@ -30,8 +30,10 @@ questionController = {
     getQuestion(req, res, next) {
         let query;
         if(req.body.skill_id) {
-            query = `SELECT question_id, * FROM answer CROSS JOIN questions where skill_id =${req.body.skill_id}`; 
+            query = `SELECT * from questions1`
+            //select q.question, a.answer from questions q inner join answer a on q.id = a.question_id where q.skill_id = 2 
         }
+
         else {
             query = 'SELECT * from "questions"'
         }
