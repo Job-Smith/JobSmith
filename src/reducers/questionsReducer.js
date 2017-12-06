@@ -15,12 +15,16 @@ const questionsReducer = (state=initialState, action) => {
       });
       return questions;
 
-    case types.ADD_QUESTION:
+    case types.ADD_QUESTION: //Currently not used
       questions = state.slice();
       questions.push(action.payload);
-      return question;
-       
+      return questions;
 
+    case types.ADD_ANSWER: //Currently not used
+      questions = state.slice();
+      // question.
+      return questions;  
+       
     case types.EXPAND_ANSWERS:
       questions = state.slice();
       questions = questions.map(question => {
