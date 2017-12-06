@@ -25,6 +25,12 @@ export const showLogin = (login) => ({
   payload: login,
 });
 
+export const showSignUp = (signup) => ({
+  type: types.SHOW_SIGNUP,
+  payload: signup,
+});
+
+// add more action creators
 // question reducer
 export const replaceQuestions = (questions) => ({
   type: types.REPLACE_QUESTIONS,

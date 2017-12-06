@@ -4,11 +4,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import MainContainer from './containers/MainContainer/MainContainer.jsx';
 import LoginContainer from './containers/Login/Login.jsx';
+import SignUpContainer from './containers/SignUp/SignUp.jsx';
 
 const mapStateToProps = store => ({
   // add pertinent state here
-  // skills: store.skills,
-  // login: store.login,
+  skills: store.skills,
+  login: store.login,
+  signup: store.signUp
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -24,7 +26,8 @@ class App extends Component {
   render() {
     return(
       <div>
-        {/*<LoginContainer/>*/}
+        <LoginContainer/>
+        <SignUpContainer/>
         <MainContainer/>
       </div>
     )

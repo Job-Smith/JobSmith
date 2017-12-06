@@ -3,8 +3,7 @@
     height: 100%;
     background-color: cyan;
 } */
-#loginContainer {
-    /* display: none; */
+#signUpContainer {
     width: 100%;
     height: 100%;
     background-color: grey;
@@ -14,20 +13,23 @@
     padding-top: 30px;
     margin: 0px;
 }
-#loginOuterBox {
+#signUpOuterBox {
     width: 400px;
     height: 400px;
     background-color: greenyellow;
     margin: 0 auto;
+    z-index: 2000;
 }
-#loginHeader {
+#signUpHeader {
     width: 200px;
     height: 40px;
     background-color: red;
     text-align: center;
     margin: auto;
+    z-index: 2000;
 }
-#loginForm {
+#signUpForm {
     background-color: rgb(221, 210, 61);
     margin: auto;
+    z-index: 2000;
 }

@@ -22,52 +22,52 @@ import axios from 'axios';
 
 const mapStateToProps = store => ({
   // add pertinent state here
-  // totalCards: store.cards.totalCards,
-  // totalMarkets: store.markets.totalMarkets
   login: store.login,
+  signUp: store.signUp
 });
 
 const mapDispatchToProps = dispatch => ({
   // return bindActionCreators(actionCreators, dispatch);
   showLogin: (login) => {
     dispatch(actions.showLogin(login));
+  },
+  showSignUp: (signUp) => {
+    dispatch(actions.showSignUp(signUp));
   }
 });
 
 // function that on click, makes post request to server
 // if login credentials are correct, submit action to store to change loginRecur's display to 'none'
 
-function sendCredentials () {
+function sendCredentials (that) {
+  console.log('this inside of sendCredentials', that);
   axios.post('/login', {
-    email: 'woojun@gmail.com',
-    password: 1234
+    // email: 'woojun@gmail.com',
+    email: document.getElementById('loginEmail').value,
+    // password: 1234
+    password: document.getElementById('loginPassword').value
   })
   .then(function (response) {
-    console.log('RESPONSE FROM DB:', response);
+    console.log('response:', response.data);
+    that.props.showLogin('none');
   })
   .catch(function (error) {
-    console.log('kelly post')
-    console.log('ERROR FROM DB', error);
+    console.log('error:', error);
   });
 }
 
+function hideLoginShowSignUp (that) {
+  document.getElementById('loginEmail').value = "";
+  document.getElementById('loginPassword').value = "";
+  that.props.showLogin('none');
+  // show sign up page:
+  that.props.showSignUp('block');
+}
 
 class LoginContainer extends Component {
   constructor(props) {
-    // console.log("props", props);
     super(props);
   }
-
-  componentDidMount() {
-    console.log("actions", actions);
-        console.log('componentDidMount');
-        //Update login reducer boolean ....
-        // const data = true;
-        // this.props.showLogin(data);
-        // console.log('props in login', this.props.login.display)
-        console.log('props in login', this.props.login)   
-        sendCredentials();     
-      }
 
   render() {
     return(
@@ -76,12 +76,14 @@ class LoginContainer extends Component {
           <h1 id="loginHeader">Login</h1>
           { /* Start adding components here... */ }
           <form id="loginForm">
-            <h2>Name / Email</h2><br></br>
-            <input type="text" name="nameOrEmail"></input><br></br>
+            <h2>Email</h2><br></br>
+            <input id="loginEmail" type="text" name="nameOrEmail"></input><br></br>
             <h2>Password</h2><br></br>
-            <input type="text" name="password"></input>
-            <input type="submit" value="Submit"></input>
+            <input id="loginPassword" type="password" name="password"></input>
+            <input type="button" value="Submit" onClick={() => sendCredentials(this)}></input>
           </form>
+          <h2>Not a user? Sign up here</h2>
+          <input type="button" value="SignUp" onClick={() => hideLoginShowSignUp(this)}></input>
         </div>
       </div>
     )

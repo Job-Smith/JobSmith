@@ -6,6 +6,7 @@ export const SHOW_LOGIN = "SHOW_LOGIN";
 
 // questions reducer
 export const REPLACE_QUESTIONS = "REPLACE_QUESTIONS";
+export const SHOW_SIGNUP = "SHOW_SIGNUP";
 export const EXPAND_ANSWERS = "EXPAND_ANSWERS";
 export const ADD_QUESTION = "ADD_QUESTION";
 
