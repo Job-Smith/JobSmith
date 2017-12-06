@@ -21,6 +21,9 @@ const mapDispatchToProps = dispatch => ({
   updateSkills: (skills) => {
     dispatch(actions.updateSkills(skills));
   },
+  addQuestion: () => {
+    // dispatch(actions.updateSkills(skills));
+  },
   markerClicked:(skillType) => {
     console.log("skillType", skillType);
     //DO AJAX HERE??
@@ -127,7 +130,7 @@ class MainContainer extends Component {
         </div>
         <div className="bottom">
           <div className="left">
-            <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} />
+            <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} addQuestion={this.props.addQuestion}/>
           </div>
           <div className="display">
             <Display />
