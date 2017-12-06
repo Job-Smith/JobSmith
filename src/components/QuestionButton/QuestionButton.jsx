@@ -11,6 +11,10 @@ const QuestionButton = props => {
     props.expandAnswers(props.questionId);
   }
 
+  function addAnswerClicked() {
+    console.log('addAnswerClicked');
+  }
+
   if (props.hasAnswers) {
     return (
       <div className="questionButton" onClick={expanderClicked}>{symbol}</div>
@@ -18,7 +22,7 @@ const QuestionButton = props => {
   }
 
   return (
-    <div></div>
+    <div className="questionButton" onClick={addAnswerClicked}>A</div>
   ); 
 };
 

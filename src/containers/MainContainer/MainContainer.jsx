@@ -124,7 +124,7 @@ class MainContainer extends Component {
                    { id: 3, skill: 'HTML', color: '#E517AC' }, 
                    { id: 4, skill: 'CSS', color: '#5417E5' } ];
     this.props.updateSkills(data); 
-    // this.props.showLogin('block');
+    this.props.showLogin('block');
   }
 
   render() {

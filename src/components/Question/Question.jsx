@@ -33,7 +33,7 @@ const Question = props => {
         <QuestionButton expandAnswers={props.expandAnswers} questionId={question.id} expand={question.expand} hasAnswers={hasAnswers}/>
       </div>
       <div className="answerHolder">
-       {answerList}
+        {answerList}
       </div>
     </div>
   );
