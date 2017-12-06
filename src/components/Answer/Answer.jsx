@@ -8,8 +8,6 @@ import css from './Answer.css';
 
 const Answer = props => {
     
-  console.log("Answer props", props);  
-  
   return (
     <div className='answer'>
       {props.answer.answer}
