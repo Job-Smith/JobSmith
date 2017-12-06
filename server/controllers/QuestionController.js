@@ -18,7 +18,10 @@ questionController = {
         };
 
         db.conn.one(query)
-        .then(postQuestion => res.status(200).send({'msg':'question created!'}))
+        .then(postQuestion => {
+            res.status(200).send({'msg':'question created!'})
+            next();
+        })
         .catch(err =>{ 
             console.log('The error is', err);
             res.status(404).send(err)
@@ -30,6 +33,7 @@ questionController = {
         .then(data => {
             console.log('you are getting questions')
             res.send(data)
+            next()
         })
         .catch(err => {
             res.status(404).send(err)

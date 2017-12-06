@@ -5,6 +5,7 @@ const userController = require('./controllers/UserController');
 const skillController = require('./controllers/SkillController');
 const questionConroller = require('./controllers/QuestionController');
 const answerController = require('./controllers/AnswerController');
+const QuestionskillController = require('./controllers/QuestionskillController')
 
 // define port
 const PORT = process.env.PORT || 3000;
@@ -51,6 +52,9 @@ app.post('/login', userController.postLogin)
     .post('/question', questionController.postQuestion)
     .get('/question', questionController.getQuestion)
     .post('/answer', answerController.postAnswer)
+    .get('/answer', answerController.getAnswer)
+    .post('/questionskill', QuestionskillController.postQuestionskill)
+    .get('/questionskill', QuestionskillController.getQuestionskill)
 /**
  * Listen to Port
  */
