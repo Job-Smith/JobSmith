@@ -38,6 +38,7 @@ const skillController = {
      * 
      */
     updateSkill(req, res, next) {
+        console.log(req.body);
         const query = {
             text: 'INSERT INTO "skills" (skill, color) VALUES($1, $2)',
             values: [req.body.skill, req.body.color]
