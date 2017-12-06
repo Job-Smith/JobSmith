@@ -1,0 +1,49 @@
+
+.question {
+  display: flex;
+  margin-top: 5px;
+  width: 100%;
+  min-height: 40px;
+  background-color: #F70538;
+}
+
+.skillHolder {
+  position: absolute;
+  display: inline-block;
+  width: 120px;
+  background-color: #F8EF11;
+}
+
+.textHolder {
+  margin-top: 10px;
+  padding-left: 18px;
+  display: inline-block;
+  width: 90%;
+  margin-left: 120px;
+  background-color: #D00BF0;
+}
+
+.questionButton {
+  margin-top: 10px;
+  float: right;
+  display: inline-block;
+  width: 25px;
+  height: 20px;
+  border-color: #090404;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 20px;
+  background: transparent;
+  line-height: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.questionItem {
+  background-color: #29645C;
+}
+
+.answerHolder {
+  background-color: #AEDA40;
+}
