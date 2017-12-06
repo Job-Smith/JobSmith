@@ -11,6 +11,10 @@ const NewQuestion = props => {
   //props.skills has the array of skills
   // will add function to props for saving thru the morning..
   // Still working on reducers.
+
+  // to save call props.saveQuestion()
+  // must have an object as it's only argument in the format of 
+  // { question: <questionString>, skill_id: <skill_id>, company: <company name>} 
     
   return (
     <div className='questionWrapper'>
