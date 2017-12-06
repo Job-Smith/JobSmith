@@ -6,10 +6,3 @@
   min-height: 40px;
   background-color: #F77805;
 }
-
-.skillHolder {
-  position: absolute;
-  display: inline-block;
-  width: 120px;
-  background-color: #CDC848;
-}

@@ -30,6 +30,9 @@ const Question = props => {
         <div className="textHolder">
           {question.question}
         </div>
+        <div className="company">
+          {question.company}
+        </div>
         <QuestionButton expandAnswers={props.expandAnswers} questionId={question.id} expand={question.expand} hasAnswers={hasAnswers}/>
       </div>
       <div className="answerHolder">

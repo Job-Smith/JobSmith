@@ -8,13 +8,15 @@ import css from './Answer.css';
 
 const Answer = props => {
     
+  if(props.answer.answer)
+
+
   return (
     <div className='answer'>
       <div className="skillSpacer"></div>
       <div className="textHolder">
         {props.answer.answer}
       </div>
-      {/*<QuestionButton expandAnswers={props.expandAnswers} questionId={question.id} expand={question.expand} hasAnswers={hasAnswers}/>*/}
     </div>
   );
 };
