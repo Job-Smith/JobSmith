@@ -1,6 +1,6 @@
 .marker {
-  display: block;
-  width: 140px;
+  display: inline-block;
+  width: 120px;
   height: 25px;
   margin: 0 auto;
   margin-top: 10px;

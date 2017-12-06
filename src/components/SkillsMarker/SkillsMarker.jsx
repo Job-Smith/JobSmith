@@ -4,12 +4,13 @@ import React from 'react';
 import css from './SkillsMarker.css';
 
 const SkillsMarker = props => {
-    console.log("props", props);
     
   const { id, skill, color } = props.skill;
   
   function markerClick(e) {
-    props.markerClicked(e.target.getAttribute("data-id")); 
+    if(props.markerClicked) {
+      props.markerClicked(e.target.getAttribute("data-id")); 
+    }
   }
 
   return (

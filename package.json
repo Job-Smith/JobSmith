@@ -7,6 +7,7 @@
   "author": "Woojun Choi, Gordon Farquharson, Kelly Gilliam, Vu Phong",
   "license": "MIT",
   "scripts": {
+    "start": "nodemon server/server.js",
     "serve": "live-server public",
     "build": "webpack",
     "dev-server": "webpack-dev-server"

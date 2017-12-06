@@ -97,6 +97,15 @@ class MainContainer extends Component {
   }
 
   componentDidMount() {
+    const update = this.props.updateSkills;
+    // DO AJAX HERE??
+    // axios.get('/skills')
+    //   .then((response) => {
+    //     update(response.data);    
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
     //Do AJAX request to get skills ....
     const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
                    { id: 2, skill: 'Java', color: '#E51742' }, 
@@ -112,6 +121,7 @@ class MainContainer extends Component {
         <div className="top">
           <h1 id="header">JobSmith</h1>
           { /* Start adding components here... */ }
+          <button id="loginBtn">Login</button>
         </div>
         <div className="bottom">
           <div className="left">
