@@ -10,18 +10,34 @@ import css from './Question.css';
 const Question = props => {
     
   const { question } = props;
-  console.log("question", question);
   const answers = question.answers;
- 
+  const symbol = question.expand ? '-' : '+';
+  const answerList = [];
+  
+  if (question.expand) {
+    for (let i = 0, ilen = answers.length; i < ilen; i += 1) {
+      answerList.push(<Answer key={i+'ans'} answer={answers[i]} />);
+    }
+  }
+
+  function expanderClicked() {
+    props.expandAnswers(question.id);
+  }
+
   return (
-    <div className='question'>
-      <div className="skillHolder">
-        <SkillsMarker skill={props.skill}/>
+    <div className="questionItem">
+      <div className='question'>
+        <div className="skillHolder">
+          <SkillsMarker skill={props.skill}/>
+        </div>
+        <div className="textHolder">
+          {question.question}
+        </div>
+        <div className="questionButton" onClick={expanderClicked}>{symbol}</div>
       </div>
-      <div className="textHolder">
-        {question.question}
+      <div className="answerHolder">
+       {answerList}
       </div>
-      <div className="questionButton">+</div>
     </div>
   );
 };

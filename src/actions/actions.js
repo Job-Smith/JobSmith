@@ -11,8 +11,12 @@ export const showLogin = (login) => ({
   payload: login,
 });
 
-// add more action creators
 export const replaceQuestions = (questions) => ({
   type: types.REPLACE_QUESTIONS,
   payload: questions,
+});
+
+export const expandAnswers = (questionId) => ({
+  type: types.EXPAND_ANSWERS,
+  payload: questionId,
 });
