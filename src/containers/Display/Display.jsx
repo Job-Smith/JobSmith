@@ -17,14 +17,10 @@ const mapStateToProps = store => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  // updateSkills: (skills) => {
-  //   dispatch(actions.updateSkills(skills));
-  // },
-  // markerClicked:(skillType) => {
-  //   console.log("skillType", skillType);
-  //   //DO AJAX HERE??
-  //   dispatch(actions.updateQuestions(skillType))
-  // }
+  expandAnswers: (questionId) => {
+    console.log("questionId", questionId);
+    dispatch(actions.expandAnswers(questionId));
+  }
 });
 
 class Display extends Component {
@@ -35,7 +31,7 @@ class Display extends Component {
   render() {
     return(
       <div className="displayContainer">
-        <QuestionWrapper questions={this.props.questions} skills={this.props.skills}/>
+        <QuestionWrapper questions={this.props.questions} skills={this.props.skills} expandAnswers={this.props.expandAnswers}/>
       </div>  
     )
   }

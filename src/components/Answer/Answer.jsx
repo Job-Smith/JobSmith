@@ -8,14 +8,9 @@ import css from './Answer.css';
 
 const Answer = props => {
     
-  // const { question } = props;
-  // const answers = question.answers;
-
-  // const questions = [];
-
   return (
     <div className='answer'>
-      Answer
+      {props.answer.answer}
     </div>
   );
 };

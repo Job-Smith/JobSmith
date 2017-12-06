@@ -39,3 +39,11 @@
   font-weight: bold;
   font-size: 24px;
 }
+
+.questionItem {
+  background-color: #29645C;
+}
+
+.answerHolder {
+  background-color: #AEDA40;
+}

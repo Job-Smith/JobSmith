@@ -39,12 +39,14 @@ const mapDispatchToProps = dispatch => ({
     //     console.log(error);
     //   });
     const data = [  { 
+                      id: 100,
                       question: 'What is recursion?',
                       skills_id: 1,
                       company: 'Amazon',
                       date: new Date('01/02/2001'),
                       answers: [
                                   { 
+                                    id: 1043,
                                     answer : 'Invoking the function from within itself',
                                     resource : 'http://www.geeksforgeeks.org/recursion/',
                                     rating: 2
@@ -52,12 +54,14 @@ const mapDispatchToProps = dispatch => ({
                                ]
                     }, 
                     {
+                      id: 101,
                       question: "'use strict' at the beginning of a JavaScript source file - what and why?",
                       skills_id: 1,
                       company: 'Google',
                       date: new Date('02/03/2002'),
                       answers: [
                                   {
+                                    id: 1013,
                                     answer : 'The purpose of "use strict" is to indicate that the code should be executed in "strict mode".',
                                     resource : 'http://www.geeksforgeeks.org/recursion/',
                                     rating: 1
@@ -65,22 +69,26 @@ const mapDispatchToProps = dispatch => ({
                                ]
                     }, 
                     {
+                      id: 102,
                       question: 'Map, Reduce, Filter',
                       skills_id: 1,
                       company: 'Facebook',
                       date: new Date('03/04/2003'),
                       answers: [
                                   {
+                                    id: 1001,
                                     answer : '',
                                     resource : 'https://www.w3schools.com/jsref/jsref_map.asp',
                                     rating: 1
                                   },
                                   {
+                                    id: 1002,
                                     answer : 'Working with arrays is a daily task for most developers. And one of the most common tasks is taking an array and filtering it down to a subset of the elements it contains.',
                                     resource : '',
                                     rating: 1
                                   },
                                   {
+                                    id: 1003,
                                     answer : 'Great resource for all of them..',
                                     resource : 'http://reactivex.io/learnrx/',
                                     rating: 1
