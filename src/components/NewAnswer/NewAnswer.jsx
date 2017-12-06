@@ -12,8 +12,16 @@ const NewAnswer = props => {
   // Still working on reducers.
   
   return (
-    <div className='questionWrapper'>
-      NewAnswer
+    <div className='answerWrapper'>
+      <form className='forumWrapper'>
+        <div className='labelWrapper'>
+          <label>
+            <strong><u>Answer</u></strong><br/>
+            <input className='answerInput' type='text'></input>
+          </label>
+        </div>
+        <input type='submit' value='Submit'/>
+      </form>
     </div>
   );
 };
