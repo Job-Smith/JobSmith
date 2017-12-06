@@ -1,0 +1,33 @@
+.answerWrapper {
+    display: block;
+    height:100%;
+    width: 100%;
+    background-color: #87B0A9;
+  }
+  
+  .forumWrapper {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: rgb(176, 135, 173);
+  }
+  
+  .labelWrapper {
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 80%;
+    height: 50%;
+    background-color: rgb(65, 184, 118);
+    text-align: center;
+  }
+  
+  .answerInput {
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 75%;
+    height: 50%;
+  }
