@@ -8,7 +8,9 @@ import css from './Answer.css';
 
 const Answer = props => {
     
-  if(props.answer.answer)
+  if (props.answer.resource) {
+
+  }
 
 
   return (

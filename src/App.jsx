@@ -18,9 +18,6 @@ const mapDispatchToProps = dispatch => ({
 class App extends Component {
 
   constructor(props) {
-
-    // console.log('props in App', props);
-    // console.log('props in Login', props.login.display);
     super(props);
   }
 
