@@ -54,14 +54,14 @@ export const fetchQuestions = (skillType) => {
 };
 
 export const saveQuestion = (questionData) => {
-  console.log('Save Question...');
+  console.log('Save Question -> Actions', questionData);
   return (dispatch) => {
-    axios.post('/question', { questionData })
+    axios.post('/question', questionData)
       .then((response) => {
-        dispatch(replaceQuestions(response.data));
+        dispatch(fetchQuestions(response.data.skill_id));
       })
       .catch(function (error) {
-        console.log('Fetch Questions ERROR: ', error);
+        console.log('Save Question ERROR: ', error);
       });
   };
 }
