@@ -6,4 +6,13 @@ export const updateSkills = (skills) => ({
   payload: skills,
 });
 
+export const showLogin = (login) => ({
+  type: types.SHOW_LOGIN,
+  payload: login,
+});
+
 // add more action creators
+export const replaceQuestions = (questions) => ({
+  type: types.REPLACE_QUESTIONS,
+  payload: questions,
+});

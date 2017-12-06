@@ -3,7 +3,6 @@ const db = require('../models/database');
 
 const userController = {
     postLogin(req, res, next) {
-<<<<<<< HEAD
         // let loginUser = new User({
         //     email: req.body.email,
         //     password: req.body.password
@@ -13,7 +12,7 @@ const userController = {
             // value: [req.body.email, req.body.password]
         
         db.conn.one(query)
-        .then(postLogin => res.status(200).send({'msg':'User logged in!'}))
+        .then(postLogin => res.status(200).send({'msg':'Login successful!'}))
         .catch(err =>{ 
             console.log('The error is', err);
             res.status(404).send(err)
@@ -22,15 +21,6 @@ const userController = {
        //store it in variables email and password
        //compare req.body.email and req.body.password
        //redirect to the landing page
-=======
-       const query = `SELECT * FROM "user" WHERE email = '${req.body.email}' AND password = '${req.body.password}'`;
-       db.conn.one(query)
-        .then(postLogin => res.status(200).send({'msg': 'Login successful'}))
-        .catch(err =>{ 
-           console.log('The error is', err);
-           res.status(404).send(err)
-       });
->>>>>>> a2d68d99351509bb6f28309ef34500dcec94f03c
     },
 
     postRegister(req, res, next) {
@@ -43,16 +33,19 @@ const userController = {
         let query = {
             text: 'INSERT INTO "user" (name, password, email) VALUES($1, $2, $3) RETURNING id',
             values: [newUser.name, newUser.password, newUser.email]
-
         };
 
         db.conn.one(query)
-        .then(postRegister => res.status(200).send({'msg':'User created!', 'id': postRegister.id}))
+        .then(postRegister => {
+            res.status(200).send({'msg':'User created!', 'id': postRegister.id});
+            next();
+        })
         .catch(err =>{ 
             console.log('The error is', err);
             res.status(404).send(err)
         });
     }
+    
 }
 
 module.exports = userController;

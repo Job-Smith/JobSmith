@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const userController = require('./controllers/UserController');
-
+const skillController = require('./controllers/SkillController');
+const questionConroller = require('./controllers/QuestionController');
+const answerController = require('./controllers/AnswerController');
 
 // define port
 const PORT = process.env.PORT || 3000;
@@ -41,10 +43,14 @@ app.use('/', express.static(__dirname + './../assets'));
     next();
 });
 
-// User login and register
+// User login, register, skills
 app.post('/login', userController.postLogin)
-    .post('/register', userController.postRegister);
-
+    .post('/register', userController.postRegister)
+    .get('/skills', skillController.getSkill)
+    .post('/skills', skillController.updateSkill)
+    .post('/question', questionController.postQuestion)
+    .get('/question', questionController.getQuestion)
+    .post('/answer', answerController.postAnswer)
 /**
  * Listen to Port
  */

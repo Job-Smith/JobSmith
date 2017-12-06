@@ -1,8 +1,6 @@
 import * as types from '../constants/actionTypes';
 
-const initialState = {
-  skills: [],
-};
+const initialState = [];
 
 const skillsReducer = (state=initialState, action) => {
   let skills;
@@ -10,13 +8,9 @@ const skillsReducer = (state=initialState, action) => {
   switch(action.type) {
 
     case types.UPDATE_SKILLS:
-      skills = state.skills.slice();
+      skills = state.slice();
       skills = skills.concat(action.payload);
-
-      return {
-        ...state,
-        skills,
-      };
+      return skills;
     
     default:
       return state;
