@@ -16,15 +16,19 @@ const userController = {
      */
     postLogin(req, res, next) {
        // query 
-       console.log('REQ BODY', req.body); 
+       console.log('REQ BODY', req.body);
+       console.log('REQ EMAIL AND PASSWORD', req.body.email, req.body.password); 
        const query = `SELECT * FROM "user" WHERE email = '${req.body.email}' AND password = '${req.body.password}'`;
        db.conn.one(query)
-        .then(postLogin => res.status(200).send({'msg': 'Login successful'}))
+        .then(postLogin => {
+            res.status(200).send({'msg': 'Login successful'})
+            next();
+        })
         .catch(err =>{ 
+           console.log('REQ BODY IN ERROR',req.body);
            console.log('The error is', err);
            res.status(404).send(err)
        });
-       next();
     },
     /**
      * 
