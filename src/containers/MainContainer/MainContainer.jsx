@@ -64,12 +64,12 @@ const mapDispatchToProps = dispatch => ({
                       company: 'Google',
                       date: new Date('02/03/2002'),
                       answers: [
-                                  {
-                                    id: 1013,
-                                    answer : 'The purpose of "use strict" is to indicate that the code should be executed in "strict mode".',
-                                    resource : 'http://www.geeksforgeeks.org/recursion/',
-                                    rating: 1
-                                  },
+                                  // {
+                                  //   id: 1013,
+                                  //   answer : 'The purpose of "use strict" is to indicate that the code should be executed in "strict mode".',
+                                  //   resource : 'http://www.geeksforgeeks.org/recursion/',
+                                  //   rating: 1
+                                  // },
                                ]
                     }, 
                     {
