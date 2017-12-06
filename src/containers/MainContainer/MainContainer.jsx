@@ -23,7 +23,11 @@ const mapDispatchToProps = dispatch => ({
   updateSkills: (skills) => {
     dispatch(actions.updateSkills(skills));
   },
-  addQuestion: () => {
+  fetchSkills: () => {
+    console.log(fetchSkills);
+    dispatch(actions.fetchSkills());
+  },
+  showAddQuestion: () => {
     dispatch(actions.changeView(views.QUESTION_VIEW));
   },
   showLogin: (login) => {
@@ -119,11 +123,12 @@ class MainContainer extends Component {
     //     console.log(error);
     //   });
     //Do AJAX request to get skills ....
-    const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
-                   { id: 2, skill: 'Java', color: '#E51742' }, 
-                   { id: 3, skill: 'HTML', color: '#E517AC' }, 
-                   { id: 4, skill: 'CSS', color: '#5417E5' } ];
-    this.props.updateSkills(data); 
+    // const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
+    //                { id: 2, skill: 'Java', color: '#E51742' }, 
+    //                { id: 3, skill: 'HTML', color: '#E517AC' }, 
+    //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
+    // this.props.updateSkills(data); 
+    // this.props.fetchSkills();
     this.props.showLogin('block');
   }
 
@@ -136,7 +141,7 @@ class MainContainer extends Component {
         </div>
         <div className="bottom">
           <div className="left">
-            <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} addQuestion={this.props.addQuestion}/>
+            <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} showAddQuestion={this.props.showAddQuestion}/>
           </div>
           <div className="display">
             <Display />

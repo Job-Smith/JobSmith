@@ -4,7 +4,6 @@ const initialState = [];
 
 const questionsReducer = (state=initialState, action) => {
   let questions;
-      console.log("action.type", action.type);
   switch(action.type) {
 
     case types.REPLACE_QUESTIONS:
@@ -15,6 +14,12 @@ const questionsReducer = (state=initialState, action) => {
         return question;
       });
       return questions;
+
+    case types.ADD_QUESTION:
+      questions = state.slice();
+      questions.push(action.payload);
+      return question;
+       
 
     case types.EXPAND_ANSWERS:
       questions = state.slice();
