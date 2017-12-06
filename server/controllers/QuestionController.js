@@ -28,7 +28,13 @@ questionController = {
         });
     },
     getQuestion(req, res, next) {
-        let query = 'SELECT * from "questions"'
+        let query;
+        if(req.body.skill_id) {
+            query = `SELECT question_id, * FROM answer CROSS JOIN questions where skill_id =${req.body.skill_id}`; 
+        }
+        else {
+            query = 'SELECT * from "questions"'
+        }
         db.conn.many(query)
         .then(data => {
             console.log('you are getting questions')
