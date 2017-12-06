@@ -22,9 +22,13 @@ const mapDispatchToProps = dispatch => ({
   updateSkills: (skills) => {
     dispatch(actions.updateSkills(skills));
   },
+  addQuestion: () => {
+    // dispatch(actions.updateSkills(skills));
+  },
   showLogin: (login) => {
     dispatch(actions.showLogin(login));
     console.log('click fired')
+
   },
   markerClicked:(skillType) => {
     console.log("skillType", skillType);
@@ -60,12 +64,12 @@ const mapDispatchToProps = dispatch => ({
                       company: 'Google',
                       date: new Date('02/03/2002'),
                       answers: [
-                                  {
-                                    id: 1013,
-                                    answer : 'The purpose of "use strict" is to indicate that the code should be executed in "strict mode".',
-                                    resource : 'http://www.geeksforgeeks.org/recursion/',
-                                    rating: 1
-                                  },
+                                  // {
+                                  //   id: 1013,
+                                  //   answer : 'The purpose of "use strict" is to indicate that the code should be executed in "strict mode".',
+                                  //   resource : 'http://www.geeksforgeeks.org/recursion/',
+                                  //   rating: 1
+                                  // },
                                ]
                     }, 
                     {
@@ -120,7 +124,7 @@ class MainContainer extends Component {
                    { id: 3, skill: 'HTML', color: '#E517AC' }, 
                    { id: 4, skill: 'CSS', color: '#5417E5' } ];
     this.props.updateSkills(data); 
-    // this.props.showLogin('block');
+    this.props.showLogin('block');
   }
 
   render() {
@@ -133,7 +137,7 @@ class MainContainer extends Component {
         </div>
         <div className="bottom">
           <div className="left">
-            <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} />
+            <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} addQuestion={this.props.addQuestion}/>
           </div>
           <div className="display">
           {/* onClick={this.props.showLogin('none')} */}
