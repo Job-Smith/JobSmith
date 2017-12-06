@@ -16,7 +16,12 @@ const SkillsMenu = props => {
 
   return (
     <div className='menuContainer'>
-      {skillMarkers}
+      <div className="newQuestion" onClick={props.addQuestion}>
+        Add Question
+      </div>
+      <div className="skillsContainer">
+        {skillMarkers}
+      </div>
     </div>
   );
 };

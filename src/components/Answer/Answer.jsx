@@ -10,7 +10,11 @@ const Answer = props => {
     
   return (
     <div className='answer'>
-      {props.answer.answer}
+      <div className="skillSpacer"></div>
+      <div className="textHolder">
+        {props.answer.answer}
+      </div>
+      {/*<QuestionButton expandAnswers={props.expandAnswers} questionId={question.id} expand={question.expand} hasAnswers={hasAnswers}/>*/}
     </div>
   );
 };

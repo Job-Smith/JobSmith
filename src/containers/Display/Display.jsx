@@ -18,7 +18,6 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => ({
   expandAnswers: (questionId) => {
-    console.log("questionId", questionId);
     dispatch(actions.expandAnswers(questionId));
   }
 });
