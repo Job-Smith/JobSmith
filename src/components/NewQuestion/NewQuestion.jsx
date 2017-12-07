@@ -14,7 +14,6 @@ const NewQuestion = props => {
     const e = document.getElementById('skillList');
     const skill_id = e.options[e.selectedIndex].getAttribute('values');
     const skillType =  document.getElementById('skillType').value;
-console.log("NewQuestion.jsx skillType", skillType);
     const company = document.getElementById('company').value;
     if (question === "" || skill_id === "" || company === "") {
       alert('Please enter all the required fields');
@@ -37,7 +36,8 @@ console.log("NewQuestion.jsx skillType", skillType);
   props.skills.forEach((objElement, index) => {
       options.push(<SkillOption key={index} skill_id = {objElement.id} skill = {objElement.skill}/>);
   });
-  options.push(<option key={options.length} values = {options.length+1}>Other</option>)
+  options.push(<option key={options.length} values = {options.length+1}>Other</option>);
+
   /**
    * Event Listener selecting option 'other'
    */

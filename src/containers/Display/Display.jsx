@@ -30,12 +30,11 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.changeView(views.ANSWER_VIEW));
   },
   saveQuestion: (questionData, skills) => {
-    console.log('saveQuestion questionData', questionData);
     const skillId = questionData.skill_id;
-    if (skills.filter(skill => skill.id == skillId).length === 0) {
-      dispatch(actions.saveSkill(questionData))
-    } else {
+    if (skills.filter(skill => skill.id == skillId).length !== 0) {
       dispatch(actions.saveQuestion(questionData));
+    } else {
+      dispatch(actions.saveSkill(questionData, skills.length));
     }
 
   },

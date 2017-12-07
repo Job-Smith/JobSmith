@@ -25,7 +25,7 @@ const mapStateToProps = store => ({
   login: store.login,
   signUp: store.signUp,
   logoutButton: store.logoutButton,
-  // user: store.user
+  user: store.user,
   showMain: store.showMain
 });
 
@@ -52,7 +52,6 @@ const mapDispatchToProps = dispatch => ({
 // if login credentials are correct, submit action to store to change loginRecur's display to 'none'
 
 function sendCredentials (that) {
-  console.log('this inside of sendCredentials', that);
   axios.post('/login', {
     // email: 'woojun@gmail.com',
     email: document.getElementById('loginEmail').value,
@@ -60,14 +59,13 @@ function sendCredentials (that) {
     password: document.getElementById('loginPassword').value
   })
   .then(function (response) {
-    console.log(response);
     document.getElementById('loginEmail').value = '';
     document.getElementById('loginPassword').value = '';
     that.props.showLogin('none');
     that.props.showLogoutButton('block'); 
     that.props.showMain('block');      
-    console.log('RESPONSE ID', response);
-    that.props.setUser(response.id);
+    that.props.setUser(response.data.id);
+    console.log('USER PROPS IN LOGIN', that.props.user)
   })
   .catch(function (error) {
     console.log('error:', error);
@@ -87,12 +85,8 @@ class LoginContainer extends Component {
     super(props);
   }
 
-  // for testing:
-  componentDidMount() {
-    console.log('PROPS IN LOGIN', this.props);
-  }
-
   render() {
+    console.log('props in login container', this.props.user);
     return(
       <div id="loginContainer" style={{display: this.props.login}}>
         <div id="loginOuterBox">
