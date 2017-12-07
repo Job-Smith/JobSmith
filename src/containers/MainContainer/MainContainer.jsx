@@ -16,8 +16,10 @@ import css from './MainContainer.css';
 const mapStateToProps = store => ({
     skills: store.skills,
     login: store.login,
-    // loginButton: store.loginButton
-    logoutButton: store.logoutButton    
+    logoutButton: store.logoutButton,
+    ///////// this importing of main here for testing:///////
+    // main: store.obfuscateMain 
+    ///////////////////////////////////////   
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -29,7 +31,6 @@ const mapDispatchToProps = dispatch => ({
   },
 //////////////////////////////////////  
   fetchSkills: () => {
-    console.log('fetchSkills');
     dispatch(actions.fetchSkills());
   },
   showAddQuestion: () => {
@@ -39,17 +40,18 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.showLogin(login));
     // hide logout button:
     dispatch(actions.showLogoutButton('none'));
-    // that.props.showLogoutButton('block');
   },
-  // showLoginButton: (loginButton) => {
-  //   dispatch(actions.showLoginButton(loginButton));
-  // },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
   },
+  ////// for testing: /////////
+  // obfuscateMain: (main) => {
+  //   dispatch(actions.obfuscateMain(main));
+  // },
+  /////////////////////////////
   markerClicked:(skillType) => {
     dispatch(actions.changeView(views.REGULAR_VIEW));
-    // dispatch(actions.fetchQuestions(skillType));
+    dispatch(actions.fetchQuestions(skillType));
 
     const data = [  { 
                       id: 100,
@@ -108,25 +110,24 @@ const mapDispatchToProps = dispatch => ({
                                   },
                                ]
                     } ];
-    dispatch(actions.replaceQuestions(data));
+    // dispatch(actions.replaceQuestions(data));
   }
 });
 
 class MainContainer extends Component {
   constructor(props) {
-      console.log("props", props);
     super(props);
   }
 
   componentDidMount() {
 
-    const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
-                   { id: 2, skill: 'Java', color: '#E51742' }, 
-                   { id: 3, skill: 'HTML', color: '#E517AC' }, 
-                   { id: 4, skill: 'CSS', color: '#5417E5' } ];
+    // const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
+    //                { id: 2, skill: 'Java', color: '#E51742' }, 
+    //                { id: 3, skill: 'HTML', color: '#E517AC' }, 
+    //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
 
-    this.props.updateSkills(data); 
-    // // this.props.fetchSkills();
+    // this.props.updateSkills(data); 
+    this.props.fetchSkills();
   }
 
   render() {
@@ -138,6 +139,7 @@ class MainContainer extends Component {
           <p>be awesome, get shouted out at family dinner</p>
           </div>
           {/* <button id="loginBtn" style={{display: this.props.loginButton}} onClick={() => this.props.showLogin('block')}>Login</button> */}
+
           <button id="logoutBtn" style={{display: this.props.logoutButton}} onClick={() => this.props.showLoginAndHideLogoutButton('block')}>Logout</button>
         </div>
         <div className="bottom">

@@ -48,8 +48,6 @@ getQuestion(req, res, next) {
       }
       db.conn.many(answerQuery)
         .then(answerData => {
-console.log("questionsData", questionsData);
-console.log("answerData", answerData);
           let result = questions.map((quest) => {
             quest.answers = answerData.filter((ans) => {
                 return ans.question_id === quest.id
@@ -58,7 +56,6 @@ console.log("answerData", answerData);
             })
             return quest;
           })
-          console.log('AnswerQuery result: ', result)
           res.status(200).send(result)
           next();
         })
@@ -70,12 +67,10 @@ console.log("answerData", answerData);
             }));
             return;
           }
-          console.log('AnswerQuery error: ', err);
           res.status(404).send(err)
         });
     })
     .catch(err => {
-      console.log('QuestionQuery error: ', err);
       res.status(404).send(err)
     });
   }

@@ -14,6 +14,12 @@ const NewQuestion = props => {
   // { question: <questionString>, skill_id: <skill_id>, company: <company name>}
 
 
+  // props.displayOther -  defaults to 'none' 
+  // props.setDisplayOther() will change the setting of displayOther. So set it to 'block' or back to 'none'
+
+  /**
+   * send questions by invoking props.saveQuestion(question object)
+   */
   function sendQuestion() {
     const question = document.getElementById('questionInput').value;
     const e = document.getElementById('skillList');
@@ -26,12 +32,34 @@ const NewQuestion = props => {
     // console.log(props.saveQuestion);
     props.saveQuestion({question, skill_id, company});
   }
+  
+  function createElement() {
+    let element = document.createElement('label');
+    console.log(element);
+  }
+  function addSkill() {
 
+    const selectionOption = document.getElementById('skillList').value;
+    if (selectionOption === 'Other') {
+      createElement();
+    } else {
+      console.log('no element');
+    }
+  }
+
+  /**
+   * creating options tags for skills
+   */
   let options = [];
   props.skills.forEach((objElement, index) => {
       options.push(<SkillOption key={index} skill_id = {objElement.id} skill = {objElement.skill}/>);
   });
-  // console.log('OPTION', options);
+  options.push(<option key={options.length} values = {options.length+1}>Other</option>)
+
+  /**
+   * Event Listener selecting option 'other'
+   */
+
   return (
     <div className='questionWrapper'>
       <div className='forumWrapper'>
@@ -41,7 +69,7 @@ const NewQuestion = props => {
             <textarea id='questionInput' type='text'></textarea>
           </label>
           <label>Skills</label>
-          <select id = "skillList">
+          <select id = "skillList" onChange={() => addSkill()}>
             {options}
           </select>
           <label>

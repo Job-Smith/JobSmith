@@ -24,7 +24,9 @@ const mapStateToProps = store => ({
   // add pertinent state here
   login: store.login,
   signUp: store.signUp,
-  logoutButton: store.logoutButton
+  logoutButton: store.logoutButton,
+  // user: store.user
+  // main: store.obfuscateMain
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -37,7 +39,13 @@ const mapDispatchToProps = dispatch => ({
   },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
-  }
+  },
+  setUser: (userId) => {
+    dispatch(actions.setUser(userId));
+  },
+  // obfuscateMain: (main) => {
+  //   dispatch(actions.obfuscateMain(main));
+  // }
 });
 
 // function that on click, makes post request to server
@@ -52,10 +60,13 @@ function sendCredentials (that) {
     password: document.getElementById('loginPassword').value
   })
   .then(function (response) {
+    console.log(response);
     document.getElementById('loginEmail').value = '';
     document.getElementById('loginPassword').value = '';
     that.props.showLogin('none');
     that.props.showLogoutButton('block'); 
+    console.log('RESPONSE ID', response);
+    that.props.setUser(response.id);
   })
   .catch(function (error) {
     console.log('error:', error);
@@ -75,21 +86,29 @@ class LoginContainer extends Component {
     super(props);
   }
 
+  // for testing:
+  // componentDidMount() {
+  //   console.log('PROPS IN LOGIN', this.props);
+  //   this.props.obfuscateMain('none');
+  // }
+
   render() {
     return(
       <div id="loginContainer" style={{display: this.props.login}}>
         <div id="loginOuterBox">
-          <h1 id="loginHeader">Login</h1>
+        <h1 id="loginHeader">Jobsmith</h1>
+          {/* <h1 id="loginHeader">Login</h1> */}
           { /* Start adding components here... */ }
           <form id="loginForm">
-            <h2>Email</h2><br></br>
-            <input id="loginEmail" type="text" name="nameOrEmail"></input><br></br>
-            <h2>Password</h2><br></br>
-            <input id="loginPassword" type="password" name="password"></input>
-            <input type="button" value="Submit" onClick={() => sendCredentials(this)}></input>
+            {/* <h2>Email</h2><br></br> */}
+            <input id="loginEmail" type="text" name="nameOrEmail" placeholder="Email"></input><br></br>
+            <br></br>
+            {/* <h2>Password</h2><br></br> */}
+            <input id="loginPassword" type="password" name="password" placeholder="Password"></input>
+            <input id="submitBtn" type="button" value="Submit" onClick={() => sendCredentials(this)}></input>
           </form>
-          <h2>Not a user? Sign up here</h2>
-          <input type="button" value="SignUp" onClick={() => hideLoginShowSignUp(this)}></input>
+          {/* <h2>Not a user? Sign up here</h2> */}
+          <input id="signUpBtn" type="button" value="Not A User? Sign Up" onClick={() => hideLoginShowSignUp(this)}></input>
         </div>
       </div>
     )

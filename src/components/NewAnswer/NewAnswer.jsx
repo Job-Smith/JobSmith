@@ -1,16 +1,21 @@
 import React from 'react';
 
-// import from child components...
-// import Question from './../Question/Question.jsx'
-
 // Import css
 import css from './NewAnswer.css';
 
 const NewAnswer = props => {
   
-   // will add function to props for saving thru the morning..
-  // Still working on reducers.
-  
+  console.log("NewAnswer props", props);
+   // props.saveAnswer() to save the answer
+   // argument will be { rating, answer, user_id: props.user_id, question_id: props.question_id }
+
+  function submitAnswer() {
+    const answer = document.getElementById('answerField').value;
+    const answerObj = { rating: 0, answer, user_id: props.user_id, question_id: props.question_id };
+console.log("answerObj", answerObj);
+    props.saveAnswer(answerObj);
+  } 
+
   return (
     <div className='answerWrapper'>
       <form className='forumWrapper'>
@@ -19,10 +24,11 @@ const NewAnswer = props => {
             <strong><u>Answer</u></strong><br/>
             <input className='answerInput' type='text'></input>
           </label>
-          <input type='submit' value='Submit'/>
+          <button onClick={submitAnswer}>'Submit'</button>
 
         </div>
       </form>
+
     </div>
   );
 };

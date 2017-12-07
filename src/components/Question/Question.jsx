@@ -11,8 +11,6 @@ import css from './Question.css';
 const Question = props => {
 
   const { question } = props;
-  console.log("QUESTION question", question);
-  console.log("QUESTION props", props);
   const answers = question.answers;
   const answerList = [];
   const hasAnswers = answers.length > 0;
