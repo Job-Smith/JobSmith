@@ -41,6 +41,12 @@ export const showLogoutButton = (logoutButton) => ({
   payload: logoutButton,
 });
 
+export const obfuscateMain = (main) => ({
+  type: types.OBFUSCATE_MAIN,
+  payload: main,
+});
+
+// add more action creators
 // question reducer
 export const replaceQuestions = (questions) => ({
   type: types.REPLACE_QUESTIONS,

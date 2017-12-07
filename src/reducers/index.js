@@ -5,10 +5,12 @@ import skillsReducer from './skillsReducer';
 import loginReducer from './loginReducer';
 import signUpReducer from './signUpReducer';
 import questionsReducer from './questionsReducer';
-import displayReducer from './displayReducer.js';
+import displayReducer from './displayReducer';
 import userReducer from './userReducer';
-// import showLoginButtonReducer from './showLoginButtonReducer'; 
 import logoutButtonReducer from './logoutButtonReducer';
+///////// for testing: //////////
+import obfuscateMainReducer from './obfuscateMainReducer';
+/////////////////////////////////
 
 // combine reducers
 const reducers = combineReducers({
@@ -18,6 +20,9 @@ const reducers = combineReducers({
   logoutButton: logoutButtonReducer,
   questions: questionsReducer,
   display: displayReducer,
+  ////////// for testing: /////////
+  // obfuscateMain: obfuscateMainReducer
+  /////////////////////////////////
   user: userReducer 
 });
 
