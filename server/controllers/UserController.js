@@ -3,10 +3,7 @@ const db = require('../models/database');
 
 const userController = {
     postLogin(req, res, next) {
-
        // query 
-       console.log('REQ BODY', req.body);
-       console.log('REQ EMAIL AND PASSWORD', req.body.email, req.body.password); 
        const query = `SELECT * FROM "user" WHERE email = '${req.body.email}' AND password = '${req.body.password}'`;
        db.conn.one(query)
         .then(postLogin => {
