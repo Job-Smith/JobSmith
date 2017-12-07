@@ -61,8 +61,8 @@ console.log("NewQuestion.jsx skillType", skillType);
             Skill
             <input id='skillType' type='text'></input>
           </label>
+          <button value='Submit' onClick={() => sendQuestion()}>Submit</button>
         </div>
-        <button value='Submit' onClick={() => sendQuestion()}>Submit</button>
       </div>
     </div>
   );
