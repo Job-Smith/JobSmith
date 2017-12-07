@@ -34,7 +34,7 @@ const mapDispatchToProps = dispatch => ({
     if (skills.filter(skill => skill.id == skillId).length !== 0) {
       dispatch(actions.saveQuestion(questionData));
     } else {
-      dispatch(actions.saveSkill(questionData));
+      dispatch(actions.saveSkill(questionData, skills.length));
     }
 
   },

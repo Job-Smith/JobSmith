@@ -20,12 +20,12 @@ export const fetchSkills = () => {
   };
 };
 
-export const saveSkill = (questionData) => {
-  const colours = ['#D15656', '#DB7B34', '#C5BE3F', '#A6DB45', '#276C2D', '#7BC3AE', '#3F70A9', '#9568B2', '#E457E1', '#41DDB3', '#F1CC1F'];
-  function getRandomColor() {
-    return colours[Math.floor((Math.random() * 11) + 1)];
+export const saveSkill = (questionData, skillsLength) => {
+  const colours = ['#D15656', '#DB7B34', '#C5BE3F', '#A6DB45', '#276C2D', '#8396AC', '#9568B2', '#CB61C9', '#3ED5AC', '#F1CC1F'];
+  function getNextColor() {
+    return colours[skills.length % 10];
   }
-  const color = getRandomColor();
+  const color = getNextColor();
   const skill = { skill: questionData.skillType, color };
   return (dispatch) => {
     axios.post('/saveSkill', skill)
