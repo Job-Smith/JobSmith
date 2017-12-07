@@ -14,7 +14,7 @@ const SkillsMarker = props => {
   }
 
   return (
-    <div className='marker' style={ {backgroundColor: color} } onClick={markerClick} data-id={id} >
+    <div className='marker'style={ {backgroundColor: color} } onClick={markerClick} data-id={id} >
       {skill}
     </div>
   );

@@ -17,7 +17,7 @@ const SkillsMenu = props => {
   return (
     <div className='menuContainer'>
       <div className="newQuestion" onClick={props.showAddQuestion}>
-        Add Question
+        <p className = 'menutext'>Add Question</p>
       </div>
       <div className="skillsContainer">
         {skillMarkers}

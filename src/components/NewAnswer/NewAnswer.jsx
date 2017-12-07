@@ -19,8 +19,9 @@ const NewAnswer = props => {
             <strong><u>Answer</u></strong><br/>
             <input className='answerInput' type='text'></input>
           </label>
+          <input type='submit' value='Submit'/>
+
         </div>
-        <input type='submit' value='Submit'/>
       </form>
     </div>
   );
