@@ -20,8 +20,7 @@ export const fetchSkills = () => {
   };
 };
 
-
-//login reducer
+// reducers for toggling show (display: block) and hide (display: none):
 export const showLogin = (login) => ({
   type: types.SHOW_LOGIN,
   payload: login,
@@ -30,6 +29,16 @@ export const showLogin = (login) => ({
 export const showSignUp = (signup) => ({
   type: types.SHOW_SIGNUP,
   payload: signup,
+});
+
+// export const showLoginButton = (loginButton) => ({
+//   type: types.SHOW_LOGIN_BUTTON,
+//   payload: loginButton,
+// });
+
+export const showLogoutButton = (logoutButton) => ({
+  type: types.SHOW_LOGOUT_BUTTON,
+  payload: logoutButton,
 });
 
 // add more action creators
@@ -48,7 +57,6 @@ export const addQuestion = (question) => ({
   type: types.ADD_QUESTION,
   payload: question,
 });
-
 
 // display reducer
 export const changeView = (view) => ({
