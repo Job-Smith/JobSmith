@@ -127,7 +127,6 @@ class MainContainer extends Component {
     //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
 
     // this.props.updateSkills(data); 
-    console.log('main props in main', this.props.main);
     this.props.fetchSkills();
   }
 
