@@ -21,7 +21,7 @@ const NewQuestion = props => {
     const company = document.getElementById('company').value;
     console.log(question, skill_id, company);
     if (question === "" || skill_id === "" || company === "") {
-      alert('Please enter all the require fields');
+      alert('Please enter all the required fields');
     }
     // console.log(props.saveQuestion);
     props.saveQuestion({question, skill_id, company});
