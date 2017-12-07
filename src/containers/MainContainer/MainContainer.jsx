@@ -43,10 +43,10 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.showLogin(login));
     // hide logout button:
     dispatch(actions.showLogoutButton('none'));
-    dispatch(actions.showMain('none'));
-    // dispatch(actions.setUser(-1));
     let newUserId = -1;
     that.props.setUser(newUserId);
+    dispatch(actions.showMain('none'));
+    // dispatch(actions.setUser(-1));
     console.log('USER STATUS', that.props.user);
   },
   showLogoutButton: (logoutButton) => {
@@ -148,7 +148,7 @@ class MainContainer extends Component {
           </div>
           {/* <button id="loginBtn" style={{display: this.props.loginButton}} onClick={() => this.props.showLogin('block')}>Login</button> */}
           <div className='logoutdiv'>
-          <button id="logoutBtn" style={{display: this.props.logoutButton, "height":"20px"}} onClick={() => this.props.showLoginAndHideLogoutButton('block')}>Logout</button>
+          <button id="logoutBtn" style={{display: this.props.logoutButton, "height":"20px"}} onClick={() => this.props.showLoginAndHideLogoutButton('block', this)}>Logout</button>
           </div>
         </div>
         <div className="bottom">

@@ -86,6 +86,7 @@ class LoginContainer extends Component {
   }
 
   render() {
+    console.log('props in login container', this.props.user);
     return(
       <div id="loginContainer" style={{display: this.props.login}}>
         <div id="loginOuterBox">
