@@ -12,7 +12,7 @@ const QuestionWrapper = props => {
 
   for (let i = 0, ilen = props.questions.length; i < ilen; i += 1) {
     const question = props.questions[i];
-    const skill = props.skills.filter(skill => skill.id === question.skills_id)[0];
+    const skill = props.skills.filter(skill => skill.id === question.skill_id)[0];
     questionsList.push( <Question key={i + '_question'} question={question} skill={skill} expandAnswers={props.expandAnswers} showNewAnswer={props.showNewAnswer} />);
   }
 
