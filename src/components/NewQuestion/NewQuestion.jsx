@@ -76,8 +76,9 @@ const NewQuestion = props => {
             Company
             <input id='company' type='text'></input>
           </label>
+          <button value='Submit' onClick={() => sendQuestion()}>Submit</button>
+
         </div>
-        <button value='Submit' onClick={() => sendQuestion()}>Submit</button>
       </div>
     </div>
   );

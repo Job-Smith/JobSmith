@@ -2,7 +2,7 @@
   display: block;
   height:100%;
   width: 100%;
-  background-color: #87B0A9;
+  background-color: white;
 }
 
 .forumWrapper {
@@ -11,7 +11,7 @@
   height: 100%;
   width: 100%;
   margin: auto;
-  background-color: rgb(176, 135, 173);
+  background-color: white;
 }
 
 .labelWrapper {
@@ -20,7 +20,7 @@
   margin: auto;
   width: 80%;
   height: 50%;
-  background-color: rgb(65, 184, 118);
+  background-color: white;
   text-align: center;
 }
 
