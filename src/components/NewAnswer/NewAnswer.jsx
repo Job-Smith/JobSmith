@@ -8,8 +8,8 @@ import css from './NewAnswer.css';
 
 const NewAnswer = props => {
   
-   // will add function to props for saving thru the morning..
-  // Still working on reducers.
+   // props.saveAnswer() to save the answer
+   // argument will be { rating, answer, user_id: props.user_id, question_id: props.question_id }
   
   return (
     <div className='answerWrapper'>

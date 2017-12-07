@@ -29,7 +29,6 @@ const mapDispatchToProps = dispatch => ({
   },
 //////////////////////////////////////  
   fetchSkills: () => {
-    console.log('fetchSkills');
     dispatch(actions.fetchSkills());
   },
   showAddQuestion: () => {
@@ -114,7 +113,6 @@ const mapDispatchToProps = dispatch => ({
 
 class MainContainer extends Component {
   constructor(props) {
-      console.log("props", props);
     super(props);
   }
 
@@ -126,7 +124,7 @@ class MainContainer extends Component {
                    { id: 4, skill: 'CSS', color: '#5417E5' } ];
 
     this.props.updateSkills(data); 
-    // // this.props.fetchSkills();
+    // this.props.fetchSkills();
   }
 
   render() {

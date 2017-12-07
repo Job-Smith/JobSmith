@@ -48,8 +48,6 @@ getQuestion(req, res, next) {
       }
       db.conn.many(answerQuery)
         .then(answerData => {
-console.log("questionsData", questionsData);
-console.log("answerData", answerData);
           let result = questions.map((quest) => {
             quest.answers = answerData.filter((ans) => {
                 return ans.question_id === quest.id
