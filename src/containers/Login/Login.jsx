@@ -24,7 +24,8 @@ const mapStateToProps = store => ({
   // add pertinent state here
   login: store.login,
   signUp: store.signUp,
-  logoutButton: store.logoutButton
+  logoutButton: store.logoutButton,
+  // main: store.obfuscateMain
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -37,7 +38,10 @@ const mapDispatchToProps = dispatch => ({
   },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
-  }
+  },
+  // obfuscateMain: (main) => {
+  //   dispatch(actions.obfuscateMain(main));
+  // }
 });
 
 // function that on click, makes post request to server
@@ -75,6 +79,12 @@ class LoginContainer extends Component {
   constructor(props) {
     super(props);
   }
+
+  // for testing:
+  // componentDidMount() {
+  //   console.log('PROPS IN LOGIN', this.props);
+  //   this.props.obfuscateMain('none');
+  // }
 
   render() {
     return(

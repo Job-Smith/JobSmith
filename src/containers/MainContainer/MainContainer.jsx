@@ -16,8 +16,10 @@ import css from './MainContainer.css';
 const mapStateToProps = store => ({
     skills: store.skills,
     login: store.login,
-    // loginButton: store.loginButton
-    logoutButton: store.logoutButton    
+    logoutButton: store.logoutButton,
+    ///////// this importing of main here for testing:///////
+    // main: store.obfuscateMain 
+    ///////////////////////////////////////   
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -39,14 +41,15 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.showLogin(login));
     // hide logout button:
     dispatch(actions.showLogoutButton('none'));
-    // that.props.showLogoutButton('block');
   },
-  // showLoginButton: (loginButton) => {
-  //   dispatch(actions.showLoginButton(loginButton));
-  // },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
   },
+  ////// for testing: /////////
+  // obfuscateMain: (main) => {
+  //   dispatch(actions.obfuscateMain(main));
+  // },
+  /////////////////////////////
   markerClicked:(skillType) => {
     dispatch(actions.changeView(views.REGULAR_VIEW));
     // dispatch(actions.fetchQuestions(skillType));
@@ -126,6 +129,7 @@ class MainContainer extends Component {
                    { id: 4, skill: 'CSS', color: '#5417E5' } ];
 
     this.props.updateSkills(data); 
+    console.log('main props in main', this.props.main);
     // // this.props.fetchSkills();
   }
 
@@ -134,7 +138,6 @@ class MainContainer extends Component {
       <div className="container">
         <div className="top">
           <h1 id="header">JobSmith</h1>
-          {/* <button id="loginBtn" style={{display: this.props.loginButton}} onClick={() => this.props.showLogin('block')}>Login</button> */}
           <button id="logoutBtn" style={{display: this.props.logoutButton}} onClick={() => this.props.showLoginAndHideLogoutButton('block')}>Logout</button>
         </div>
         <div className="bottom">
