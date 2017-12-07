@@ -26,7 +26,7 @@ const mapStateToProps = store => ({
   signUp: store.signUp,
   logoutButton: store.logoutButton,
   // user: store.user
-  // main: store.obfuscateMain
+  showMain: store.showMain
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -43,9 +43,9 @@ const mapDispatchToProps = dispatch => ({
   setUser: (userId) => {
     dispatch(actions.setUser(userId));
   },
-  // obfuscateMain: (main) => {
-  //   dispatch(actions.obfuscateMain(main));
-  // }
+  showMain: (main) => {
+    dispatch(actions.showMain(main));
+  }
 });
 
 // function that on click, makes post request to server
@@ -65,6 +65,7 @@ function sendCredentials (that) {
     document.getElementById('loginPassword').value = '';
     that.props.showLogin('none');
     that.props.showLogoutButton('block'); 
+    that.props.showMain('block');      
     console.log('RESPONSE ID', response);
     that.props.setUser(response.id);
   })
@@ -87,10 +88,9 @@ class LoginContainer extends Component {
   }
 
   // for testing:
-  // componentDidMount() {
-  //   console.log('PROPS IN LOGIN', this.props);
-  //   this.props.obfuscateMain('none');
-  // }
+  componentDidMount() {
+    console.log('PROPS IN LOGIN', this.props);
+  }
 
   render() {
     return(

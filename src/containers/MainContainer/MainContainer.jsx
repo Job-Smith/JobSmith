@@ -18,7 +18,7 @@ const mapStateToProps = store => ({
     login: store.login,
     logoutButton: store.logoutButton,
     ///////// this importing of main here for testing:///////
-    // main: store.obfuscateMain 
+    showMain: store.showMain 
     ///////////////////////////////////////   
 });
 
@@ -40,6 +40,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.showLogin(login));
     // hide logout button:
     dispatch(actions.showLogoutButton('none'));
+    dispatch(actions.showMain('none'));
   },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
@@ -127,13 +128,13 @@ class MainContainer extends Component {
     //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
 
     // this.props.updateSkills(data); 
-    console.log('main props in main', this.props.main);
+    console.log('main props in main', this.props.showMain);
     this.props.fetchSkills();
   }
 
   render() {
     return (
-      <div className="container">
+      <div className="container" style={{display: this.props.showMain}}>
         <div className="top">
           <h1 id="header">JobSmith</h1>
           <button id="logoutBtn" style={{display: this.props.logoutButton}} onClick={() => this.props.showLoginAndHideLogoutButton('block')}>Logout</button>

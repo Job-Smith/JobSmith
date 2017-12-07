@@ -41,8 +41,8 @@ export const showLogoutButton = (logoutButton) => ({
   payload: logoutButton,
 });
 
-export const obfuscateMain = (main) => ({
-  type: types.OBFUSCATE_MAIN,
+export const showMain = (main) => ({
+  type: types.SHOW_MAIN,
   payload: main,
 });
 

@@ -27,7 +27,8 @@ const mapStateToProps = store => ({
   // login: store.login,
   // import signUp from store
   signUp: store.signUp,
-  logoutButton: store.logoutButton
+  logoutButton: store.logoutButton,
+  showMain: store.showMain
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -40,6 +41,9 @@ const mapDispatchToProps = dispatch => ({
   },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
+  },
+  showMain: (main) => {
+    dispatch(actions.showMain(main));
   }
 });
 
@@ -56,13 +60,13 @@ function signUpUser (that) {
     password: document.getElementById('signUpPassword').value
   })
   .then(function (response) {
-    console.log('response:', response.data);
-    // that.props.showLogin('none');
     document.getElementById('signUpName').value = '';
     document.getElementById('email').value = '';
     document.getElementById('signUpPassword').value = '';
     that.props.showSignUp('none');   
     that.props.showLogoutButton('block'); 
+    that.props.showMain('block');
+    // console.log(that.props.showMain)
   })
   .catch(function (error) {
     console.log('error:', error);

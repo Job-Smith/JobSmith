@@ -9,7 +9,7 @@ import displayReducer from './displayReducer';
 import userReducer from './userReducer';
 import logoutButtonReducer from './logoutButtonReducer';
 ///////// for testing: //////////
-import obfuscateMainReducer from './obfuscateMainReducer';
+import showMainReducer from './showMainReducer';
 /////////////////////////////////
 
 // combine reducers
@@ -21,7 +21,7 @@ const reducers = combineReducers({
   questions: questionsReducer,
   display: displayReducer,
   ////////// for testing: /////////
-  // obfuscateMain: obfuscateMainReducer
+  showMain: showMainReducer,
   /////////////////////////////////
   user: userReducer 
 });

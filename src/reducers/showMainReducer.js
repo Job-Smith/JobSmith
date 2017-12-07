@@ -2,12 +2,12 @@
 
 import * as types from '../constants/actionTypes';
 
-const initialState = 'block';
+const initialState = 'none';
 
-const obfuscateMainReducer = (state=initialState, action) => {
+const showMainReducer = (state=initialState, action) => {
   switch(action.type) {
 
-    case types.OBFUSCATE_MAIN:
+    case types.SHOW_MAIN:
       console.log('ACTION PAYLOAD', action.payload);
       return action.payload;
 
@@ -16,4 +16,4 @@ const obfuscateMainReducer = (state=initialState, action) => {
   }
 };
 
-export default obfuscateMainReducer;
+export default showMainReducer;
