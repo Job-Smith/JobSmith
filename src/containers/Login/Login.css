@@ -17,17 +17,50 @@
 #loginOuterBox {
     width: 400px;
     height: 400px;
-    background-color: greenyellow;
+    background-color: white;
     margin: 0 auto;
+    border: solid grey 2px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    padding: 100px;
+    box-shadow: 1px 5px 5px 5px grey;
+    /* display: flex;     */
+    /* justify-content: center; */
 }
 #loginHeader {
     width: 200px;
     height: 40px;
-    background-color: red;
+    /* background-color: red; */
     text-align: center;
+    /* top: 20px; */
     margin: auto;
+    color: rgb(32, 26, 53);
 }
 #loginForm {
-    background-color: rgb(221, 210, 61);
+    background-color: white;
     margin: auto;
+}
+#loginEmail {
+    width: 90%;
+    height: 20px;
+    margin-top: 30px;
+}
+#loginPassword {
+    width: 90%;
+    height: 20px;
+}
+#submitBtn {
+    width: 90%;
+    position: center;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 16px;
+}
+#signUpBtn {
+    margin-top: 10px;
+    width: 90%;
+    display: inline-block;
+    font-size: 16px;
 }
