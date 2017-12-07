@@ -18,13 +18,17 @@ console.log("answerObj", answerObj);
 
   return (
     <div className='answerWrapper'>
-      <div className='labelWrapper'>
-        <label>
-          <strong><u>Answer</u></strong><br/>
-          <textarea id='answerField' className='answerInput' type='text'></textarea>
-        </label>
-      </div>
-      <button onClick={submitAnswer}>'Submit'</button>
+      <form className='forumWrapper'>
+        <div className='labelWrapper'>
+          <label>
+            <strong><u>Answer</u></strong><br/>
+            <input className='answerInput' type='text'></input>
+          </label>
+          <button onClick={submitAnswer}>'Submit'</button>
+
+        </div>
+      </form>
+
     </div>
   );
 };

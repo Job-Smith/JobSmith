@@ -4,37 +4,30 @@
   margin-top: 5px;
   width: 100%;
   min-height: 40px;
-  background-color: #F70538;
 }
 
 .skillHolder {
   position: absolute; 
   display: inline-block;
   width: 120px;
-  background-color: #F8EF11;
 }
 
 .textHolder {
-  margin-top: 10px;
+  height:35px;
   padding-left: 18px;
   display: inline-block;
   width: 90%;
-  margin-left: 120px;
-  background-color: #D00BF0;
-}
-
-.questionItem {
-  background-color: #29645C;
-}
-
-.answerHolder {
-  background-color: #AEDA40;
+  margin-left: 160px;
+  border: 1px solid black;  
+  padding-top:15px;
 }
 
 .company {
-  margin-top: 10px;
   display: inline-block;
   width: 150px;
-  color: #68696E;
-  background-color: #A14A7D;
+  height:35px;
+  padding-top:15px;
+  border: 1px solid black;
+  border-left:none;
+  text-align: center;
 }

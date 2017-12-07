@@ -8,9 +8,9 @@ import SignUpContainer from './containers/SignUp/SignUp.jsx';
 
 const mapStateToProps = store => ({
   // add pertinent state here
-  skills: store.skills,
-  login: store.login,
-  signup: store.signUp
+  // skills: store.skills,
+  // login: store.login,
+  // signup: store.signUp
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -128,7 +128,6 @@ class MainContainer extends Component {
     //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
 
     // this.props.updateSkills(data); 
-    console.log('main props in main', this.props.showMain);
     this.props.fetchSkills();
   }
 
@@ -136,7 +135,12 @@ class MainContainer extends Component {
     return (
       <div className="container" style={{display: this.props.showMain}}>
         <div className="top">
-          <h1 id="header">JobSmith</h1>
+        <img className ='logo' src="https://www.codesmith.io/images/main/codesmith-logo-md.png" />
+          <div id="header"><p className ='headertext'>JobSmith</p> 
+          <p>be awesome, get shouted out at family dinner</p>
+          </div>
+          {/* <button id="loginBtn" style={{display: this.props.loginButton}} onClick={() => this.props.showLogin('block')}>Login</button> */}
+
           <button id="logoutBtn" style={{display: this.props.logoutButton}} onClick={() => this.props.showLoginAndHideLogoutButton('block')}>Logout</button>
         </div>
         <div className="bottom">
@@ -146,9 +150,9 @@ class MainContainer extends Component {
           <div className="display">
             <Display />
           </div>
-          <div className="right">
+          {/* <div className="right">
             Right
-          </div>
+          </div> */}
         </div>
       </div>  
     )
