@@ -39,7 +39,7 @@ export const saveSkill = (questionData, skillsLength) => {
   };
 }
 
-// reducers for toggling show (display: block) and hide (display: none):
+// reducers for toggling show (eg: {display: block} and hide {display: none}):
 export const showLogin = (login) => ({
   type: types.SHOW_LOGIN,
   payload: login,
