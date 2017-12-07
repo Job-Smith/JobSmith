@@ -11,9 +11,8 @@ const userController = {
             next();
         })
         .catch(err => { 
-           console.log('REQ BODY IN ERROR',req.body);
            console.log('The error is', err);
-           res.status(404).send(err)
+           res.status(404).send(err);
        });
     },
 
@@ -36,7 +35,7 @@ const userController = {
         })
         .catch(err =>{ 
             console.log('The error is', err);
-            res.status(404).send(err)
+            res.status(404).send(err);
         });
     }
     
