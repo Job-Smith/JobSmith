@@ -1,4 +1,5 @@
-import * as types from '../constants/actionTypes'
+import * as types from '../constants/actionTypes';
+import * as views from '../constants/displayTypes.js';
 import axios from 'axios';
 
 // skills reducer
@@ -40,7 +41,6 @@ export const showLogoutButton = (logoutButton) => ({
   payload: logoutButton,
 });
 
-// add more action creators
 // question reducer
 export const replaceQuestions = (questions) => ({
   type: types.REPLACE_QUESTIONS,
@@ -52,18 +52,15 @@ export const expandAnswers = (questionId) => ({
   payload: questionId,
 });
 
-export const addQuestion = (question) => ({
-  type: types.ADD_QUESTION,
-  payload: question,
+export const addAnswer = (answerData) => ({
+  type: types.ADD_ANSWER,
+  payload: answerData,
 });
 
 export const fetchQuestions = (skillType) => {
-  console.log("fetchQuestions CALLED");
-  console.log("skillType", skillType);
   return (dispatch) => {
     axios.post('/getQuestions', { skill_id: skillType })
       .then((response) => {
-        console.log("response", response.data);
         dispatch(replaceQuestions(response.data));
       })
       .catch(function (error) {
@@ -73,11 +70,24 @@ export const fetchQuestions = (skillType) => {
 };
 
 export const saveQuestion = (questionData) => {
-  console.log('Save Question -> Actions', questionData);
   return (dispatch) => {
-    axios.post('/question', questionData)
+    axios.post('/saveQuestion', questionData)
       .then((response) => {
         dispatch(fetchQuestions(response.data.skill_id));
+        dispatch(changeView(views.REGULAR_VIEW));
+      })
+      .catch(function (error) {
+        console.log('Save Question ERROR: ', error);
+      });
+  };
+}
+
+export const saveAnswer = (answerData) => {
+  return (dispatch) => {
+    axios.post('/saveAnswer', answerData)
+      .then((response) => {
+console.log("saveAnswer response.data", response.data);
+        dispatch(addAnswer(response.data));
       })
       .catch(function (error) {
         console.log('Save Question ERROR: ', error);
