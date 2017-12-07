@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const userController = require('./controllers/UserController');
 const skillController = require('./controllers/SkillController');
-const questionConroller = require('./controllers/QuestionController');
+const questionConroller = require('./controllers//QuestionController.js');
 const answerController = require('./controllers/AnswerController');
 const QuestionskillController = require('./controllers/QuestionskillController')
 
@@ -49,8 +49,8 @@ app.post('/login', userController.postLogin)
     .post('/register', userController.postRegister)
     .get('/skills', skillController.getSkill)
     .post('/skills', skillController.updateSkill)
-    .post('/question', questionController.postQuestion)
-    .get('/question', questionController.getQuestion)
+    .post('/saveQuestion', questionController.postQuestion)
+    .post('/getQuestions', questionController.getQuestion)
     .post('/answer', answerController.postAnswer)
     .get('/answer', answerController.getAnswer)
     .post('/questionskill', QuestionskillController.postQuestionskill)

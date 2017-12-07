@@ -48,9 +48,12 @@ export const addQuestion = (question) => ({
 });
 
 export const fetchQuestions = (skillType) => {
+  console.log("fetchQuestions CALLED");
+  console.log("skillType", skillType);
   return (dispatch) => {
-    axios.get('/getQuestions', { skillType })
+    axios.post('/getQuestions', { skill_id: skillType })
       .then((response) => {
+        console.log("response", response.data);
         dispatch(replaceQuestions(response.data));
       })
       .catch(function (error) {
