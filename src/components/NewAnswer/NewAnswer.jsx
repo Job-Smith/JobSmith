@@ -8,9 +8,10 @@ import css from './NewAnswer.css';
 
 const NewAnswer = props => {
   
+  console.log("NewAnswer props", props);
    // props.saveAnswer() to save the answer
    // argument will be { rating, answer, user_id: props.user_id, question_id: props.question_id }
-  
+
   return (
     <div className='answerWrapper'>
       <form className='forumWrapper'>

@@ -26,6 +26,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.expandAnswers(questionId));
   },
   showNewAnswer: (questionId) => {
+    dispatch(actions.setSelectedQuestion(questionId));
     dispatch(actions.changeView(views.ANSWER_VIEW));
   },
   saveQuestion: (questionData) => {
@@ -63,7 +64,7 @@ class Display extends Component {
     } else if (this.props.display === views.ANSWER_VIEW) {
       return(
         <div className="displayContainer">
-          <NewAnswer saveAnswer={this.props.saveAnswer} user_id={1} question_id={2} />
+          <NewAnswer saveAnswer={this.props.saveAnswer} user_id={this.props.user.userId} question_id={this.props.user.selectedQuestion} />
         </div>  
       ); 
     } else { 
