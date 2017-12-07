@@ -1,25 +1,35 @@
 .menuContainer {
   display: flex;
   margin-top: 15px;
-  background-color: #B57CA8;
   flex-direction: column;
+  justify-content: center;
 }
 
 .skillsContainer {
   display: flex;
   margin-top: 15px;
-  background-color: #B57CA8;
   flex-direction: column;
 }
 
 .newQuestion {
-  display: inline-block;
+  display: flex;
   width: 120px;
-  height: 40px;
+  height: 60px;
+  line-height: 16px;
   margin: 0 auto;
   margin-top: 10px;
   text-align: center;
   border-radius: 4px;
   font-weight: bold;
   background-color: #B6B7BB;
+  text-align: center;
+  align-content: center;
+  justify-content: center;  
+  cursor:pointer;
+  background-color: white;
+  
+}
+.menutext {
+  justify-content: center;
+  align-content: center;
 }

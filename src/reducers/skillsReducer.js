@@ -8,9 +8,7 @@ const skillsReducer = (state=initialState, action) => {
   switch(action.type) {
 
     case types.UPDATE_SKILLS:
-      skills = state.slice();
-      skills = skills.concat(action.payload);
-      return skills;
+      return action.payload;
     
     default:
       return state;

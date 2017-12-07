@@ -4,6 +4,10 @@ import React from 'react';
 import css from './SkillsMarker.css';
 
 const SkillsMarker = props => {
+
+  if (!props.skill) {
+    return (<div></div>);  
+  }
     
   const { id, skill, color } = props.skill;
   
@@ -14,7 +18,7 @@ const SkillsMarker = props => {
   }
 
   return (
-    <div className='marker' style={ {backgroundColor: color} } onClick={markerClick} data-id={id} >
+    <div className='marker'style={ {backgroundColor: color} } onClick={markerClick} data-id={id} >
       {skill}
     </div>
   );

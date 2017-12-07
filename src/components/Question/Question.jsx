@@ -9,7 +9,7 @@ import QuestionButton from './../QuestionButton/QuestionButton.jsx'
 import css from './Question.css';
 
 const Question = props => {
-
+    
   const { question } = props;
   const answers = question.answers;
   const answerList = [];

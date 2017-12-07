@@ -1,8 +1,11 @@
-
+html {
+  font-family: sans-serif;
+}
 .answer {
   display: flex;
   margin-top: 5px;
-  width: 100%;
+  width: 97.5%;
   min-height: 40px;
-  background-color: #F77805;
+  font-style: italic;
+  overflow: scroll;
 }

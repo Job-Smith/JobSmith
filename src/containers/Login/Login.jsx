@@ -52,7 +52,6 @@ const mapDispatchToProps = dispatch => ({
 // if login credentials are correct, submit action to store to change loginRecur's display to 'none'
 
 function sendCredentials (that) {
-  console.log('this inside of sendCredentials', that);
   axios.post('/login', {
     // email: 'woojun@gmail.com',
     email: document.getElementById('loginEmail').value,
@@ -60,14 +59,16 @@ function sendCredentials (that) {
     password: document.getElementById('loginPassword').value
   })
   .then(function (response) {
-    console.log(response);
     document.getElementById('loginEmail').value = '';
     document.getElementById('loginPassword').value = '';
     that.props.showLogin('none');
     that.props.showLogoutButton('block'); 
     that.props.showMain('block');      
     that.props.setUser(response.data.id);
+<<<<<<< HEAD
     console.log('USER PROPS IN LOGIN', that.props.user)
+=======
+>>>>>>> e03c5f4a021679a5bc180a8810b9475a51691844
   })
   .catch(function (error) {
     console.log('error:', error);
@@ -85,11 +86,6 @@ function hideLoginShowSignUp (that) {
 class LoginContainer extends Component {
   constructor(props) {
     super(props);
-  }
-
-  // for testing:
-  componentDidMount() {
-    console.log('PROPS IN LOGIN', this.props);
   }
 
   render() {

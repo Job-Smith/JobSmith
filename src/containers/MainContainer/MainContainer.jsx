@@ -142,8 +142,14 @@ class MainContainer extends Component {
     return (
       <div className="container" style={{display: this.props.showMain}}>
         <div className="top">
-          <h1 id="header">JobSmith</h1>
-          <button id="logoutBtn" style={{display: this.props.logoutButton}} onClick={() => this.props.showLoginAndHideLogoutButton('block', this)}>Logout</button>
+        <img className ='logo' src="https://www.codesmith.io/images/main/codesmith-logo-md.png" />
+          <div id="header"><p className ='headertext'>JobSmith</p> 
+          <p>be awesome, get shouted out at family dinner</p>
+          </div>
+          {/* <button id="loginBtn" style={{display: this.props.loginButton}} onClick={() => this.props.showLogin('block')}>Login</button> */}
+          <div className='logoutdiv'>
+          <button id="logoutBtn" style={{display: this.props.logoutButton, "height":"20px"}} onClick={() => this.props.showLoginAndHideLogoutButton('block')}>Logout</button>
+          </div>
         </div>
         <div className="bottom">
           <div className="left">
@@ -152,9 +158,9 @@ class MainContainer extends Component {
           <div className="display">
             <Display />
           </div>
-          <div className="right">
+          {/* <div className="right">
             Right
-          </div>
+          </div> */}
         </div>
       </div>  
     )
