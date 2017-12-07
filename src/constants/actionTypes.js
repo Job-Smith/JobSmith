@@ -12,5 +12,9 @@ export const REPLACE_QUESTIONS = "REPLACE_QUESTIONS";
 export const EXPAND_ANSWERS = "EXPAND_ANSWERS";
 export const ADD_ANSWER = "ADD_ANSWER";
 
+// user reducer
+export const SET_USER = "SET_USER";
+export const SET_QUESTION = "SET_QUESTION";
+
 // display reducer
 export const CHANGE_VIEW = "CHANGE_VIEW";

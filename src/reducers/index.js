@@ -17,7 +17,8 @@ const reducers = combineReducers({
   // loginButton: showLoginButtonReducer,
   logoutButton: logoutButtonReducer,
   questions: questionsReducer,
-  display: displayReducer
+  display: displayReducer,
+  user: userReducer 
 });
 
 // make the combined reducers available for import

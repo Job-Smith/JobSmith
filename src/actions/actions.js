@@ -95,6 +95,17 @@ console.log("saveAnswer response.data", response.data);
   };
 }
 
+// user reducer
+export const setUser = (userId) => ({
+  type: types.SET_USER,
+  payload: userId,
+});
+
+export const setSelectedQuestion = (questionId) => ({
+  type: types.SET_QUESTION,
+  payload: questionId,
+});
+
 // display reducer
 export const changeView = (view) => ({
   type: types.CHANGE_VIEW,
