@@ -82,12 +82,12 @@ export const saveQuestion = (questionData) => {
         dispatch(changeView(views.REGULAR_VIEW));
       })
       .catch(function (error) {
-        console.info('Save Question ERROR: ', error);
       });
   };
 }
 
 export const saveAnswer = (answerData) => {
+console.log("saveAnswer answerData", answerData);
   return (dispatch) => {
     axios.post('/saveAnswer', answerData)
       .then((response) => {
