@@ -7,7 +7,7 @@ import signUpReducer from './signUpReducer';
 import questionsReducer from './questionsReducer';
 import displayReducer from './displayReducer.js';
 import userReducer from './userReducer';
-// import showLoginButtonReducer from './showLoginButtonReducer';
+// import showLoginButtonReducer from './showLoginButtonReducer'; 
 import logoutButtonReducer from './logoutButtonReducer';
 
 // combine reducers

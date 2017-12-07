@@ -64,7 +64,6 @@ export const fetchQuestions = (skillType) => {
         dispatch(replaceQuestions(response.data));
       })
       .catch(function (error) {
-        console.log('Fetch Questions ERROR: ', error);
       });
   };
 };
@@ -77,7 +76,7 @@ export const saveQuestion = (questionData) => {
         dispatch(changeView(views.REGULAR_VIEW));
       })
       .catch(function (error) {
-        console.log('Save Question ERROR: ', error);
+        console.info('Save Question ERROR: ', error);
       });
   };
 }
