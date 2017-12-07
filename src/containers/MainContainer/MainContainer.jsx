@@ -54,7 +54,7 @@ const mapDispatchToProps = dispatch => ({
     const data = [  { 
                       id: 100,
                       question: 'What is recursion?',
-                      skills_id: 1,
+                      skill_id: 1,
                       company: 'Amazon',
                       date: new Date('01/02/2001'),
                       answers: [
@@ -69,7 +69,7 @@ const mapDispatchToProps = dispatch => ({
                     {
                       id: 101,
                       question: "'use strict' at the beginning of a JavaScript source file - what and why?",
-                      skills_id: 1,
+                      skill_id: 1,
                       company: 'Google',
                       date: new Date('02/03/2002'),
                       answers: [
@@ -84,7 +84,7 @@ const mapDispatchToProps = dispatch => ({
                     {
                       id: 102,
                       question: 'Map, Reduce, Filter',
-                      skills_id: 1,
+                      skill_id: 1,
                       company: 'Facebook',
                       date: new Date('03/04/2003'),
                       answers: [
@@ -114,6 +114,7 @@ const mapDispatchToProps = dispatch => ({
 
 class MainContainer extends Component {
   constructor(props) {
+      console.log("props", props);
     super(props);
   }
 
@@ -123,15 +124,13 @@ class MainContainer extends Component {
                    { id: 2, skill: 'Java', color: '#E51742' }, 
                    { id: 3, skill: 'HTML', color: '#E517AC' }, 
                    { id: 4, skill: 'CSS', color: '#5417E5' } ];
-    this.props.updateSkills(data); 
 
-    
-    // this.props.fetchSkills();
-    // this.props.showLogin('none');
+    this.props.updateSkills(data); 
+    // // this.props.fetchSkills();
   }
 
   render() {
-    return(
+    return (
       <div className="container">
         <div className="top">
           <h1 id="header">JobSmith</h1>
@@ -140,7 +139,7 @@ class MainContainer extends Component {
         </div>
         <div className="bottom">
           <div className="left">
-            <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} showAddQuestion={this.props.showAddQuestion}/>
+           <SkillsMenu skills={this.props.skills} markerClicked={this.props.markerClicked} showAddQuestion={this.props.showAddQuestion}/>
           </div>
           <div className="display">
             <Display />
