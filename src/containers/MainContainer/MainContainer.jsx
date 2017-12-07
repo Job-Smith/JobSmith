@@ -116,7 +116,6 @@ class MainContainer extends Component {
     
 
     // this.props.fetchSkills();
-    this.props.showLogin('block');
   }
 
   render() {
