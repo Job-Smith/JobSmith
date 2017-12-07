@@ -1,7 +1,7 @@
 import * as types from '../constants/actionTypes';
 import * as views from '../constants/displayTypes.js';
 
-const initialState = { userId: -1, selectedQuestion: -1, showOther: false };
+const initialState = { userId: -1, selectedQuestion: -1, displayOther: 'none' };
 
 const userReducer = (state=initialState, action) => {
     
@@ -14,10 +14,9 @@ const userReducer = (state=initialState, action) => {
       };
 
     case types.TOGGLE_SHOW_OTHER:
-      const newOther = !state.showOther;
       return { 
         ...state,
-        showOther: newOther
+        displayOther: action.payload
       };  
 
     case types.SET_QUESTION:
