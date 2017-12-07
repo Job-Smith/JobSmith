@@ -25,7 +25,7 @@ const mapStateToProps = store => ({
   login: store.login,
   signUp: store.signUp,
   logoutButton: store.logoutButton,
-  // user: store.user
+  user: store.user,
   showMain: store.showMain
 });
 
@@ -65,6 +65,7 @@ function sendCredentials (that) {
     that.props.showLogoutButton('block'); 
     that.props.showMain('block');      
     that.props.setUser(response.data.id);
+    console.log('USER PROPS IN LOGIN', that.props.user)
   })
   .catch(function (error) {
     console.log('error:', error);
@@ -85,6 +86,7 @@ class LoginContainer extends Component {
   }
 
   render() {
+    console.log('props in login container', this.props.user);
     return(
       <div id="loginContainer" style={{display: this.props.login}}>
         <div id="loginOuterBox">

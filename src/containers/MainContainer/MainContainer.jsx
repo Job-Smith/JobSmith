@@ -17,9 +17,8 @@ const mapStateToProps = store => ({
     skills: store.skills,
     login: store.login,
     logoutButton: store.logoutButton,
-    ///////// this importing of main here for testing:///////
-    showMain: store.showMain 
-    ///////////////////////////////////////   
+    showMain: store.showMain,
+    user: store.user
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -36,11 +35,19 @@ const mapDispatchToProps = dispatch => ({
   showAddQuestion: () => {
     dispatch(actions.changeView(views.QUESTION_VIEW));
   },
-  showLoginAndHideLogoutButton: (login) => {
+  setUser: (userId) => {
+    console.log('userIdINSETUSER', userId);    
+    dispatch(actions.setUser(userId));
+  },
+  showLoginAndHideLogoutButton: (login, that) => {
     dispatch(actions.showLogin(login));
     // hide logout button:
     dispatch(actions.showLogoutButton('none'));
+    let newUserId = -1;
+    that.props.setUser(newUserId);
     dispatch(actions.showMain('none'));
+    // dispatch(actions.setUser(-1));
+    console.log('USER STATUS', that.props.user);
   },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
@@ -141,7 +148,7 @@ class MainContainer extends Component {
           </div>
           {/* <button id="loginBtn" style={{display: this.props.loginButton}} onClick={() => this.props.showLogin('block')}>Login</button> */}
           <div className='logoutdiv'>
-          <button id="logoutBtn" style={{display: this.props.logoutButton, "height":"20px"}} onClick={() => this.props.showLoginAndHideLogoutButton('block')}>Logout</button>
+          <button id="logoutBtn" style={{display: this.props.logoutButton, "height":"20px"}} onClick={() => this.props.showLoginAndHideLogoutButton('block', this)}>Logout</button>
           </div>
         </div>
         <div className="bottom">
