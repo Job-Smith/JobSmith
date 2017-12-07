@@ -26,6 +26,11 @@ const mapDispatchToProps = dispatch => ({
   },
   showNewAnswer: (questionId) => {
     dispatch(actions.changeView(views.ANSWER_VIEW));
+  },
+  saveQuestion: (questionData) => {
+    const testObj = { question: 'test question', skill_id: 1, company: 'nasa' }; 
+    // dispatch(actions.saveQuestion(questionData));
+    dispatch(actions.saveQuestion(testObj));
   }
 });
 
@@ -39,7 +44,7 @@ class Display extends Component {
     if (this.props.display === views.QUESTION_VIEW) {
       return(
         <div className="displayContainer">
-          <NewQuestion skills={this.props.skills} />
+          <NewQuestion skills={this.props.skills} saveQuestion={this.props.saveQuestion} />
         </div>  
       );   
     } else if (this.props.display === views.ANSWER_VIEW) {

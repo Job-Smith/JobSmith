@@ -11,7 +11,6 @@ export const fetchSkills = () => {
   return (dispatch) => {
     axios.get('/skills')
       .then((response) => {
-        console.log(response.data);    
         dispatch(updateSkills(response.data));
       })
       .catch(function (error) {
@@ -57,6 +56,31 @@ export const addQuestion = (question) => ({
   type: types.ADD_QUESTION,
   payload: question,
 });
+
+export const fetchQuestions = (skillType) => {
+  return (dispatch) => {
+    axios.get('/getQuestions', { skillType })
+      .then((response) => {
+        dispatch(replaceQuestions(response.data));
+      })
+      .catch(function (error) {
+        console.log('Fetch Questions ERROR: ', error);
+      });
+  };
+};
+
+export const saveQuestion = (questionData) => {
+  console.log('Save Question -> Actions', questionData);
+  return (dispatch) => {
+    axios.post('/question', questionData)
+      .then((response) => {
+        dispatch(fetchQuestions(response.data.skill_id));
+      })
+      .catch(function (error) {
+        console.log('Save Question ERROR: ', error);
+      });
+  };
+}
 
 // display reducer
 export const changeView = (view) => ({

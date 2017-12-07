@@ -21,11 +21,15 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+
+////////////////////////////////////////  
+// To be removed after hard coding is removed 
   updateSkills: (skills) => {
     dispatch(actions.updateSkills(skills));
   },
+//////////////////////////////////////  
   fetchSkills: () => {
-    console.log(fetchSkills);
+    console.log('fetchSkills');
     dispatch(actions.fetchSkills());
   },
   showAddQuestion: () => {
@@ -45,16 +49,7 @@ const mapDispatchToProps = dispatch => ({
   },
   markerClicked:(skillType) => {
     dispatch(actions.changeView(views.REGULAR_VIEW));
-    //DO AJAX HERE??
-    // axios.post('/getQuestions', { 
-    //     skillType 
-    //   })
-    //   .then((response) => {
-    //     dispatch(actions.replaceQuestions(response));    
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
+    // dispatch(actions.fetchQuestions(skillType));
 
     const data = [  { 
                       id: 100,
@@ -139,6 +134,13 @@ class MainContainer extends Component {
     //                { id: 3, skill: 'HTML', color: '#E517AC' }, 
     //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
     // this.props.updateSkills(data); 
+    const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
+                   { id: 2, skill: 'Java', color: '#E51742' }, 
+                   { id: 3, skill: 'HTML', color: '#E517AC' }, 
+                   { id: 4, skill: 'CSS', color: '#5417E5' } ];
+    this.props.updateSkills(data); 
+    
+
     // this.props.fetchSkills();
     // this.props.showLogin('block');
   }
