@@ -16,7 +16,8 @@ import css from './Display.css';
 const mapStateToProps = store => ({
     questions: store.questions,
     skills: store.skills,
-    display: store.display
+    display: store.display,
+    user: store.user
 });
 
 
@@ -32,6 +33,9 @@ const mapDispatchToProps = dispatch => ({
   },
   saveAnswer: (answerData) => {
     dispatch(actions.saveAnswer(answerData));
+  },
+  toggleShowOther: () => {
+    dispatch(actions.toggleShowOther());
   },
   getAllQuestions: () => {
     dispatch(actions.fetchQuestions());
@@ -52,7 +56,7 @@ class Display extends Component {
     if (this.props.display === views.QUESTION_VIEW) {
       return(
         <div className="displayContainer">
-          <NewQuestion skills={this.props.skills} saveQuestion={this.props.saveQuestion} />
+          <NewQuestion skills={this.props.skills} saveQuestion={this.props.saveQuestion} showOther={1} toggleShowOther={this.props.user.showOther} />
         </div>  
       );   
     } else if (this.props.display === views.ANSWER_VIEW) {
