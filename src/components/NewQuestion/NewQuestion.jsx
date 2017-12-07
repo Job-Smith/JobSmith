@@ -12,6 +12,8 @@ const NewQuestion = props => {
   // to save call props.saveQuestion({question, skill_id, compa})
   // must have an object as it's only argument in the format of 
   // { question: <questionString>, skill_id: <skill_id>, company: <company name>}
+  // props.showOther - true or false - defaults to false 
+  // props.toggleShowOther() will change the setting of showOther.
 
 
   function sendQuestion() {

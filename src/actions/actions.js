@@ -106,6 +106,10 @@ export const setSelectedQuestion = (questionId) => ({
   payload: questionId,
 });
 
+export const toggleShowOther = () => ({
+  type: types.TOGGLE_SHOW_OTHER,
+});
+
 // display reducer
 export const changeView = (view) => ({
   type: types.CHANGE_VIEW,
