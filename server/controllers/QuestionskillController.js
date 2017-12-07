@@ -1,7 +1,7 @@
 const db = require('../models/database');
 const Questionskill = require('../models/questionskillModel');
 
-questionskillController = {
+const questionskillController = {
     postQuestionskill(req,res,next) {
         let questionskill = new Questionskill({
             skill_id: req.body.skill_id,

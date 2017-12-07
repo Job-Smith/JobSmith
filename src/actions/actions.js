@@ -19,7 +19,7 @@ export const fetchSkills = () => {
   };
 };
 
-//login reducer
+// reducers for toggling show (display: block) and hide (display: none):
 export const showLogin = (login) => ({
   type: types.SHOW_LOGIN,
   payload: login,
@@ -28,6 +28,16 @@ export const showLogin = (login) => ({
 export const showSignUp = (signup) => ({
   type: types.SHOW_SIGNUP,
   payload: signup,
+});
+
+// export const showLoginButton = (loginButton) => ({
+//   type: types.SHOW_LOGIN_BUTTON,
+//   payload: loginButton,
+// });
+
+export const showLogoutButton = (logoutButton) => ({
+  type: types.SHOW_LOGOUT_BUTTON,
+  payload: logoutButton,
 });
 
 // add more action creators
@@ -48,9 +58,12 @@ export const addQuestion = (question) => ({
 });
 
 export const fetchQuestions = (skillType) => {
+  console.log("fetchQuestions CALLED");
+  console.log("skillType", skillType);
   return (dispatch) => {
-    axios.get('/getQuestions', { skillType })
+    axios.post('/getQuestions', { skill_id: skillType })
       .then((response) => {
+        console.log("response", response.data);
         dispatch(replaceQuestions(response.data));
       })
       .catch(function (error) {
@@ -60,14 +73,14 @@ export const fetchQuestions = (skillType) => {
 };
 
 export const saveQuestion = (questionData) => {
-  console.log('Save Question...');
+  console.log('Save Question -> Actions', questionData);
   return (dispatch) => {
-    axios.post('/question', { questionData })
+    axios.post('/question', questionData)
       .then((response) => {
-        dispatch(replaceQuestions(response.data));
+        dispatch(fetchQuestions(response.data.skill_id));
       })
       .catch(function (error) {
-        console.log('Fetch Questions ERROR: ', error);
+        console.log('Save Question ERROR: ', error);
       });
   };
 }

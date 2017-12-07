@@ -28,7 +28,9 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.changeView(views.ANSWER_VIEW));
   },
   saveQuestion: (questionData) => {
-    dispatch(actions.saveQuestion(questionData));
+    const testObj = { question: 'test question', skill_id: 1, company: 'nasa' }; 
+    // dispatch(actions.saveQuestion(questionData));
+    dispatch(actions.saveQuestion(testObj));
   }
 });
 
