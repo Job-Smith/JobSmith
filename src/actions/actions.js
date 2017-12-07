@@ -41,6 +41,12 @@ export const showLogoutButton = (logoutButton) => ({
   payload: logoutButton,
 });
 
+export const obfuscateMain = (main) => ({
+  type: types.OBFUSCATE_MAIN,
+  payload: main,
+});
+
+// add more action creators
 // question reducer
 export const replaceQuestions = (questions) => ({
   type: types.REPLACE_QUESTIONS,
@@ -76,12 +82,12 @@ export const saveQuestion = (questionData) => {
         dispatch(changeView(views.REGULAR_VIEW));
       })
       .catch(function (error) {
-        console.info('Save Question ERROR: ', error);
       });
   };
 }
 
 export const saveAnswer = (answerData) => {
+console.log("saveAnswer answerData", answerData);
   return (dispatch) => {
     axios.post('/saveAnswer', answerData)
       .then((response) => {

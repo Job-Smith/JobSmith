@@ -8,7 +8,7 @@
     height: 100%;
     background-color: grey;
     z-index: 1000;
-    opacity: 0.6;
+    opacity: 1;
     position: fixed;    
     padding-top: 30px;
     margin: 0px;
@@ -16,20 +16,48 @@
 #signUpOuterBox {
     width: 400px;
     height: 400px;
-    background-color: greenyellow;
+    background-color: white;
     margin: 0 auto;
     z-index: 2000;
+    border: solid grey 2px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    padding: 100px;
+		box-shadow: 1px 5px 5px 5px grey;  
+		opacity: none;  
 }
 #signUpHeader {
     width: 200px;
     height: 40px;
-    background-color: red;
     text-align: center;
     margin: auto;
-    z-index: 2000;
+		z-index: 2000;
 }
 #signUpForm {
-    background-color: rgb(221, 210, 61);
     margin: auto;
-    z-index: 2000;
+}
+#signUpName {
+	width: 90%;
+	height: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#email {
+	width: 90%;
+	height: 20px;
+	margin-bottom: 10px;	
+}
+#signUpPassword {
+	width: 90%;
+	height: 20px;
+	margin-bottom: 10px;
+}
+#submitBtn {
+  width: 90%; 
+  position: center;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 16px;
 }

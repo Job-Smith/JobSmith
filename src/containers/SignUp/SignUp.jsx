@@ -82,13 +82,13 @@ class SignUpContainer extends Component {
           <h1 id="signUpHeader">Sign Up</h1>
           { /* Start adding components here... */ }
           <form id="signUpForm">
-            <h2>Name</h2><br></br>
-            <input id="signUpName" type="text" name="name"></input><br></br>
-            <h2>Email</h2><br></br>
-            <input id="email" type="text" name="name"></input><br></br>
-            <h2>Password</h2><br></br>
-            <input id="signUpPassword" type="password" name="password"></input>
-            <input type="button" value="Submit" onClick={() => signUpUser(this)}></input>
+            {/* <h2>Name</h2><br></br> */}
+            <input id="signUpName" type="text" name="name" placeholder="Name"></input><br></br>
+            {/* <h2>Email</h2><br></br> */}
+            <input id="email" type="text" name="name" placeholder="Email"></input><br></br>
+            {/* <h2>Password</h2><br></br> */}
+            <input id="signUpPassword" type="password" name="password" placeholder="Password"></input>
+            <input id="submitBtn" type="button" value="Submit" onClick={() => signUpUser(this)}></input>
           </form>
         </div>
       </div>

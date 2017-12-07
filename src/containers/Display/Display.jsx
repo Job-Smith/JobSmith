@@ -33,6 +33,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.saveQuestion(questionData));
   },
   saveAnswer: (answerData) => {
+console.log("answerData", answerData);
     dispatch(actions.saveAnswer(answerData));
   },
   setDisplayOther: (displayType) => {
