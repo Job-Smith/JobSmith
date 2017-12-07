@@ -21,7 +21,7 @@ export const fetchSkills = () => {
 };
 
 export const saveSkill = (questionData, skillsLength) => {
-  const colours = ['#D15656', '#DB7B34', '#C5BE3F', '#A6DB45', '#276C2D', '#8396AC', '#9568B2', '#CB61C9', '#3ED5AC', '#F1CC1F'];
+  const colours = ['#D15656', '#CB61C9', '#DB7B34', '#C5BE3F', '#A6DB45', '#8396AC', '#9568B2', '#276C2D', '#3ED5AC', '#F1CC1F'];
   function getNextColor() {
     return colours[skills.length % 10];
   }
