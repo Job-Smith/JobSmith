@@ -12,7 +12,6 @@ questionController = {
       date: moment().format(),
     };
     
-    console.log("newQuestion", newQuestion);
     let query = {
       text: 'INSERT INTO "questions" (question, skill_id, company, date) VALUES($1, $2, $3, $4) returning *',
       values: [newQuestion.question, newQuestion.skill_id, newQuestion.company, newQuestion.date]
@@ -20,7 +19,6 @@ questionController = {
 
    db.conn.one(query)
     .then(postQuestion => {
-        console.log("postQuestion", postQuestion);
       res.status(200).send(postQuestion)
       next();
     })

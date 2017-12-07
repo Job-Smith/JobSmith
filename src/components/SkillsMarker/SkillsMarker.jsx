@@ -4,6 +4,10 @@ import React from 'react';
 import css from './SkillsMarker.css';
 
 const SkillsMarker = props => {
+
+  if (!props.skill) {
+    return (<div></div>);  
+  }
     
   const { id, skill, color } = props.skill;
   
