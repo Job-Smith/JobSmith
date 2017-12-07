@@ -100,13 +100,16 @@ export const saveQuestion = (questionData) => {
 }
 
 export const saveAnswer = (answerData) => {
+console.log("Action saveAnswer answerData", answerData);
   return (dispatch) => {
     axios.post('/saveAnswer', answerData)
       .then((response) => {
+console.log("Action saveAnswer response", response);
         dispatch(addAnswer(response.data));
         dispatch(changeView(views.REGULAR_VIEW));
       })
       .catch(function (error) {
+console.log("Action saveAnswer error", error);        
       });
   };
 }
