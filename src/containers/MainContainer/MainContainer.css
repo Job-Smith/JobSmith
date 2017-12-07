@@ -46,7 +46,7 @@
   background-color: #46AAE8;  
 }
 .header {
-  display:text;
+  display:flex;
   justify-content: center;
 }
 .headertext {
@@ -59,4 +59,15 @@
 .logo {
   position:absolute;
   opacity:.3;
+}
+#logoutBtn {
+  height:20px;
+  cursor:pointer;
+}
+.logoutdiv {
+  width:100vw;
+  height:20vh;
+  display:flex;
+  justify-content:flex-end;
+  position: absolute;
 }

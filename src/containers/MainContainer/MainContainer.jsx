@@ -139,8 +139,9 @@ class MainContainer extends Component {
           <p>be awesome, get shouted out at family dinner</p>
           </div>
           {/* <button id="loginBtn" style={{display: this.props.loginButton}} onClick={() => this.props.showLogin('block')}>Login</button> */}
-
-          <button id="logoutBtn" style={{display: this.props.logoutButton}} onClick={() => this.props.showLoginAndHideLogoutButton('block')}>Logout</button>
+          <div className='logoutdiv'>
+          <button id="logoutBtn" style={{display: this.props.logoutButton, "height":"20px"}} onClick={() => this.props.showLoginAndHideLogoutButton('block')}>Logout</button>
+          </div>
         </div>
         <div className="bottom">
           <div className="left">
