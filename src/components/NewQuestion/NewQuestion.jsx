@@ -61,8 +61,8 @@ const NewQuestion = props => {
             Skill
             <input id='skillType' type='text'></input>
           </label>
+          <button value='Submit' onClick={() => sendQuestion()}>Submit</button>
         </div>
-        <button value='Submit' onClick={() => sendQuestion()}>Submit</button>
       </div>
     </div>
   );
