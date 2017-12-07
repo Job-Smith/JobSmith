@@ -1,22 +1,11 @@
 import React from 'react';
-
-// import from child components...
-// import Question from './../Question/Question.jsx'
-
 import SkillOption from './../SkillOption/SkillOption.jsx';
+
 // Import css
 import css from './NewQuestion.css';
 
 const NewQuestion = props => {
-
-  // to save call props.saveQuestion({question, skill_id, compa})
-  // must have an object as it's only argument in the format of 
-  // { question: <questionString>, skill_id: <skill_id>, company: <company name>}
-
-
-  // props.displayOther -  defaults to 'none' 
-  // props.setDisplayOther() will change the setting of displayOther. So set it to 'block' or back to 'none'
-
+    
   /**
    * send questions by invoking props.saveQuestion(question object)
    */
@@ -24,29 +13,23 @@ const NewQuestion = props => {
     const question = document.getElementById('questionInput').value;
     const e = document.getElementById('skillList');
     const skill_id = e.options[e.selectedIndex].getAttribute('values');
+    const skillType =  document.getElementById('skillType').value;
+console.log("NewQuestion.jsx skillType", skillType);
     const company = document.getElementById('company').value;
-    console.log(question, skill_id, company);
     if (question === "" || skill_id === "" || company === "") {
       alert('Please enter all the required fields');
     }
-    // console.log(props.saveQuestion);
-    props.saveQuestion({question, skill_id, company});
+    props.saveQuestion({question, skill_id, company, skillType}, props.skills);
   }
   
-  function createElement() {
-    let element = document.createElement('label');
-    console.log(element);
-  }
   function addSkill() {
-
     const selectionOption = document.getElementById('skillList').value;
     if (selectionOption === 'Other') {
-      createElement();
+      props.setDisplayOther('block');
     } else {
-      console.log('no element');
+      props.setDisplayOther('none');
     }
   }
-
   /**
    * creating options tags for skills
    */
@@ -55,11 +38,9 @@ const NewQuestion = props => {
       options.push(<SkillOption key={index} skill_id = {objElement.id} skill = {objElement.skill}/>);
   });
   options.push(<option key={options.length} values = {options.length+1}>Other</option>)
-
   /**
    * Event Listener selecting option 'other'
    */
-
   return (
     <div className='questionWrapper'>
       <div className='forumWrapper'>
@@ -76,12 +57,14 @@ const NewQuestion = props => {
             Company
             <input id='company' type='text'></input>
           </label>
-          <button value='Submit' onClick={() => sendQuestion()}>Submit</button>
-
+          <label style={{'display' : props.displayOther}}>
+            Skill
+            <input id='skillType' type='text'></input>
+          </label>
         </div>
+        <button value='Submit' onClick={() => sendQuestion()}>Submit</button>
       </div>
     </div>
   );
 };
-
 export default NewQuestion;

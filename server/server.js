@@ -48,7 +48,7 @@ app.use('/', express.static(__dirname + '/../assets'));
 app.post('/login', userController.postLogin)
     .post('/register', userController.postRegister)
     .get('/skills', skillController.getSkill)
-    .post('/skills', skillController.updateSkill)
+    .post('/saveSkill', skillController.updateSkill) 
     .post('/saveQuestion', questionController.postQuestion)
     .post('/getQuestions', questionController.getQuestion)
     .post('/saveAnswer', answerController.postAnswer)
