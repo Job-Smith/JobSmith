@@ -20,7 +20,7 @@ const userReducer = (state=initialState, action) => {
       };  
 
     case types.SET_QUESTION:
-      return return { 
+      return { 
         ...state, 
         selectedQuestion: action.payload 
       };
@@ -30,4 +30,4 @@ const userReducer = (state=initialState, action) => {
   }
 };
 
-export default displayReducer;
+export default userReducer;
