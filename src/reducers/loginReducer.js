@@ -6,6 +6,9 @@ import * as types from '../constants/actionTypes';
 
 const initialState = 'block';
 
+// TESTING ONLY to hide sign in page
+// const initialState = 'none';
+
 const loginReducer = (state=initialState, action) => {
 //   let login;
   switch(action.type) {

@@ -2,7 +2,7 @@ const db = require('../models/database');
 const Answer = require('../models/answerModel');
 const moment = require('moment');
 
-answerController = {
+const answerController = {
     postAnswer(req, res, next) {
         let newAnswer = new Answer({
             answer: req.body.answer,

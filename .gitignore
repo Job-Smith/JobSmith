@@ -1,3 +1,5 @@
+public/bundle.js
+
 # Logs
 logs
 *.log
@@ -57,5 +59,6 @@ typings/
 # dotenv environment variables file
 .env
 
-#webpack bundle
+# bundle
 bundle.js
+

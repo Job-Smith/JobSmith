@@ -118,31 +118,16 @@ class MainContainer extends Component {
   }
 
   componentDidMount() {
-    console.log('PROPS IN MAIN CONTAINER:', this.props);
-    // const update = this.props.updateSkills;
-    // DO AJAX HERE??
-    // axios.get('/skills')
-    //   .then((response) => {
-    //     update(response.data);    
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-    //Do AJAX request to get skills ....
-    // const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
-    //                { id: 2, skill: 'Java', color: '#E51742' }, 
-    //                { id: 3, skill: 'HTML', color: '#E517AC' }, 
-    //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
-    // this.props.updateSkills(data); 
+
     const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
                    { id: 2, skill: 'Java', color: '#E51742' }, 
                    { id: 3, skill: 'HTML', color: '#E517AC' }, 
                    { id: 4, skill: 'CSS', color: '#5417E5' } ];
     this.props.updateSkills(data); 
-    
 
+    
     // this.props.fetchSkills();
-    // this.props.showLogin('block');
+    // this.props.showLogin('none');
   }
 
   render() {

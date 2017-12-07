@@ -24,7 +24,7 @@
   text-align: center;
 }
 
-.questionInput {
+#questionInput {
   display: block;
   position: relative;
   margin: auto;
