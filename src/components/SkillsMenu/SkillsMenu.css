@@ -14,7 +14,8 @@
 .newQuestion {
   display: flex;
   width: 120px;
-  height: 40px;
+  height: 60px;
+  line-height: 16px;
   margin: 0 auto;
   margin-top: 10px;
   text-align: center;
