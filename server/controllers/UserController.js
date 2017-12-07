@@ -10,7 +10,7 @@ const userController = {
             res.status(200).send({'msg': 'Login successful', 'id': postLogin.id});
             next();
         })
-        .catch(err =>{ 
+        .catch(err => { 
            console.log('REQ BODY IN ERROR',req.body);
            console.log('The error is', err);
            res.status(404).send(err)
