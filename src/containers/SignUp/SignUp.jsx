@@ -26,8 +26,8 @@ const mapStateToProps = store => ({
   // totalMarkets: store.markets.totalMarkets
   // login: store.login,
   // import signUp from store
-  signUp: store.signUp
-  // signUp: store.signUp
+  signUp: store.signUp,
+  logoutButton: store.logoutButton
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -37,6 +37,9 @@ const mapDispatchToProps = dispatch => ({
   // },
   showSignUp: (signUp) => {
     dispatch(actions.showSignUp(signUp));
+  },
+  showLogoutButton: (logoutButton) => {
+    dispatch(actions.showLogoutButton(logoutButton));
   }
 });
 
@@ -55,10 +58,11 @@ function signUpUser (that) {
   .then(function (response) {
     console.log('response:', response.data);
     // that.props.showLogin('none');
-    document.getElementById('signUpName').value = "";
-    document.getElementById('email').value = "";
-    document.getElementById('signUpPassword').value = "";
-    that.props.showSignUp('none');    
+    document.getElementById('signUpName').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('signUpPassword').value = '';
+    that.props.showSignUp('none');   
+    that.props.showLogoutButton('block'); 
   })
   .catch(function (error) {
     console.log('error:', error);
