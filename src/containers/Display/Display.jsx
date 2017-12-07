@@ -34,8 +34,8 @@ const mapDispatchToProps = dispatch => ({
   saveAnswer: (answerData) => {
     dispatch(actions.saveAnswer(answerData));
   },
-  toggleShowOther: () => {
-    dispatch(actions.toggleShowOther());
+  setDisplayOther: (displayType) => {
+    dispatch(actions.displayOther(displayType));
   },
   getAllQuestions: () => {
     dispatch(actions.fetchQuestions());
@@ -56,7 +56,8 @@ class Display extends Component {
     if (this.props.display === views.QUESTION_VIEW) {
       return(
         <div className="displayContainer">
-          <NewQuestion skills={this.props.skills} saveQuestion={this.props.saveQuestion} showOther={1} toggleShowOther={this.props.user.showOther} />
+          <NewQuestion skills={this.props.skills} saveQuestion={this.props.saveQuestion} displayOther={this.props.user.displayOther} 
+                       setDisplayOther={this.props.setDisplayOther} />
         </div>  
       );   
     } else if (this.props.display === views.ANSWER_VIEW) {

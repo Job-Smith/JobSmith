@@ -106,8 +106,9 @@ export const setSelectedQuestion = (questionId) => ({
   payload: questionId,
 });
 
-export const toggleShowOther = () => ({
+export const displayOther = (displayType) => ({
   type: types.TOGGLE_SHOW_OTHER,
+  payload: displayType,
 });
 
 // display reducer
