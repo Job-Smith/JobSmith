@@ -53,5 +53,10 @@
   justify-content: center;
   align-items: center;
   font-size:45px;
+  margin-bottom:20px;
   text-align: center;
+}
+.logo {
+  position:absolute;
+  opacity:.3;
 }
