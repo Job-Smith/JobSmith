@@ -17,9 +17,8 @@ const mapStateToProps = store => ({
     skills: store.skills,
     login: store.login,
     logoutButton: store.logoutButton,
-    ///////// this importing of main here for testing:///////
-    showMain: store.showMain 
-    ///////////////////////////////////////   
+    showMain: store.showMain,
+    user: store.user
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -36,11 +35,19 @@ const mapDispatchToProps = dispatch => ({
   showAddQuestion: () => {
     dispatch(actions.changeView(views.QUESTION_VIEW));
   },
-  showLoginAndHideLogoutButton: (login) => {
+  setUser: (userId) => {
+    console.log('userIdINSETUSER', userId);    
+    dispatch(actions.setUser(userId));
+  },
+  showLoginAndHideLogoutButton: (login, that) => {
     dispatch(actions.showLogin(login));
     // hide logout button:
     dispatch(actions.showLogoutButton('none'));
     dispatch(actions.showMain('none'));
+    // dispatch(actions.setUser(-1));
+    let newUserId = -1;
+    that.props.setUser(newUserId);
+    console.log('USER STATUS', that.props.user);
   },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
@@ -128,7 +135,6 @@ class MainContainer extends Component {
     //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
 
     // this.props.updateSkills(data); 
-    console.log('main props in main', this.props.showMain);
     this.props.fetchSkills();
   }
 
@@ -137,7 +143,7 @@ class MainContainer extends Component {
       <div className="container" style={{display: this.props.showMain}}>
         <div className="top">
           <h1 id="header">JobSmith</h1>
-          <button id="logoutBtn" style={{display: this.props.logoutButton}} onClick={() => this.props.showLoginAndHideLogoutButton('block')}>Logout</button>
+          <button id="logoutBtn" style={{display: this.props.logoutButton}} onClick={() => this.props.showLoginAndHideLogoutButton('block', this)}>Logout</button>
         </div>
         <div className="bottom">
           <div className="left">
