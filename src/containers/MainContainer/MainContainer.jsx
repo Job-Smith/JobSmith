@@ -39,24 +39,20 @@ const mapDispatchToProps = dispatch => ({
     console.log('userIdINSETUSER', userId);    
     dispatch(actions.setUser(userId));
   },
+  // on logout
   showLoginAndHideLogoutButton: (login, that) => {
-    dispatch(actions.showLogin(login));
-    // hide logout button:
-    dispatch(actions.showLogoutButton('none'));
-    let newUserId = -1;
-    that.props.setUser(newUserId);
+    // show login page
+    dispatch(actions.showLogin(login));  
+    // hide logout button
+    dispatch(actions.showLogoutButton('none')); 
+    // set userId to 0
+    that.props.setUser(-1); 
+    // hide main container
     dispatch(actions.showMain('none'));
-    // dispatch(actions.setUser(-1));
-    console.log('USER STATUS', that.props.user);
   },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
   },
-  ////// for testing: /////////
-  // obfuscateMain: (main) => {
-  //   dispatch(actions.obfuscateMain(main));
-  // },
-  /////////////////////////////
   markerClicked:(skillType) => {
     dispatch(actions.changeView(views.REGULAR_VIEW));
     dispatch(actions.fetchQuestions(skillType));
@@ -146,7 +142,6 @@ class MainContainer extends Component {
           <div id="header"><p className ='headertext'>JobSmith</p> 
           <p>be awesome, get shouted out at family dinner</p>
           </div>
-          {/* <button id="loginBtn" style={{display: this.props.loginButton}} onClick={() => this.props.showLogin('block')}>Login</button> */}
           <div className='logoutdiv'>
           <button id="logoutBtn" style={{display: this.props.logoutButton, "height":"20px"}} onClick={() => this.props.showLoginAndHideLogoutButton('block', this)}>Logout</button>
           </div>
