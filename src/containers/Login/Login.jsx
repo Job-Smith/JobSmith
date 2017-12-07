@@ -52,7 +52,8 @@ function sendCredentials (that) {
     password: document.getElementById('loginPassword').value
   })
   .then(function (response) {
-    console.log('response:', response.data);
+    document.getElementById('loginEmail').value = '';
+    document.getElementById('loginPassword').value = '';
     that.props.showLogin('none');
     that.props.showLogoutButton('block'); 
   })

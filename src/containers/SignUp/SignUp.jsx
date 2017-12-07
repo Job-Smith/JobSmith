@@ -58,9 +58,9 @@ function signUpUser (that) {
   .then(function (response) {
     console.log('response:', response.data);
     // that.props.showLogin('none');
-    document.getElementById('signUpName').value = "";
-    document.getElementById('email').value = "";
-    document.getElementById('signUpPassword').value = "";
+    document.getElementById('signUpName').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('signUpPassword').value = '';
     that.props.showSignUp('none');   
     that.props.showLogoutButton('block'); 
   })
