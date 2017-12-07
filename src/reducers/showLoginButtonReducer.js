@@ -1,9 +1,5 @@
 import * as types from '../constants/actionTypes';
 
-// const initialState = {
-//   display: 'none'
-// };
-
 const initialState = 'block';
 
 const showLoginButtonReducer = (state=initialState, action) => {

@@ -21,8 +21,6 @@
     padding: 100px;
     box-shadow: 1px 5px 5px 5px grey;
     opacity: none;
-    /* display: flex;     */
-    /* justify-content: center; */
 }
 #loginHeader {
     width: 200px;

@@ -36,19 +36,16 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.changeView(views.QUESTION_VIEW));
   },
   setUser: (userId) => {
-    console.log('userIdINSETUSER', userId);    
     dispatch(actions.setUser(userId));
   },
-  // on logout
+  // on logout:
   showLoginAndHideLogoutButton: (login, that) => {
-    // show login page
+    // toggle hide and show components
     dispatch(actions.showLogin(login));  
-    // hide logout button
-    dispatch(actions.showLogoutButton('none')); 
+    dispatch(actions.showLogoutButton('none'));
+    dispatch(actions.showMain('none')); 
     // set userId to 0
-    that.props.setUser(-1); 
-    // hide main container
-    dispatch(actions.showMain('none'));
+    that.props.setUser(-1);     
   },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));

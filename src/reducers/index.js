@@ -8,9 +8,7 @@ import questionsReducer from './questionsReducer';
 import displayReducer from './displayReducer';
 import userReducer from './userReducer';
 import logoutButtonReducer from './logoutButtonReducer';
-///////// for testing: //////////
 import showMainReducer from './showMainReducer';
-/////////////////////////////////
 
 // combine reducers
 const reducers = combineReducers({
@@ -20,9 +18,7 @@ const reducers = combineReducers({
   logoutButton: logoutButtonReducer,
   questions: questionsReducer,
   display: displayReducer,
-  ////////// for testing: /////////
   showMain: showMainReducer,
-  /////////////////////////////////
   user: userReducer 
 });
 
