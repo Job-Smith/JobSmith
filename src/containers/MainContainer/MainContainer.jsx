@@ -18,7 +18,7 @@ const mapStateToProps = store => ({
     login: store.login,
     logoutButton: store.logoutButton,
     ///////// this importing of main here for testing:///////
-    // main: store.obfuscateMain 
+    showMain: store.showMain 
     ///////////////////////////////////////   
 });
 
@@ -40,6 +40,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.showLogin(login));
     // hide logout button:
     dispatch(actions.showLogoutButton('none'));
+    dispatch(actions.showMain('none'));
   },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
@@ -132,7 +133,7 @@ class MainContainer extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container" style={{display: this.props.showMain}}>
         <div className="top">
         <img className ='logo' src="https://www.codesmith.io/images/main/codesmith-logo-md.png" />
           <div id="header"><p className ='headertext'>JobSmith</p> 

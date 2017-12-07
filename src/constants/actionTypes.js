@@ -7,7 +7,7 @@ export const SHOW_SIGNUP = "SHOW_SIGNUP";
 // export const SHOW_LOGIN_BUTTON = "SHOW_LOGIN_BUTTON";
 export const SHOW_LOGOUT_BUTTON = "SHOW_LOGOUT_BUTTON";
 /////////// for testing: ///////////
-// export const OBFUSCATE_MAIN = 'OBFUSCATE_MAIN';
+export const SHOW_MAIN = 'SHOW_MAIN';
 ///////////////////////////////////
 
 // questions reducer
