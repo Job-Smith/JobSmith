@@ -1,6 +1,6 @@
 import * as types from '../constants/actionTypes';
 
-const initialState = 'block';
+const initialState = 'none';
 
 const loginReducer = (state=initialState, action) => {
   switch(action.type) {

@@ -2,7 +2,7 @@
 
 import * as types from '../constants/actionTypes';
 
-const initialState = 'none';
+const initialState = 'block';
 
 const showMainReducer = (state=initialState, action) => {
   switch(action.type) {
