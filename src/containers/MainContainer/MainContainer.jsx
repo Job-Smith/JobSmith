@@ -15,9 +15,10 @@ import css from './MainContainer.css';
 
 const mapStateToProps = store => ({
     skills: store.skills,
-    login: store.login
+    login: store.login,
+    // loginButton: store.loginButton
+    logoutButton: store.logoutButton    
 });
-
 
 const mapDispatchToProps = dispatch => ({
 
@@ -34,8 +35,17 @@ const mapDispatchToProps = dispatch => ({
   showAddQuestion: () => {
     dispatch(actions.changeView(views.QUESTION_VIEW));
   },
-  showLogin: (login) => {
+  showLoginAndHideLogoutButton: (login) => {
     dispatch(actions.showLogin(login));
+    // hide logout button:
+    dispatch(actions.showLogoutButton('none'));
+    // that.props.showLogoutButton('block');
+  },
+  // showLoginButton: (loginButton) => {
+  //   dispatch(actions.showLoginButton(loginButton));
+  // },
+  showLogoutButton: (logoutButton) => {
+    dispatch(actions.showLogoutButton(logoutButton));
   },
   markerClicked:(skillType) => {
     dispatch(actions.changeView(views.REGULAR_VIEW));
@@ -108,13 +118,22 @@ class MainContainer extends Component {
   }
 
   componentDidMount() {
-    // const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
-    //                { id: 2, skill: 'Java', color: '#E51742' }, 
-    //                { id: 3, skill: 'HTML', color: '#E517AC' }, 
-    //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
-    // this.props.updateSkills(data); 
-    
-
+    console.log('PROPS IN MAIN CONTAINER:', this.props);
+    // const update = this.props.updateSkills;
+    // DO AJAX HERE??
+    // axios.get('/skills')
+    //   .then((response) => {
+    //     update(response.data);    
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+    //Do AJAX request to get skills ....
+    const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
+                   { id: 2, skill: 'Java', color: '#E51742' }, 
+                   { id: 3, skill: 'HTML', color: '#E517AC' }, 
+                   { id: 4, skill: 'CSS', color: '#5417E5' } ];
+    this.props.updateSkills(data); 
     this.props.fetchSkills();
     this.props.showLogin('none');
   }
@@ -124,7 +143,8 @@ class MainContainer extends Component {
       <div className="container">
         <div className="top">
           <h1 id="header">JobSmith</h1>
-          <button id="loginBtn" onClick={() => this.props.showLogin('block')}>Login</button>
+          {/* <button id="loginBtn" style={{display: this.props.loginButton}} onClick={() => this.props.showLogin('block')}>Login</button> */}
+          <button id="logoutBtn" style={{display: this.props.logoutButton}} onClick={() => this.props.showLoginAndHideLogoutButton('block')}>Logout</button>
         </div>
         <div className="bottom">
           <div className="left">
