@@ -13,7 +13,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import from child components...
 import { bindActionCreators } from 'redux';
-// import Login from '../containers/Login.jsx';
 // Import css
 import css from './SignUp.css'; 
 import * as actions from './../../actions/actions.js';
@@ -22,10 +21,6 @@ import axios from 'axios';
 
 const mapStateToProps = store => ({
   // add pertinent state here
-  // totalCards: store.cards.totalCards,
-  // totalMarkets: store.markets.totalMarkets
-  // login: store.login,
-  // import signUp from store
   signUp: store.signUp,
   logoutButton: store.logoutButton,
   showMain: store.showMain
@@ -33,9 +28,6 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => ({
   // return bindActionCreators(actionCreators, dispatch);
-  // showLogin: (login) => {
-  //   dispatch(actions.showLogin(login));
-  // },
   showSignUp: (signUp) => {
     dispatch(actions.showSignUp(signUp));
   },
@@ -47,26 +39,20 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-// function that on click, makes post request to server
-// if login credentials are correct, submit action to store to change loginRecur's display to 'none'
-
 function signUpUser (that) {
-  console.log('this inside of signUpUser', that);
   axios.post('/register', {
-    // email: 'woojun@gmail.com',
     name: document.getElementById('signUpName').value,
     email: document.getElementById('email').value,
-    // password: 1234
     password: document.getElementById('signUpPassword').value
   })
   .then(function (response) {
     document.getElementById('signUpName').value = '';
     document.getElementById('email').value = '';
     document.getElementById('signUpPassword').value = '';
+    // toggle hide and show components
     that.props.showSignUp('none');   
     that.props.showLogoutButton('block'); 
     that.props.showMain('block');
-    // console.log(that.props.showMain)
   })
   .catch(function (error) {
     console.log('error:', error);
@@ -80,17 +66,12 @@ class SignUpContainer extends Component {
 
   render() {
     return(
-    //   <div id="signUpContainer" style={{display: this.props.login}}>
       <div id="signUpContainer" style={{display: this.props.signUp}}>
         <div id="signUpOuterBox">
           <h1 id="signUpHeader">Sign Up</h1>
-          { /* Start adding components here... */ }
           <form id="signUpForm">
-            {/* <h2>Name</h2><br></br> */}
             <input id="signUpName" type="text" name="name" placeholder="Name"></input><br></br>
-            {/* <h2>Email</h2><br></br> */}
             <input id="email" type="text" name="name" placeholder="Email"></input><br></br>
-            {/* <h2>Password</h2><br></br> */}
             <input id="signUpPassword" type="password" name="password" placeholder="Password"></input>
             <input id="submitBtn" type="button" value="Submit" onClick={() => signUpUser(this)}></input>
           </form>
@@ -101,5 +82,4 @@ class SignUpContainer extends Component {
 
 }
 
-// export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpContainer);

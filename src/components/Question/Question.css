@@ -14,7 +14,8 @@
 
 .textHolder {
   height:35px;
-  padding-left: 18px;
+  /* padding-left: 18px; */
+  padding: 18px;
   display: inline-block;
   width: 90%;
   margin-left: 280px;
@@ -26,7 +27,8 @@
   display: inline-block;
   width: 150px;
   height:35px;
-  padding-top:15px;
+  /* padding-top:15px; */
+  padding: 16.5px;
   border: 1px solid black;
   border-left:none;
   text-align: center;
