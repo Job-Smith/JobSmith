@@ -5,6 +5,12 @@ import SkillOption from './../SkillOption/SkillOption.jsx';
 import css from './NewQuestion.css';
 
 const NewQuestion = props => {
+
+  let otherDisplay = props.displayOther;
+
+  if (props.skills.length == 0) {
+    otherDisplay = 'block';
+  }
     
   /**
    * send questions by invoking props.saveQuestion(question object)
@@ -57,7 +63,7 @@ const NewQuestion = props => {
             Company
             <input id='company' type='text'></input>
           </label>
-          <label style={{'display' : props.displayOther}}>
+          <label style={{'display' : otherDisplay}}>
             Skill
             <input id='skillType' type='text'></input>
           </label>

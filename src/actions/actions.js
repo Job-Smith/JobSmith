@@ -21,12 +21,14 @@ export const fetchSkills = () => {
 };
 
 export const saveSkill = (questionData, skillsLength) => {
+    console.log("saveSkill");
   const colours = ['#D15656', '#CB61C9', '#DB7B34', '#C5BE3F', '#A6DB45', '#8396AC', '#9568B2', '#276C2D', '#3ED5AC', '#F1CC1F'];
   function getNextColor() {
-    return colours[skills.length % 10];
+    return colours[skillsLength % 10];
   }
   const color = getNextColor();
   const skill = { skill: questionData.skillType, color };
+  console.log("skill", skill);
   return (dispatch) => {
     axios.post('/saveSkill', skill)
       .then((response) => {
@@ -91,6 +93,7 @@ export const saveQuestion = (questionData) => {
   return (dispatch) => {
     axios.post('/saveQuestion', questionData)
       .then((response) => {
+console.log("saveQuestion response", response);
         dispatch(fetchQuestions(response.data.skill_id));
         dispatch(changeView(views.REGULAR_VIEW));
       })
