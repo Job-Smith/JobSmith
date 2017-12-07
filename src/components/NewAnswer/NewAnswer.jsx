@@ -18,16 +18,16 @@ console.log("answerObj", answerObj);
 
   return (
     <div className='answerWrapper'>
-      <form className='forumWrapper'>
+      <div className='forumWrapper'>
         <div className='labelWrapper'>
           <label>
             <strong><u>Answer</u></strong><br/>
-            <input className='answerInput' type='text'></input>
+            <textarea id='answerField' className='answerInput' type='text'></textarea>
           </label>
           <button onClick={submitAnswer}>'Submit'</button>
 
         </div>
-      </form>
+      </div>
 
     </div>
   );
