@@ -25,6 +25,7 @@ const mapStateToProps = store => ({
   login: store.login,
   signUp: store.signUp,
   logoutButton: store.logoutButton,
+  // user: store.user
   // main: store.obfuscateMain
 });
 
@@ -38,6 +39,9 @@ const mapDispatchToProps = dispatch => ({
   },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
+  },
+  setUser: (userId) => {
+    dispatch(actions.setUser(userId));
   },
   // obfuscateMain: (main) => {
   //   dispatch(actions.obfuscateMain(main));
@@ -61,6 +65,8 @@ function sendCredentials (that) {
     document.getElementById('loginPassword').value = '';
     that.props.showLogin('none');
     that.props.showLogoutButton('block'); 
+    console.log('RESPONSE ID', response);
+    that.props.setUser(response.id);
   })
   .catch(function (error) {
     console.log('error:', error);

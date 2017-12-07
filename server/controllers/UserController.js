@@ -7,7 +7,7 @@ const userController = {
        const query = `SELECT * FROM "user" WHERE email = '${req.body.email}' AND password = '${req.body.password}'`;
        db.conn.one(query)
         .then(postLogin => {
-            res.status(200).send({'msg': 'Login successful'});
+            res.status(200).send({'msg': 'Login successful', 'id': postLogin.id});
             next();
         })
         .catch(err =>{ 
