@@ -56,7 +56,6 @@ getQuestion(req, res, next) {
             })
             return quest;
           })
-          console.log('AnswerQuery result: ', result)
           res.status(200).send(result)
           next();
         })
@@ -68,12 +67,10 @@ getQuestion(req, res, next) {
             }));
             return;
           }
-          console.log('AnswerQuery error: ', err);
           res.status(404).send(err)
         });
     })
     .catch(err => {
-      console.log('QuestionQuery error: ', err);
       res.status(404).send(err)
     });
   }
