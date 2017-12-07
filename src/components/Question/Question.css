@@ -9,7 +9,7 @@
 .skillHolder {
   position: absolute; 
   display: inline-block;
-  width: 120px;
+  width: 100px;
 }
 
 .textHolder {
@@ -17,7 +17,7 @@
   padding-left: 18px;
   display: inline-block;
   width: 90%;
-  margin-left: 160px;
+  margin-left: 280px;
   border: 1px solid black;  
   padding-top:15px;
 }
