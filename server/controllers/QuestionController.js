@@ -32,19 +32,19 @@ getQuestion(req, res, next) {
   let questionQuery;
   let answerQuery;
   if (req.body.skill_id) {
-    questionQuery = `SELECT * FROM "questions" WHERE skill_id =${req.body.skill_id}`
+    questionQuery = `SELECT * FROM "questions" WHERE skill_id =${req.body.skill_id} order by date desc`
   }
   else {
-    questionQuery = `SELECT * FROM "questions"`
+    questionQuery = `SELECT * FROM "questions" order by date desc`
   }
   db.conn.many(questionQuery)
     .then(questionsData => {
       const questions = questionsData;
       if (req.body.skill_id) {
-        answerQuery = `select q.*, a.* from "questions" q inner join "answer" a on q.id = a.question_id where q.skill_id = ${req.body.skill_id}`;
+        answerQuery = `select q.*, a.* from "questions" q inner join "answer" a on q.id = a.question_id where q.skill_id = ${req.body.skill_id} order by date desc`;
       }
       else {
-        answerQuery = `select q.*, a.* from "questions" q inner join "answer" a on q.id = a.question_id`;
+        answerQuery = `select q.*, a.* from "questions" q inner join "answer" a on q.id = a.question_id order by date desc`;
       }
       db.conn.many(answerQuery)
         .then(answerData => {
@@ -53,6 +53,8 @@ console.log("answerData", answerData);
           let result = questions.map((quest) => {
             quest.answers = answerData.filter((ans) => {
                 return ans.question_id === quest.id
+            }).sort(function(a, b) {
+              return b.rating - a.rating
             })
             return quest;
           })
