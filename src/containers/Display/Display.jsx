@@ -29,11 +29,19 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.setSelectedQuestion(questionId));
     dispatch(actions.changeView(views.ANSWER_VIEW));
   },
-  saveQuestion: (questionData) => {
-    dispatch(actions.saveQuestion(questionData));
+  saveQuestion: (questionData, skills) => {
+    console.log('saveQuestion questionData', questionData);
+    const skillId = questionData.skill_id;
+    if (skills.filter(skill => skill.id == skillId).length === 0) {
+      console.log('add Skill for question');
+      dispatch(actions.saveSkill(questionData))
+    } else {
+      console.log('dont Skill for question');
+      dispatch(actions.saveQuestion(questionData));
+    }
+
   },
   saveAnswer: (answerData) => {
-console.log("answerData", answerData);
     dispatch(actions.saveAnswer(answerData));
   },
   setDisplayOther: (displayType) => {

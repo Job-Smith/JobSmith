@@ -4,7 +4,7 @@ import * as types from '../constants/actionTypes';
 //   display: 'none'
 // };
 
-const initialState = 'block';
+const initialState = 'none';
 
 // TESTING ONLY to hide sign in page
 // const initialState = 'none';

@@ -20,6 +20,25 @@ export const fetchSkills = () => {
   };
 };
 
+export const saveSkill = (questionData) => {
+  const colours = ['#D15656', '#DB7B34', '#C5BE3F', '#A6DB45', '#276C2D', '#7BC3AE', '#3F70A9', '#9568B2', '#E457E1', '#41DDB3', '#F1CC1F'];
+  function getRandomColor() {
+    return colours[Math.floor((Math.random() * 11) + 1)];
+  }
+  const color = getRandomColor();
+  const skill = { skill: questionData.skillType, color };
+  return (dispatch) => {
+    axios.post('/saveSkill', skill)
+      .then((response) => {
+        questionData.skill_id = response.data.id;
+        dispatch(fetchSkills());
+        dispatch(saveQuestion(questionData));
+      })
+      .catch(function (error) {
+      });
+  };
+}
+
 // reducers for toggling show (display: block) and hide (display: none):
 export const showLogin = (login) => ({
   type: types.SHOW_LOGIN,
@@ -31,11 +50,6 @@ export const showSignUp = (signup) => ({
   payload: signup,
 });
 
-// export const showLoginButton = (loginButton) => ({
-//   type: types.SHOW_LOGIN_BUTTON,
-//   payload: loginButton,
-// });
-
 export const showLogoutButton = (logoutButton) => ({
   type: types.SHOW_LOGOUT_BUTTON,
   payload: logoutButton,
@@ -46,7 +60,6 @@ export const showMain = (main) => ({
   payload: main,
 });
 
-// add more action creators
 // question reducer
 export const replaceQuestions = (questions) => ({
   type: types.REPLACE_QUESTIONS,
@@ -87,15 +100,13 @@ export const saveQuestion = (questionData) => {
 }
 
 export const saveAnswer = (answerData) => {
-console.log("saveAnswer answerData", answerData);
   return (dispatch) => {
     axios.post('/saveAnswer', answerData)
       .then((response) => {
-console.log("saveAnswer response.data", response.data);
         dispatch(addAnswer(response.data));
+        dispatch(changeView(views.REGULAR_VIEW));
       })
       .catch(function (error) {
-        console.log('Save Question ERROR: ', error);
       });
   };
 }
