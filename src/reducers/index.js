@@ -6,6 +6,7 @@ import loginReducer from './loginReducer';
 import signUpReducer from './signUpReducer';
 import questionsReducer from './questionsReducer';
 import displayReducer from './displayReducer';
+import userReducer from './userReducer';
 import logoutButtonReducer from './logoutButtonReducer';
 ///////// for testing: //////////
 import obfuscateMainReducer from './obfuscateMainReducer';
@@ -22,6 +23,7 @@ const reducers = combineReducers({
   ////////// for testing: /////////
   // obfuscateMain: obfuscateMainReducer
   /////////////////////////////////
+  user: userReducer 
 });
 
 // make the combined reducers available for import

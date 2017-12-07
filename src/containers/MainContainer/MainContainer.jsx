@@ -31,7 +31,6 @@ const mapDispatchToProps = dispatch => ({
   },
 //////////////////////////////////////  
   fetchSkills: () => {
-    console.log('fetchSkills');
     dispatch(actions.fetchSkills());
   },
   showAddQuestion: () => {
@@ -52,7 +51,7 @@ const mapDispatchToProps = dispatch => ({
   /////////////////////////////
   markerClicked:(skillType) => {
     dispatch(actions.changeView(views.REGULAR_VIEW));
-    // dispatch(actions.fetchQuestions(skillType));
+    dispatch(actions.fetchQuestions(skillType));
 
     const data = [  { 
                       id: 100,
@@ -111,26 +110,25 @@ const mapDispatchToProps = dispatch => ({
                                   },
                                ]
                     } ];
-    dispatch(actions.replaceQuestions(data));
+    // dispatch(actions.replaceQuestions(data));
   }
 });
 
 class MainContainer extends Component {
   constructor(props) {
-      console.log("props", props);
     super(props);
   }
 
   componentDidMount() {
 
-    const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
-                   { id: 2, skill: 'Java', color: '#E51742' }, 
-                   { id: 3, skill: 'HTML', color: '#E517AC' }, 
-                   { id: 4, skill: 'CSS', color: '#5417E5' } ];
+    // const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
+    //                { id: 2, skill: 'Java', color: '#E51742' }, 
+    //                { id: 3, skill: 'HTML', color: '#E517AC' }, 
+    //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
 
     this.props.updateSkills(data); 
     console.log('main props in main', this.props.main);
-    // // this.props.fetchSkills();
+    this.props.fetchSkills();
   }
 
   render() {
