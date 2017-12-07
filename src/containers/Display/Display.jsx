@@ -33,10 +33,8 @@ const mapDispatchToProps = dispatch => ({
     console.log('saveQuestion questionData', questionData);
     const skillId = questionData.skill_id;
     if (skills.filter(skill => skill.id == skillId).length === 0) {
-      console.log('add Skill for question');
       dispatch(actions.saveSkill(questionData))
     } else {
-      console.log('dont Skill for question');
       dispatch(actions.saveQuestion(questionData));
     }
 
