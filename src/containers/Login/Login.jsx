@@ -65,10 +65,7 @@ function sendCredentials (that) {
     that.props.showLogoutButton('block'); 
     that.props.showMain('block');      
     that.props.setUser(response.data.id);
-<<<<<<< HEAD
     console.log('USER PROPS IN LOGIN', that.props.user)
-=======
->>>>>>> e03c5f4a021679a5bc180a8810b9475a51691844
   })
   .catch(function (error) {
     console.log('error:', error);
