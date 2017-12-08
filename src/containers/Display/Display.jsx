@@ -25,13 +25,12 @@ const mapDispatchToProps = dispatch => ({
   expandAnswers: (questionId) => {
     dispatch(actions.expandAnswers(questionId));
   },
-  showNewAnswer: (questionId) => {
+  showNewAnswer: (questionId, skillId) => {
+    dispatch(actions.setSelectedQuestionSkill(skillId));
     dispatch(actions.setSelectedQuestion(questionId));
     dispatch(actions.changeView(views.ANSWER_VIEW));
   },
   saveQuestion: (questionData, skills) => {
-console.log("saveQuestion", questionData);
-console.log("skills", skills);
     const skillId = questionData.skill_id;
     if (skills.filter(skill => skill.id == skillId).length !== 0) {
       dispatch(actions.saveQuestion(questionData));
@@ -40,8 +39,8 @@ console.log("skills", skills);
     }
 
   },
-  saveAnswer: (answerData) => {
-    dispatch(actions.saveAnswer(answerData));
+  saveAnswer: (answerData, skillId) => {
+    dispatch(actions.saveAnswer(answerData, skillId));
   },
   setDisplayOther: (displayType) => {
     dispatch(actions.displayOther(displayType));
@@ -61,7 +60,6 @@ class Display extends Component {
   }
 
   render() {
-
     if (this.props.display === views.QUESTION_VIEW) {
       return(
         <div className="displayContainer">
@@ -72,7 +70,8 @@ class Display extends Component {
     } else if (this.props.display === views.ANSWER_VIEW) {
       return(
         <div className="displayContainer">
-          <NewAnswer saveAnswer={this.props.saveAnswer} user_id={this.props.user.userId} question_id={this.props.user.selectedQuestion} />
+          <NewAnswer saveAnswer={this.props.saveAnswer} user_id={this.props.user.userId} question_id={this.props.user.selectedQuestion} 
+                     skillId={this.props.user.selectedQuestionSkill} />
         </div>  
       ); 
     } else { 
@@ -83,9 +82,7 @@ class Display extends Component {
         </div>  
       );  
     } 
-    
   }
-
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Display);
