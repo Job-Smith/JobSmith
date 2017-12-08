@@ -70,7 +70,8 @@
 .logoutdiv {
   width:100vw;
   height:20vh;
-  display:flex;
+  /* display:flex; */
+  display:flex;  
   justify-content:flex-end;
   position: absolute;
 }

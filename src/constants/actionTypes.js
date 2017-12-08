@@ -12,10 +12,12 @@ export const REPLACE_QUESTIONS = "REPLACE_QUESTIONS";
 export const EXPAND_ANSWERS = "EXPAND_ANSWERS";
 export const ADD_ANSWER = "ADD_ANSWER";
 
+
 // user reducer
 export const SET_USER = "SET_USER";
 export const SET_QUESTION = "SET_QUESTION";
 export const TOGGLE_SHOW_OTHER = "TOGGLE_SHOW_OTHER";
+export const SET_QUESTION_SKILL = "SET_QUESTION_SKILL";
 
 
 // display reducer
