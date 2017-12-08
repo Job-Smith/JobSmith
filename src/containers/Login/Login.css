@@ -56,3 +56,10 @@
     display: inline-block;
     font-size: 16px;
 }
+.loginLogo {
+    /* position:absolute; */
+    position:absolute;   
+    top: 96px;
+    left: 500px;
+    opacity:.3;
+}

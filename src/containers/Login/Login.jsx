@@ -84,6 +84,7 @@ class LoginContainer extends Component {
     return(
       <div id="loginContainer" style={{display: this.props.login}}>
         <div id="loginOuterBox">
+        <img className ='loginLogo' src="https://www.codesmith.io/images/main/codesmith-logo-md.png" />
         <h1 id="loginHeader">Jobsmith</h1>
           <form id="loginForm">
             <input id="loginEmail" type="text" name="nameOrEmail" placeholder="Email"></input><br></br>
