@@ -13,7 +13,8 @@ const LastAnswerRow = props => {
   return (
     <div className="row">
       <QuestionButton expandAnswers={null} questionId={props.questionId} expand={true} hasAnswers={false}
-                        showNewAnswer={props.showNewAnswer} skillId={props.skillId} />
+                      showNewAnswer={props.showNewAnswer} skillId={props.skillId} />
+
     </div>
   );
 };
