@@ -1,14 +1,18 @@
 const User = require('../models/userModel');
 const db = require('../models/database');
+const bcrypt = require('bcrypt')
 
 const userController = {
     postLogin(req, res, next) {
-       // query 
-       const query = `SELECT * FROM "user" WHERE email = '${req.body.email}' AND password = '${req.body.password}'`;
+       const query = `SELECT * FROM "user" WHERE email = '${req.body.email}'`;
        db.conn.one(query)
         .then(postLogin => {
-            res.status(200).send({'msg': 'Login successful', 'id': postLogin.id});
-            next();
+            if(bcrypt.compareSync(req.body.password, postLogin.password)) {
+                res.status(200).send({'msg': 'Login successful'});
+            }
+             else {
+                console.log('Password dont match')
+            }
         })
         .catch(err => { 
            console.log('The error is', err);
@@ -22,10 +26,13 @@ const userController = {
             password: req.body.password,
             email: req.body.email,
         });
+
+        bcrypt.hash(req.body.password, 10, function (err, hash) {
+            console.log(hash)
         
         let query = {
             text: 'INSERT INTO "user" (name, password, email) VALUES($1, $2, $3) RETURNING id',
-            values: [newUser.name, newUser.password, newUser.email]
+            values: [newUser.name, hash, newUser.email]
         };
 
         db.conn.one(query)
@@ -37,8 +44,8 @@ const userController = {
             console.log('The error is', err);
             res.status(404).send(err);
         });
-    }
-    
+    })
+}
 }
 
 module.exports = userController;
