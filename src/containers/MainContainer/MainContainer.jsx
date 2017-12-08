@@ -137,10 +137,10 @@ class MainContainer extends Component {
         <div className="top">
         <img className ='logo' src="https://www.codesmith.io/images/main/codesmith-logo-md.png" />
           <div id="header"><p className ='headertext'>JobSmith</p> 
-          <p>be awesome, get shouted out at family dinner</p>
+            <p>be awesome, get shouted out at family dinner</p>
           </div>
           <div className='logoutdiv'>
-          <button id="logoutBtn" style={{display: this.props.logoutButton, "height":"20px"}} onClick={() => this.props.showLoginAndHideLogoutButton('block', this)}>Logout</button>
+            <button id="logoutBtn" style={{display: this.props.logoutButton, "height":"20px"}} onClick={() => this.props.showLoginAndHideLogoutButton('block', this)}>Logout</button>
           </div>
         </div>
         <div className="bottom">

@@ -36,7 +36,7 @@ const Question = props => {
           {question.company}
         </div>
         <QuestionButton expandAnswers={props.expandAnswers} questionId={question.id} expand={question.expand} hasAnswers={hasAnswers}
-                        showNewAnswer={props.showNewAnswer} />
+                        showNewAnswer={props.showNewAnswer} className="questionButton"/>
       </div>
       <div className="answerHolder">
         {answerList}
