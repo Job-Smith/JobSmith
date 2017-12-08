@@ -36,27 +36,20 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.changeView(views.QUESTION_VIEW));
   },
   setUser: (userId) => {
-    console.log('userIdINSETUSER', userId);    
     dispatch(actions.setUser(userId));
   },
+  // on logout:
   showLoginAndHideLogoutButton: (login, that) => {
-    dispatch(actions.showLogin(login));
-    // hide logout button:
+    // toggle hide and show components
+    dispatch(actions.showLogin(login));  
     dispatch(actions.showLogoutButton('none'));
-    let newUserId = -1;
-    that.props.setUser(newUserId);
-    dispatch(actions.showMain('none'));
-    // dispatch(actions.setUser(-1));
-    console.log('USER STATUS', that.props.user);
+    dispatch(actions.showMain('none')); 
+    // set userId to 0
+    that.props.setUser(-1);     
   },
   showLogoutButton: (logoutButton) => {
     dispatch(actions.showLogoutButton(logoutButton));
   },
-  ////// for testing: /////////
-  // obfuscateMain: (main) => {
-  //   dispatch(actions.obfuscateMain(main));
-  // },
-  /////////////////////////////
   markerClicked:(skillType) => {
     dispatch(actions.changeView(views.REGULAR_VIEW));
     dispatch(actions.fetchQuestions(skillType));
@@ -129,10 +122,10 @@ class MainContainer extends Component {
 
   componentDidMount() {
 
-    // const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
-    //                { id: 2, skill: 'Java', color: '#E51742' }, 
-    //                { id: 3, skill: 'HTML', color: '#E517AC' }, 
-    //                { id: 4, skill: 'CSS', color: '#5417E5' } ];
+    const data = [ { id: 1, skill: 'Javascript', color: '#E58017' }, 
+                   { id: 2, skill: 'Java', color: '#E51742' }, 
+                   { id: 3, skill: 'HTML', color: '#E517AC' }, 
+                   { id: 4, skill: 'CSS', color: '#5417E5' } ];
 
     // this.props.updateSkills(data); 
     this.props.fetchSkills();
@@ -144,11 +137,10 @@ class MainContainer extends Component {
         <div className="top">
         <img className ='logo' src="https://www.codesmith.io/images/main/codesmith-logo-md.png" />
           <div id="header"><p className ='headertext'>JobSmith</p> 
-          <p>be awesome, get shouted out at family dinner</p>
+            <p>be awesome, get shouted out at family dinner</p>
           </div>
-          {/* <button id="loginBtn" style={{display: this.props.loginButton}} onClick={() => this.props.showLogin('block')}>Login</button> */}
           <div className='logoutdiv'>
-          <button id="logoutBtn" style={{display: this.props.logoutButton, "height":"20px"}} onClick={() => this.props.showLoginAndHideLogoutButton('block', this)}>Logout</button>
+            <button id="logoutBtn" style={{display: this.props.logoutButton, "height":"20px"}} onClick={() => this.props.showLoginAndHideLogoutButton('block', this)}>Logout</button>
           </div>
         </div>
         <div className="bottom">

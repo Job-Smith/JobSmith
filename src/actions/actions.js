@@ -23,7 +23,7 @@ export const fetchSkills = () => {
 export const saveSkill = (questionData, skillsLength) => {
   const colours = ['#D15656', '#CB61C9', '#DB7B34', '#C5BE3F', '#A6DB45', '#8396AC', '#9568B2', '#276C2D', '#3ED5AC', '#F1CC1F'];
   function getNextColor() {
-    return colours[skills.length % 10];
+    return colours[skillsLength % 10];
   }
   const color = getNextColor();
   const skill = { skill: questionData.skillType, color };
@@ -39,7 +39,7 @@ export const saveSkill = (questionData, skillsLength) => {
   };
 }
 
-// reducers for toggling show (display: block) and hide (display: none):
+// reducers for toggling show (eg: {display: block} and hide {display: none}):
 export const showLogin = (login) => ({
   type: types.SHOW_LOGIN,
   payload: login,
@@ -99,14 +99,18 @@ export const saveQuestion = (questionData) => {
   };
 }
 
-export const saveAnswer = (answerData) => {
+
+export const saveAnswer = (answerData, skillId) => {
   return (dispatch) => {
     axios.post('/saveAnswer', answerData)
       .then((response) => {
+console.log("Action saveAnswer response", response);
         dispatch(addAnswer(response.data));
+        dispatch(fetchQuestions(skillId));
         dispatch(changeView(views.REGULAR_VIEW));
       })
       .catch(function (error) {
+console.log("Action saveAnswer error", error);        
       });
   };
 }
@@ -120,6 +124,11 @@ export const setUser = (userId) => ({
 export const setSelectedQuestion = (questionId) => ({
   type: types.SET_QUESTION,
   payload: questionId,
+});
+
+export const setSelectedQuestionSkill = (skillId) => ({
+  type: types.SET_QUESTION_SKILL,
+  payload: skillId,
 });
 
 export const displayOther = (displayType) => ({

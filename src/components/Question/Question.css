@@ -10,13 +10,17 @@
   position: absolute; 
   display: inline-block;
   width: 100px;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
 .textHolder {
   height:35px;
-  padding-left: 18px;
+  /* padding-left: 18px; */
+  padding: 18px;
   display: inline-block;
-  width: 90%;
+  min-width: 500px;
+  /* width: 90%; */
   margin-left: 280px;
   border: 1px solid black;  
   padding-top:15px;
@@ -24,10 +28,15 @@
 
 .company {
   display: inline-block;
-  width: 150px;
+  min-width: 100px;
   height:35px;
-  padding-top:15px;
+  /* padding-top:15px; */
+  padding: 16.5px;
   border: 1px solid black;
   border-left:none;
   text-align: center;
+}
+
+.questionButton {
+  margin-top: 21px;
 }

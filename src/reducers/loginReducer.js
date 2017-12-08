@@ -3,11 +3,9 @@ import * as types from '../constants/actionTypes';
 const initialState = 'block';
 
 const loginReducer = (state=initialState, action) => {
-//   let login;
   switch(action.type) {
 
     case types.SHOW_LOGIN:
-      console.log('ACTION PAYLOAD', action.payload);
       return action.payload;
 
     default:

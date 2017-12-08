@@ -1,7 +1,7 @@
 import * as types from '../constants/actionTypes';
 import * as views from '../constants/displayTypes.js';
 
-const initialState = { userId: -1, selectedQuestion: -1, displayOther: 'none' };
+const initialState = { userId: -1, selectedQuestion: -1, selectedQuestionSkill: -1, displayOther: 'none' };
 
 const userReducer = (state=initialState, action) => {
     
@@ -17,6 +17,12 @@ const userReducer = (state=initialState, action) => {
       return { 
         ...state,
         displayOther: action.payload
+      };  
+
+    case types.SET_QUESTION_SKILL:
+      return { 
+        ...state, 
+        selectedQuestionSkill: action.payload 
       };  
 
     case types.SET_QUESTION:

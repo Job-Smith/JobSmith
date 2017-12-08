@@ -4,6 +4,7 @@ import React from 'react';
 import Answer from './../Answer/Answer.jsx'
 import SkillsMarker from './../SkillsMarker/SkillsMarker.jsx'
 import QuestionButton from './../QuestionButton/QuestionButton.jsx'
+import LastAnswerRow from './../LastAnswerRow/LastAnswerRow.jsx'
 
 // Import css
 import css from './Question.css';
@@ -17,8 +18,9 @@ const Question = props => {
   
   if (question.expand) {
     for (let i = 0, ilen = answers.length; i < ilen; i += 1) {
-      answerList.push(<Answer key={i+'ans'} answer={answers[i]} />);
+      answerList.push(<Answer key={i+'ans'} answer={answers[i]}/>);
     }
+    answerList.push(<LastAnswerRow key={'LastAnswerRow'} showNewAnswer={props.showNewAnswer} questionId={question.id} skillId={question.skill_id} />);
   }
 
   return (
@@ -34,7 +36,7 @@ const Question = props => {
           {question.company}
         </div>
         <QuestionButton expandAnswers={props.expandAnswers} questionId={question.id} expand={question.expand} hasAnswers={hasAnswers}
-                        showNewAnswer={props.showNewAnswer} />
+                        showNewAnswer={props.showNewAnswer} skillId={question.skill_id} />
       </div>
       <div className="answerHolder">
         {answerList}

@@ -4,13 +4,14 @@
   height: 100%;
   background-color: white;
   margin: 0px;
-  /* z-index: 1; */
 }
 
 .top {
   display: flex;
+  /* display: fixed; */
   width: 100vw;
-  height: 20vh;
+  min-height: 30px;  
+  /* height: 20vh; */
   background-color: white;
   justify-content: center;
 }
@@ -24,11 +25,13 @@
 }
 
 .left {
-  width: 15vw;
+  /* width: 15vw; */
+  min-width: 40px;
   height: 100vh;
   float: left; 
   border-right:1px solid black;
   background-color: #46AAE8;  
+  margin-left: 10px;
 }
 
 .display {
@@ -67,7 +70,8 @@
 .logoutdiv {
   width:100vw;
   height:20vh;
-  display:flex;
+  /* display:flex; */
+  display:flex;  
   justify-content:flex-end;
   position: absolute;
 }

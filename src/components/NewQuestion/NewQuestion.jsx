@@ -5,6 +5,11 @@ import SkillOption from './../SkillOption/SkillOption.jsx';
 import css from './NewQuestion.css';
 
 const NewQuestion = props => {
+
+  let otherDisplay = props.displayOther;
+  if (props.skills.length == 0) {
+    otherDisplay = 'block';
+  }
     
   /**
    * send questions by invoking props.saveQuestion(question object)
