@@ -12,7 +12,7 @@ const QuestionButton = props => {
   }
 
   function addAnswerClicked() {
-    props.showNewAnswer(props.questionId);
+    props.showNewAnswer(props.questionId, props.skillId);
   }
 
   if (props.hasAnswers) {
