@@ -99,13 +99,14 @@ export const saveQuestion = (questionData) => {
   };
 }
 
-export const saveAnswer = (answerData) => {
-console.log("Action saveAnswer answerData", answerData);
+
+export const saveAnswer = (answerData, skillId) => {
   return (dispatch) => {
     axios.post('/saveAnswer', answerData)
       .then((response) => {
 console.log("Action saveAnswer response", response);
         dispatch(addAnswer(response.data));
+        dispatch(fetchQuestions(skillId));
         dispatch(changeView(views.REGULAR_VIEW));
       })
       .catch(function (error) {
@@ -123,6 +124,11 @@ export const setUser = (userId) => ({
 export const setSelectedQuestion = (questionId) => ({
   type: types.SET_QUESTION,
   payload: questionId,
+});
+
+export const setSelectedQuestionSkill = (skillId) => ({
+  type: types.SET_QUESTION_SKILL,
+  payload: skillId,
 });
 
 export const displayOther = (displayType) => ({
