@@ -7,5 +7,16 @@ html {
   width: 97.5%;
   min-height: 40px;
   font-style: italic;
-  overflow: scroll;
+  /* overflow: scroll; */
+}
+.answerTextHolder {
+  height:80px;
+  padding-left: 18px;
+  display: inline-block;
+  width: 90%;
+  margin-left: 280px;
+  border: 1px solid black;  
+  /* padding-top:15px; */
+  overflow: scroll;  
+  padding: 15px;
 }

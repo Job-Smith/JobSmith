@@ -16,7 +16,7 @@ const Answer = props => {
   return (
     <div className='answer'>
       <div className="skillSpacer"></div>
-      <div className="textHolder">
+      <div className="answerTextHolder">
         {props.answer.answer}
       </div>
     </div>
