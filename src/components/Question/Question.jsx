@@ -4,6 +4,7 @@ import React from 'react';
 import Answer from './../Answer/Answer.jsx'
 import SkillsMarker from './../SkillsMarker/SkillsMarker.jsx'
 import QuestionButton from './../QuestionButton/QuestionButton.jsx'
+import LastAnswerRow from './../LastAnswerRow/LastAnswerRow.jsx'
 
 // Import css
 import css from './Question.css';
@@ -19,6 +20,7 @@ const Question = props => {
     for (let i = 0, ilen = answers.length; i < ilen; i += 1) {
       answerList.push(<Answer key={i+'ans'} answer={answers[i]} />);
     }
+    answerList.push(<LastAnswerRow showNewAnswer={props.showNewAnswer} questionId={question.id} />);
   }
 
   return (
