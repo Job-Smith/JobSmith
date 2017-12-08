@@ -51,7 +51,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actions.showLogoutButton(logoutButton));
   },
   markerClicked:(skillType) => {
-    // dispatch(actions.changeView(views.REGULAR_VIEW));
+    dispatch(actions.changeView(views.REGULAR_VIEW));
     dispatch(actions.fetchQuestions(skillType));
 
     const data = [  { 

@@ -35,7 +35,7 @@ const Question = props => {
         <div className="company">
           {question.company}
         </div>
-        <QuestionButton expandAnswers={props.expandAnswers} questionId={question.id} expand={question.expand} hasAnswers={hasAnswers}showNewAnswer={props.showNewAnswer} skillId={question.skill_id} />
+        <QuestionButton expandAnswers={props.expandAnswers} questionId={question.id} expand={question.expand} hasAnswers={hasAnswers}
                         showNewAnswer={props.showNewAnswer} skillId={question.skill_id} />
       </div>
       <div className="answerHolder">
