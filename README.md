@@ -27,6 +27,6 @@
 > 7. Open a browser and navigate to `localhost:3000`
 
 ##### DEMO IMAGE: 
-![alt text](/login.png "Login")
-![alt text](/mainpage.png "Main Page")
+![alt text](/log.png "Login")
+![alt text](/main.png "Main Page")
 ![alt text](/posting.png "Posting")
